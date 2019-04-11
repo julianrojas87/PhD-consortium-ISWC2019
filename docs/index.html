@@ -23,53 +23,88 @@
   <section id="abstract">
     <h2>Abstract</h2>
     <!-- Context      -->
-    <p>Route planning has become a commonly used feature in different contexts.
-Commuters checking if their train or bus is on time,
-tourists discovering the optimal routes to go around a new city
-or ambulances finding the fastest route to attend an emergency
-are some examples where route planning is an essential need.
+    <p>Wheelchair users looking for accessible public transport routes,
+tourists discovering attractive routes to go around a new city,
+or bicycle users trying avoid highly polluted routes
+are some examples where highly individualized route planning is needed.
 <!-- Need         -->
-However,
-current route planning applications lack flexibility.
+Current route planning applications lack flexibility.
 The types of queries supported by a route planner
 are only determined at design time
-and heavily depend on locally centralized,
-pre-selected data sources
-(e.g. public transport modes, road networks, wheelchair accessibility, etc).
-Integrating a new data source
-to support new and more specific queries is not straight forward
-as it generally requires modifying the subjacent data model
+and heavily depend on centralized pre-selected data sources.
+Integrating a new data source such as another transport mode,
+a different road network or wheelchair accessibility is not straightforward
+as it generally requires human intervention
+to extend the subjacent data model
 and route planning algorithm implementation.
 <!-- Task         -->
 I investigate how relevant data sources available on the Web
-can be dynamically reused
-for answering specific queries,
+can be dynamically reused for answering custom queries,
 and thus allow creating more flexible
 and personalized route planning applications.
-Semantic and Linked Data technologies
+Semantic Web and Linked Data technologies
 provide a common framework for data integration.
 Yet it remains unclear how relevant data
 can be automatically discovered
 and reused while remaining independent
 from specific route planning algorithm implementations.
 <!-- Preliminaries     -->
-Preliminary work,
-(i) test the feasibility of solving route planning queries
-over distributed live and static public transport data sources on the Web,
-(ii) explore the trade-offs of different Web APIs
+Preliminary work
+(i) tests the feasibility of solving route planning queries
+over live and static public transport data sources on the Web,
+(ii) explores the trade-offs of different Web APIs
 for publishing and consuming live data streams on the Web and
-(iii) introduce a Linked Data based approach
-for publishing road network data.</p>
+(iii) introduces a Linked Data based approach
+for publishing road networks data.</p>
   </section>
 
 </header>
 
 <main>
   <!-- Add sections by specifying their file name, excluding the '.md' suffix. -->
-  <section id="relevancy">
-    <h2>Relevancy</h2>
+  <section id="relevance">
+    <h2>Relevance</h2>
 
-    <p>How to go from point A to point B</p>
+    <p>Computer-based route planning
+is nowadays used by millions of people
+to obtain <span property="schema:citation http://purl.org/spar/cito/cites" resource="https://dx.doi.org/10.1137/1.9781611975499.5"><a href="https://epubs.siam.org/doi/abs/10.1137/1.9781611975499.5">journey directions</a></span> <span class="references">[<a href="#ref-1">1</a>]</span>.
+Many public transport providers in cities around the world
+offer route planning services on top of their network
+to keep their users better informed.
+Public authorities also recognize route planning
+as a mechanism to improve the mobility conditions of their cities and regions,
+by enabling citizens and visitors to move around <a property="schema:citation http://purl.org/spar/cito/cites" href="http://eprints.lse.ac.uk/id/eprint/68875">more efficiently</a> <span class="references">[<a href="#ref-2">2</a>, <a href="#ref-3">3</a>]</span>.
+See for example the cases of Portland<sup id="fnref:portland"><a href="#fn:portland" class="footnote">1</a></sup>, London<sup id="fnref:london"><a href="#fn:london" class="footnote">2</a></sup> or Antwerp<sup id="fnref:antwerp"><a href="#fn:antwerp" class="footnote">3</a></sup>.
+In recent years, multi-modal route planning has received special <span property="schema:citation http://purl.org/spar/cito/cites" resource="https://dx.doi.org/10.3141/2032-04"><a href="https://doi.org/10.3141/2032-04">attention</a></span> <span class="references">[<a href="#ref-4">4</a>, <a href="#ref-5">5</a>, <a href="#ref-6">6</a>, <a href="#ref-7">7</a>, <a href="#ref-8">8</a>, <a href="#ref-9">9</a>]</span>.
+Applications like Google Maps, City Mapper, Moovit and many others of the sort,
+allow users to plan their journeys using multiple transport modes,
+e.g. bus, metro, bicycle, walking, among others.
+They work towards incorporating mobility related data
+about the different transport modes into their applications
+to offer more diverse route alternatives.</p>
+
+    <p>On the other hand, millions of datasets are published on the Web <span class="references">[<a href="#ref-10">10</a>]</span>.
+Following Open Data and Smart City city initiatives,
+national and regional governments, private companies and others,
+publish heterogeneous data from multiple domains.
+Potentially, many of these datasets contain information
+relevant for route planning purposes,
+e.g. parking locations and availabilities or street occupancy;
+which opens the door for creating richer applications
+capable of addressing more diverse or specific needs.
+A very typical example for route planning
+is the consideration of accessibility constraints.
+Enabling users to specify for example,
+if they are on a <span property="schema:citation http://purl.org/spar/cito/cites" resource="https://dx.doi.org/10.1145/2596695.2596708"><a href="http://doi.acm.org/10.1145/2596695.2596708">wheelchair</a></span> <span class="references">[<a href="#ref-11">11</a>]</span>
+or even if they are visually impaired <span class="references">[<a href="#ref-12">12</a>]</span>
+are features that are starting to be included ir route planners.
+However, accessibility is not the only possible scenario
+for extending route planners.
+The Web provides virtually unlimited possibilities.
+Environmental data (<em>calculate a route that avoids biking through highly polluted areas</em>),
+meteorological data (<em>calculate a route that limits walking outside on extreme weather conditions</em>),
+security-related data (<em>calculate a route that avoid areas with high criminality indexes</em>)
+or even general knowledge bases like Wikidata (<em>calculate a route that pass by the historic monuments of a city</em>) could be used to create any type of route planners.</p>
 
   </section>
 
@@ -130,7 +165,49 @@ for publishing road network data.</p>
     <p class="todo">Aknowledgements…</p>
   </section>
 
+<section id="references">
+<h2>References</h2>
+<dl class="references">
+  <dt id="ref-1">[1]</dt>
+  <dd resource="https://dx.doi.org/10.1137/1.9781611975499.5" typeof="schema:CreativeWork">Delling, D., Dibbelt, J., Pajor, T.: Fast and Exact Public Transit Routing with Restricted Pareto Sets. In: 2019 Proceedings of the Twenty-First Workshop on Algorithm Engineering and Experiments (ALENEX). pp. 54–65</dd>
+  <dt id="ref-2">[2]</dt>
+  <dd resource="http://eprints.lse.ac.uk/id/eprint/68875" typeof="schema:CreativeWork">Rode, P., Hoffmann, C., Kandt, J., Graff, A., Smith, D.: Towards new urban mobility: the case of London and Berlin. LSE Cities - The London School of Economics and Political Science, <a href="http://eprints.lse.ac.uk/id/eprint/68875">http:/​/​eprints.lse.ac.uk/id/eprint/68875</a> (2015).</dd>
+  <dt id="ref-3">[3]</dt>
+  <dd resource="https://www.london.gov.uk/sites/default/files/future_transport_report_-_final.pdf" typeof="schema:CreativeWork">Berry, R.: London Assembly - Future transport: How is London responding to technological innovation? Mayor of London - Transport Commitee, <a href="https://www.london.gov.uk/sites/default/files/future_transport_report_-_final.pdf">https:/​/​www.london.gov.uk/sites/default/files/future_transport_report_-_final.pdf</a> (2018).</dd>
+  <dt id="ref-4">[4]</dt>
+  <dd resource="https://dx.doi.org/10.3141/2032-04" typeof="schema:Article">Aifadopoulou, G., Ziliaskopoulos, A., Chrisohoou, E.: Multiobjective Optimum Path Algorithm for Passenger Pretrip Planning in Multimodal Transportation Networks. Transportation Research Record. 2032, 26–34 (2007).</dd>
+  <dt id="ref-5">[5]</dt>
+  <dd resource="#delling2013" typeof="schema:Article">Delling, D., Dibbelt, J., Pajor, T., Wagner, D., Werneck, R.F.: Computing Multimodal Journeys in Practice. In: Bonifaci, V., Demetrescu, C., and Marchetti-Spaccamela, A. (eds.) Experimental Algorithms. pp. 260–271. Springer Berlin Heidelberg, Berlin, Heidelberg (2013).</dd>
+  <dt id="ref-6">[6]</dt>
+  <dd resource="http://doi.acm.org/10.1145/2699886" typeof="schema:Article">Dibbelt, J., Pajor, T., Wagner, D.: User-Constrained Multimodal Route Planning. J. Exp. Algorithmics. 19, 1–19 (2015).</dd>
+  <dt id="ref-7">[7]</dt>
+  <dd resource="https://www.nctr.usf.edu/wp-content/uploads/2011/06/77926.pdf" typeof="schema:CreativeWork">Kelly, T., Miller, R., Datz, A., Hillsman, E., Barbeau, S.: Enabling Cost-Effective Multimodal Trip Planners through Open Transit Data. National Center for Transit Research, <a href="https://www.nctr.usf.edu/wp-content/uploads/2011/06/77926.pdf">https:/​/​www.nctr.usf.edu/wp-content/uploads/2011/06/77926.pdf</a> (2011).</dd>
+  <dt id="ref-8">[8]</dt>
+  <dd resource="https://dx.doi.org/10.1109/TITS.2006.890077" typeof="schema:Article">Rehrl, K., Bruntsch, S., Mentz, H.: Assisting Multimodal Travelers: Design and Prototypical Implementation of a Personal Travel Companion. IEEE Transactions on Intelligent Transportation Systems. 8, 31–42 (2007).</dd>
+  <dt id="ref-9">[9]</dt>
+  <dd resource="https://dx.doi.org/https://doi.org/10.1016/j.compenvurbsys.2017.08.012" typeof="schema:Article">Kujala, R., Weckström, C., Mladenović, M.N., Saramäki, J.: Travel times and transfers in public transport: Comprehensive accessibility analysis based on Pareto-optimal journeys. Computers, Environment and Urban Systems. 67, 41–54 (2018).</dd>
+  <dt id="ref-10">[10]</dt>
+  <dd resource="#noy2019" typeof="schema:Article">Noy, N., Burgess, M., Brickley, D.: Google Dataset Search: Building a search engine for datasets in an open Web ecosystem. In: 28th Web Conference (WebConf 2019) (2019).</dd>
+  <dt id="ref-11">[11]</dt>
+  <dd resource="https://dx.doi.org/10.1145/2596695.2596708" typeof="schema:Article">Ding, C., Wald, M., Wills, G.: A Survey of Open Accessibility Data. In: Proceedings of the 11th Web for All Conference. pp. 37:1–37:4. ACM, New York, NY, USA (2014).</dd>
+  <dt id="ref-12">[12]</dt>
+  <dd resource="#dornhofer2014" typeof="schema:Article">Dornhofer, M., Bischof, W., Krajnc, E.: Comparison of Open Source routing services with OpenStreetMap Data for blind pedestrians. Presented at the (2014).</dd>
+</dl>
+</section>
+<section id="footnotes">
+  <h2>Footnotes</h2>
+  <ol>
+    <li id="fn:portland">
+      <p><a href="https://trimet.org/#/planner">https:/​/​trimet.org/#/planner</a> <a href="#fnref:portland" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:london">
+      <p><a href="https://tfl.gov.uk/plan-a-journey/">https:/​/​tfl.gov.uk/plan-a-journey/</a> <a href="#fnref:london" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:antwerp">
+      <p><a href="https://www.slimnaarantwerpen.be/en/home">https:/​/​www.slimnaarantwerpen.be/en/home</a> <a href="#fnref:antwerp" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</section>
 </footer>
-
 </body>
 </html>
