@@ -2,7 +2,7 @@
 <!-- Context      -->
 Wheelchair users looking for accessible public transport routes,
 tourists discovering attractive routes to go around a new city,
-or bicycle users trying avoid highly polluted routes
+or bicycle users trying to avoid highly polluted routes
 are some examples where highly individualized route planning is needed.
 <!-- Need         -->
 Current route planning applications lack flexibility.
