@@ -5,3 +5,8 @@ for data requirements identification,
 to enable hypermedia-driven automated data discovery, and
 (iii) a generic route planning algorithm model
 able to automatically adapt
+
+
+<section id="footnotes">
+  <h2>Footnotes</h2>
+</section>

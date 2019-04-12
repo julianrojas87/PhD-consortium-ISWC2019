@@ -40,7 +40,7 @@ Environmental data (_calculate a route that avoids biking through highly pollute
 meteorological data (_calculate a route that limits walking outside under bad weather conditions_),
 security-related data (_calculate a route that avoid areas with high criminality indexes_)
 or even general knowledge bases such as [DBPedia](cite:cites auer2007) or [Wikidata](cite:cites vrandecic2014)
-(_calculate a route that pass by the historic monuments of a city_) 
+(_calculate a route that pass by the historic monuments of a city_)
 are some examples of data that could be used to create enhanced route planners.
 
 
