@@ -72,9 +72,9 @@ Public transport providers around the world
 offer route planning services to keep their users better informed.
 Public authorities also recognize route planning
 as a mechanism to improve the mobility conditions of their cities and regions,
-by enabling citizens and visitors to move around <a property="schema:citation http://purl.org/spar/cito/cites" href="http://eprints.lse.ac.uk/id/eprint/68875">more efficiently</a> <span class="references">[<a href="#ref-2">2</a>, <a href="#ref-3">3</a>]</span>,
+by enabling citizens and visitors to move around <a property="schema:citation http://purl.org/spar/cito/cites" href="http://eprints.lse.ac.uk/id/eprint/68875">more efficiently</a> <span class="references">[<a href="#ref-2">2</a>, <a href="#ref-3">3</a>, <a href="#ref-4">4</a>]</span>,
 as it occurs in the case of Portland<sup id="fnref:portland"><a href="#fn:portland" class="footnote">1</a></sup>, London<sup id="fnref:london"><a href="#fn:london" class="footnote">2</a></sup>, Antwerp<sup id="fnref:antwerp"><a href="#fn:antwerp" class="footnote">3</a></sup>, among others.
-In recent years, multi-modal route planning has received special <span property="schema:citation http://purl.org/spar/cito/cites" resource="https://dx.doi.org/10.3141/2032-04"><a href="https://doi.org/10.3141/2032-04">attention</a></span> <span class="references">[<a href="#ref-4">4</a>, <a href="#ref-5">5</a>, <a href="#ref-6">6</a>, <a href="#ref-7">7</a>, <a href="#ref-8">8</a>, <a href="#ref-9">9</a>]</span>.
+In recent years, multi-modal route planning has received special <span property="schema:citation http://purl.org/spar/cito/cites" resource="https://dx.doi.org/10.3141/2032-04"><a href="https://doi.org/10.3141/2032-04">attention</a></span> <span class="references">[<a href="#ref-5">5</a>, <a href="#ref-6">6</a>, <a href="#ref-7">7</a>, <a href="#ref-8">8</a>, <a href="#ref-9">9</a>, <a href="#ref-10">10</a>]</span>.
 Applications like Google Maps<sup id="fnref:googlemaps"><a href="#fn:googlemaps" class="footnote">4</a></sup>, City Mapper<sup id="fnref:citymapper"><a href="#fn:citymapper" class="footnote">5</a></sup> or Moovit<sup id="fnref:moovit"><a href="#fn:moovit" class="footnote">6</a></sup>,
 allow users to plan their journeys using multiple transport modes,
 e.g. bus, metro, bicycle or walking.
@@ -82,7 +82,7 @@ They focus on incorporating mobility related data
 about different transport modes into their applications
 to offer more diverse route alternatives.</p>
 
-    <p>On the other hand, millions of datasets are published on the Web <span class="references">[<a href="#ref-10">10</a>]</span>.
+    <p>On the other hand, millions of datasets are published on the Web <span class="references">[<a href="#ref-11">11</a>]</span>.
 Following Open Data and Smart City initiatives,
 national and regional governments, private companies and others,
 publish heterogeneous data from multiple domains.
@@ -94,8 +94,8 @@ capable of addressing more diverse or specific needs.
 Considering accessibility constraints
 is a very typical scenario for route planning.
 Enabling users to specify for example,
-if they are on a <span property="schema:citation http://purl.org/spar/cito/cites" resource="https://dx.doi.org/10.1145/2596695.2596708"><a href="http://doi.acm.org/10.1145/2596695.2596708">wheelchair</a></span> <span class="references">[<a href="#ref-11">11</a>]</span>
-or if they are visually impaired <span class="references">[<a href="#ref-12">12</a>]</span>,
+if they are on a <span property="schema:citation http://purl.org/spar/cito/cites" resource="https://dx.doi.org/10.1145/2596695.2596708"><a href="http://doi.acm.org/10.1145/2596695.2596708">wheelchair</a></span> <span class="references">[<a href="#ref-12">12</a>]</span>
+or if they are visually impaired <span class="references">[<a href="#ref-13">13</a>]</span>,
 are features that are getting included in existing route planners.</p>
 
     <p>Different types of data available on the Web
@@ -103,7 +103,7 @@ provide virtually unlimited possibilities for extending route planners:
 Environmental data (<em>calculate a route that avoids biking through highly polluted areas</em>),
 meteorological data (<em>calculate a route that limits walking outside under bad weather conditions</em>),
 security-related data (<em>calculate a route that avoid areas with high criminality indexes</em>)
-or even general knowledge bases such as <a property="schema:citation http://purl.org/spar/cito/cites" href="https://link.springer.com/chapter/10.1007/978-3-540-76298-0_52">DBPedia</a> <span class="references">[<a href="#ref-13">13</a>]</span> or <a property="schema:citation http://purl.org/spar/cito/cites" href="http://cacm.acm.org/magazines/2014/10/178785-wikidata/fulltext">Wikidata</a> <span class="references">[<a href="#ref-14">14</a>]</span>
+or even general knowledge bases such as <a property="schema:citation http://purl.org/spar/cito/cites" href="https://link.springer.com/chapter/10.1007/978-3-540-76298-0_52">DBPedia</a> <span class="references">[<a href="#ref-14">14</a>]</span> or <a property="schema:citation http://purl.org/spar/cito/cites" href="http://cacm.acm.org/magazines/2014/10/178785-wikidata/fulltext">Wikidata</a> <span class="references">[<a href="#ref-15">15</a>]</span>
 (<em>calculate a route that pass by the historic monuments of a city</em>)
 are some examples of data that could be used to create enhanced route planners.</p>
 
@@ -125,7 +125,8 @@ i.e. station locations and vehicle schedules.</p>
       </li>
       <li>
         <p>Then integrates the data
-following a predefined data model in a centralized data store.</p>
+following a predefined data model in a centralized data store.
+Usually a graph-based model.</p>
       </li>
       <li>
         <p>Finally, a route planning algorithm tailored
@@ -134,16 +135,24 @@ is used to calculate available routes<sup id="fnref:process"><a href="#fn:proces
       </li>
     </ul>
 
-    <p>The route planner service offered by Google Maps follows this approach.
+    <p>The route planner service offered by Google Maps for example, follows this approach.
 By encouraging public transport operators around the world
-to publish their data using the <a property="schema:citation http://purl.org/spar/cito/cites" href="https://developers.google.com/transit/gtfs/"><abbr title='General Transit Feed Specification'>GTFS</abbr></a> <span class="references">[<a href="#ref-15">15</a>]</span> common format,
-Google collects these datasets and
-integrates them into their route planning application.</p>
-
-    <p>Is not a problem if data is homogeneous. i.e. only public transport following using the same standard.
-but what happens if other type of data is integrated?</p>
-
-    <p>How google cannot calculate a route avoiding zones with high pollution even though the data is openly available.</p>
+to publish their data using the <a property="schema:citation http://purl.org/spar/cito/cites" href="https://developers.google.com/transit/gtfs/"><abbr title='General Transit Feed Specification'>GTFS</abbr></a> <span class="references">[<a href="#ref-16">16</a>]</span> common format,
+Google collects these datasets and integrates them
+into their route planning application.
+As long as data are homogeneous in terms of structure and format,
+i.e. dealing only with public transport data
+defined using a common format as <abbr title='General Transit Feed Specification'>GTFS</abbr>,
+integrating new data sources into a route planning application
+can be easily automated and the same route planning algorithm implementation
+will remain useful without requiring any adaptation.
+However, when dealing with other types of data
+the data model and the route planning algorithm that operates on top of it,
+need to be adapted to support and consider the new data
+when calculating possible routes.
+Manually adapting implementations of route planning applications
+for every new data source that enables to support more diverse queries
+does not scale, considering the highly diverse data sources found on the Web.</p>
 
     <dl>
       <dt>Problem Statement -</dt>
@@ -153,9 +162,10 @@ to adapt the subjacent data models and route planning algorithm implementations,
 resulting in ad-hoc and hence not reusable solutions.</dd>
     </dl>
 
-    <p>A centralized data approach limits the types of queries that can be asked to a route planner,
-therefore limiting how customizable it can get.
-Furthermore,</p>
+    <p>A centralized data approach limits the types of queries supported by route planners,
+which could serve as an explanation of why route planning applications
+such as Google Maps do not allow to query for routes that consider, for example air quality,
+even though this type of data can be found published on the Web as Open Data<sup id="fnref:airquality"><a href="#fn:airquality" class="footnote">8</a></sup>.</p>
 
   </section>
 
@@ -239,57 +249,61 @@ Furthermore,</p>
   <dt id="ref-3">[3]</dt>
   <dd resource="https://www.london.gov.uk/sites/default/files/future_transport_report_-_final.pdf" typeof="schema:CreativeWork">Berry, R.: London Assembly - Future transport: How is London responding to technological innovation? Mayor of London - Transport Commitee, <a href="https://www.london.gov.uk/sites/default/files/future_transport_report_-_final.pdf">https:/​/​www.london.gov.uk/sites/default/files/future_transport_report_-_final.pdf</a> (2018).</dd>
   <dt id="ref-4">[4]</dt>
-  <dd resource="https://dx.doi.org/10.3141/2032-04" typeof="schema:Article">Aifadopoulou, G., Ziliaskopoulos, A., Chrisohoou, E.: Multiobjective Optimum Path Algorithm for Passenger Pretrip Planning in Multimodal Transportation Networks. Transportation Research Record. 2032, 26–34 (2007).</dd>
+  <dd resource="https://ntnuopen.ntnu.no/ntnu-xmlui/handle/11250/2579413" typeof="schema:Article">Ahlers, D., Akerkar, R., Krogstie, J., Opdahl, A.L., Tessem, B., Zhang, W.: Harnessing Mobility Data in Cities: A Case Study From the Bergen Region. Presented at the (2018).</dd>
   <dt id="ref-5">[5]</dt>
-  <dd resource="#delling2013" typeof="schema:Article">Delling, D., Dibbelt, J., Pajor, T., Wagner, D., Werneck, R.F.: Computing Multimodal Journeys in Practice. In: Bonifaci, V., Demetrescu, C., and Marchetti-Spaccamela, A. (eds.) Experimental Algorithms. pp. 260–271. Springer Berlin Heidelberg, Berlin, Heidelberg (2013).</dd>
+  <dd resource="https://dx.doi.org/10.3141/2032-04" typeof="schema:Article">Aifadopoulou, G., Ziliaskopoulos, A., Chrisohoou, E.: Multiobjective Optimum Path Algorithm for Passenger Pretrip Planning in Multimodal Transportation Networks. Transportation Research Record. 2032, 26–34 (2007).</dd>
   <dt id="ref-6">[6]</dt>
-  <dd resource="http://doi.acm.org/10.1145/2699886" typeof="schema:Article">Dibbelt, J., Pajor, T., Wagner, D.: User-Constrained Multimodal Route Planning. J. Exp. Algorithmics. 19, 1–19 (2015).</dd>
+  <dd resource="#delling2013" typeof="schema:Article">Delling, D., Dibbelt, J., Pajor, T., Wagner, D., Werneck, R.F.: Computing Multimodal Journeys in Practice. In: Bonifaci, V., Demetrescu, C., and Marchetti-Spaccamela, A. (eds.) Experimental Algorithms. pp. 260–271. Springer Berlin Heidelberg, Berlin, Heidelberg (2013).</dd>
   <dt id="ref-7">[7]</dt>
-  <dd resource="https://www.nctr.usf.edu/wp-content/uploads/2011/06/77926.pdf" typeof="schema:CreativeWork">Kelly, T., Miller, R., Datz, A., Hillsman, E., Barbeau, S.: Enabling Cost-Effective Multimodal Trip Planners through Open Transit Data. National Center for Transit Research, <a href="https://www.nctr.usf.edu/wp-content/uploads/2011/06/77926.pdf">https:/​/​www.nctr.usf.edu/wp-content/uploads/2011/06/77926.pdf</a> (2011).</dd>
+  <dd resource="http://doi.acm.org/10.1145/2699886" typeof="schema:Article">Dibbelt, J., Pajor, T., Wagner, D.: User-Constrained Multimodal Route Planning. J. Exp. Algorithmics. 19, 1–19 (2015).</dd>
   <dt id="ref-8">[8]</dt>
-  <dd resource="https://dx.doi.org/10.1109/TITS.2006.890077" typeof="schema:Article">Rehrl, K., Bruntsch, S., Mentz, H.: Assisting Multimodal Travelers: Design and Prototypical Implementation of a Personal Travel Companion. IEEE Transactions on Intelligent Transportation Systems. 8, 31–42 (2007).</dd>
+  <dd resource="https://www.nctr.usf.edu/wp-content/uploads/2011/06/77926.pdf" typeof="schema:CreativeWork">Kelly, T., Miller, R., Datz, A., Hillsman, E., Barbeau, S.: Enabling Cost-Effective Multimodal Trip Planners through Open Transit Data. National Center for Transit Research, <a href="https://www.nctr.usf.edu/wp-content/uploads/2011/06/77926.pdf">https:/​/​www.nctr.usf.edu/wp-content/uploads/2011/06/77926.pdf</a> (2011).</dd>
   <dt id="ref-9">[9]</dt>
-  <dd resource="https://dx.doi.org/https://doi.org/10.1016/j.compenvurbsys.2017.08.012" typeof="schema:Article">Kujala, R., Weckström, C., Mladenović, M.N., Saramäki, J.: Travel times and transfers in public transport: Comprehensive accessibility analysis based on Pareto-optimal journeys. Computers, Environment and Urban Systems. 67, 41–54 (2018).</dd>
+  <dd resource="https://dx.doi.org/10.1109/TITS.2006.890077" typeof="schema:Article">Rehrl, K., Bruntsch, S., Mentz, H.: Assisting Multimodal Travelers: Design and Prototypical Implementation of a Personal Travel Companion. IEEE Transactions on Intelligent Transportation Systems. 8, 31–42 (2007).</dd>
   <dt id="ref-10">[10]</dt>
-  <dd resource="#noy2019" typeof="schema:Article">Noy, N., Burgess, M., Brickley, D.: Google Dataset Search: Building a search engine for datasets in an open Web ecosystem. In: 28th Web Conference (WebConf 2019) (2019).</dd>
+  <dd resource="https://dx.doi.org/https://doi.org/10.1016/j.compenvurbsys.2017.08.012" typeof="schema:Article">Kujala, R., Weckström, C., Mladenović, M.N., Saramäki, J.: Travel times and transfers in public transport: Comprehensive accessibility analysis based on Pareto-optimal journeys. Computers, Environment and Urban Systems. 67, 41–54 (2018).</dd>
   <dt id="ref-11">[11]</dt>
-  <dd resource="https://dx.doi.org/10.1145/2596695.2596708" typeof="schema:Article">Ding, C., Wald, M., Wills, G.: A Survey of Open Accessibility Data. In: Proceedings of the 11th Web for All Conference. pp. 37:1–37:4. ACM, New York, NY, USA (2014).</dd>
+  <dd resource="#noy2019" typeof="schema:Article">Noy, N., Burgess, M., Brickley, D.: Google Dataset Search: Building a search engine for datasets in an open Web ecosystem. In: 28th Web Conference (WebConf 2019) (2019).</dd>
   <dt id="ref-12">[12]</dt>
-  <dd resource="#dornhofer2014" typeof="schema:Article">Dornhofer, M., Bischof, W., Krajnc, E.: Comparison of Open Source routing services with OpenStreetMap Data for blind pedestrians. Presented at the (2014).</dd>
+  <dd resource="https://dx.doi.org/10.1145/2596695.2596708" typeof="schema:Article">Ding, C., Wald, M., Wills, G.: A Survey of Open Accessibility Data. In: Proceedings of the 11th Web for All Conference. pp. 37:1–37:4. ACM, New York, NY, USA (2014).</dd>
   <dt id="ref-13">[13]</dt>
-  <dd resource="https://link.springer.com/chapter/10.1007/978-3-540-76298-0_52" typeof="schema:Article">Auer, S., Bizer, C., Kobilarov, G., Lehmann, J., Cyganiak, R., Ives, Z.: DBpedia: A Nucleus for a Web of Open Data. In: The Semantic Web. pp. 722–735. Springer Berlin Heidelberg, Berlin, Heidelberg (2007).</dd>
+  <dd resource="#dornhofer2014" typeof="schema:Article">Dornhofer, M., Bischof, W., Krajnc, E.: Comparison of Open Source routing services with OpenStreetMap Data for blind pedestrians. Presented at the (2014).</dd>
   <dt id="ref-14">[14]</dt>
-  <dd resource="http://cacm.acm.org/magazines/2014/10/178785-wikidata/fulltext" typeof="schema:Article">Vrandečić, D., Krötzsch, M.: Wikidata: A Free Collaborative Knowledge Base. Communications of the ACM. 57, 78–85 (2014).</dd>
+  <dd resource="https://link.springer.com/chapter/10.1007/978-3-540-76298-0_52" typeof="schema:Article">Auer, S., Bizer, C., Kobilarov, G., Lehmann, J., Cyganiak, R., Ives, Z.: DBpedia: A Nucleus for a Web of Open Data. In: The Semantic Web. pp. 722–735. Springer Berlin Heidelberg, Berlin, Heidelberg (2007).</dd>
   <dt id="ref-15">[15]</dt>
+  <dd resource="http://cacm.acm.org/magazines/2014/10/178785-wikidata/fulltext" typeof="schema:Article">Vrandečić, D., Krötzsch, M.: Wikidata: A Free Collaborative Knowledge Base. Communications of the ACM. 57, 78–85 (2014).</dd>
+  <dt id="ref-16">[16]</dt>
   <dd resource="https://developers.google.com/transit/gtfs/" typeof="schema:CreativeWork">General Transit Feed Specification. <a href="https://developers.google.com/transit/gtfs/">https:/​/​developers.google.com/transit/gtfs/</a> (2006).</dd>
 </dl>
 </section>
-
 <section id="footnotes">
-    <h2>Footnotes</h2>
-    <ol>
-        <li id="fn:portland">
-          <p><a href="https://trimet.org/#/planner">https:/​/​trimet.org/#/planner</a> <a href="#fnref:portland" class="reversefootnote">&#8617;</a></p>
-        </li>
-        <li id="fn:london">
-          <p><a href="https://tfl.gov.uk/plan-a-journey/">https:/​/​tfl.gov.uk/plan-a-journey/</a> <a href="#fnref:london" class="reversefootnote">&#8617;</a></p>
-        </li>
-        <li id="fn:antwerp">
-          <p><a href="https://www.slimnaarantwerpen.be/en/home">https:/​/​www.slimnaarantwerpen.be/en/home</a> <a href="#fnref:antwerp" class="reversefootnote">&#8617;</a></p>
-        </li>
-        <li id="fn:googlemaps">
-          <p><a href="http://maps.google.com/landing/transit/index.html">http:/​/​maps.google.com/landing/transit/index.html</a> <a href="#fnref:googlemaps" class="reversefootnote">&#8617;</a></p>
-        </li>
-        <li id="fn:citymapper">
-          <p><a href="https://citymapper.com/">https:/​/​citymapper.com/</a> <a href="#fnref:citymapper" class="reversefootnote">&#8617;</a></p>
-        </li>
-        <li id="fn:moovit">
-          <p><a href="https://moovitapp.com/">https:/​/​moovitapp.com/</a> <a href="#fnref:moovit" class="reversefootnote">&#8617;</a></p>
-        </li>
-        <li id="fn:process">
-          <p>For a more detailed overview see for example the process to setup Open Trip Planner, a widely used open source route planning application: <a href="https://github.com/opentripplanner/OpenTripPlanner/blob/dev-1.x/docs/Configuration.md">https:/​/​github.com/opentripplanner/OpenTripPlanner/blob/dev-1.x/docs/Configuration.md</a> <a href="#fnref:process" class="reversefootnote">&#8617;</a></p>
-        </li>
-      </ol>
+  <h2>Footnotes</h2>
+  <ol>
+      <li id="fn:portland">
+        <p><a href="https://trimet.org/#/planner">https:/​/​trimet.org/#/planner</a> <a href="#fnref:portland" class="reversefootnote">&#8617;</a></p>
+      </li>
+      <li id="fn:london">
+        <p><a href="https://tfl.gov.uk/plan-a-journey/">https:/​/​tfl.gov.uk/plan-a-journey/</a> <a href="#fnref:london" class="reversefootnote">&#8617;</a></p>
+      </li>
+      <li id="fn:antwerp">
+        <p><a href="https://www.slimnaarantwerpen.be/en/home">https:/​/​www.slimnaarantwerpen.be/en/home</a> <a href="#fnref:antwerp" class="reversefootnote">&#8617;</a></p>
+      </li>
+      <li id="fn:googlemaps">
+        <p><a href="http://maps.google.com/landing/transit/index.html">http:/​/​maps.google.com/landing/transit/index.html</a> <a href="#fnref:googlemaps" class="reversefootnote">&#8617;</a></p>
+      </li>
+      <li id="fn:citymapper">
+        <p><a href="https://citymapper.com/">https:/​/​citymapper.com/</a> <a href="#fnref:citymapper" class="reversefootnote">&#8617;</a></p>
+      </li>
+      <li id="fn:moovit">
+        <p><a href="https://moovitapp.com/">https:/​/​moovitapp.com/</a> <a href="#fnref:moovit" class="reversefootnote">&#8617;</a></p>
+      </li>
+      <li id="fn:process">
+        <p>For a more detailed overview see for example the process to setup Open Trip Planner, a widely used open source route planning application: <a href="https://github.com/opentripplanner/OpenTripPlanner/blob/dev-1.x/docs/Configuration.md">https:/​/​github.com/opentripplanner/OpenTripPlanner/blob/dev-1.x/docs/Configuration.md</a> <a href="#fnref:process" class="reversefootnote">&#8617;</a></p>
+      </li>
+      <li id="fn:airquality">
+        <p>Latest measurments from Europe’s air quality monitoring network: <a href="https://www.eea.europa.eu/data-and-maps/explore-interactive-maps/up-to-date-air-quality-data">https:/​/​www.eea.europa.eu/data-and-maps/explore-interactive-maps/up-to-date-air-quality-data</a> <a href="#fnref:airquality" class="reversefootnote">&#8617;</a></p>
+      </li>
+    </ol>
 </section>
 </footer>
 
