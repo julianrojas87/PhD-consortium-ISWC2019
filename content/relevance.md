@@ -10,8 +10,8 @@ Public authorities also recognize route planning
 as a mechanism to improve the mobility conditions of their cities and regions,
 by enabling citizens and visitors to move around [more efficiently](cite:cites rode2015, berry2018, dirk2018),
 as it occurs in the case of Portland[^portland], London[^london], Antwerp[^antwerp], among others.
-In recent years, multi-modal route planning has received special [attention](cite:cites aifadopoulou2007, delling2013, dibbelt2015, kelly2011, rehrl2007, kujala2018).
-Applications like Google Maps[^googlemaps], City Mapper[^citymapper] or Moovit[^moovit],
+In recent years, multimodal route planning has received special [attention](cite:cites aifadopoulou2007, delling2013, dibbelt2015, kelly2011, rehrl2007, kujala2018).
+Applications like Google Maps[^googlemaps], Citymapper[^citymapper] or Moovit[^moovit],
 allow users to plan their journeys using multiple transport modes,
 e.g. bus, metro, bicycle or walking.
 They focus on incorporating mobility related data

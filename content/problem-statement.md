@@ -37,11 +37,11 @@ Manually adapting implementations of route planning applications
 for every new data source that enables to support more diverse queries
 does not scale, considering the highly diverse data sources found on the Web.
 
-Problem Statement -
-: Integrating new heterogeneous data sources
-to extend route planners capabilities requires human intervention
-to adapt the subjacent data models and route planning algorithm implementations,
-resulting in ad-hoc and hence not reusable solutions.
+_Problem Statement -_
+: _Integrating new heterogeneous data sources_
+_to extend route planners capabilities requires human intervention_
+_to adapt the subjacent data models and route planning algorithm implementations,_
+_resulting in ad-hoc and hence not reusable solutions._
 
 A centralized data approach limits the types of queries supported by route planners,
 which could serve as an explanation of why route planning applications
