@@ -9,12 +9,14 @@ and [Linked Data](cite:cites heath2011) technologies
 provide a common environment where data
 is given a well-defined meaning,
 better allowing machines to comprehend and
-work with heterogeneous data form different sources.
+work with heterogeneous data from different sources.
 Through the [RDF specification](cite:cites cyganiak2014),
 Linked Data is described using a graph-based model, where
 each node in the graph represents a concept, object or
-literal value in the world and each edge represents
+literal value in the world, and each edge represents
 the logical relation between two of them.
+This graph can be queried upon using the [SPARQL](cite:cites sparql) query language,
+which is the W3C recommendation to query RDF.  
 
 In this section I present an overview
 of different aspects related to the problem
@@ -43,8 +45,8 @@ as a general purpose format for exchanging public transport schedules and relate
 Transport related data is also offered on the Web as route planning APIs.
 Navitia.io[^navitia], Plannerstack[^plannerstack], CityMapper
 or the open source Open Trip Planner are some examples.
-Geo-spatial data is also fundamental for route planning applications.
-Different initiatives exist for publishing geo-spatial data on the Web.
+Geospatial data is also fundamental for route planning applications.
+Different initiatives exist for publishing geospatial data on the Web.
 For instance, [OpenStreetMap](cite:cites osm)(OSM) stands as a community-driven
 rich source of freely available spatial data.
 [LinkedGeoData](cite:cites auer2009) publishes a spatial knowledge base
@@ -73,8 +75,42 @@ vehicle departures in public transport networks.
 
 ### Data Discovery on the Web
 
+In order to dynamically integrate data sources available on the Web
+into route planning applications,
+discovering which data sources are relevant for resolving a certain query
+is a necessary previous step.
+One approach to enable automated discovery of datasets
+is using data catalogs descriptions.
+For instance, the [DCAT vocabulary](cite:cites dcat)
+is used to describe high-level metadata (keywords,
+location, data format, etc.) of datasets,
+enabling clients to discover what kind of data
+is contained on a certain dataset and how to access it.
+Given the graph-based nature of Linked Data on the Web,
+active approaches such as link traversal can be used
+to discover data during query execution.
+In [](cite:cites hartig2016) several link traversal approaches
+are studied showing significant improvements in query response time
+compared to a naive approach.
 
-Miel's paper, Hypermedia, Multidimensional Interfaces.
+Hypermedia-based approaches are also considered in the literature
+for enabling automated discovery of data.
+The approach presented in [](cite:cites vandersande2016) describes
+how to perform data source selection based on hypermedia links and controls.
+Hypermedia is also used to semantically describe responses
+of Web APIs in [](cite:cites taelman2017), following a shape-based approach
+using [SHACL](cite:cites shacl), to declare a parameterized response structure.
+
+The use of data summaries as a strategy to enable
+more precise data discovery to improve query response times
+is explored in [](cite:cites saleem2014).
+In the same direction, [Multidimensional Interfaces](cite:cites taelman2016) are
+defined to semantically describe ordinal ranges within datasets,
+e.g. time-based or geospatial-based ranges,
+which are inherent dimensions to the nature
+of route planning related datasets,
+such as public transport network topologies (geospatial dimension)
+and their schedules (time dimension).
 
 ### Route Planning
 

@@ -180,12 +180,14 @@ and <a property="schema:citation http://purl.org/spar/cito/cites" href="http://l
 provide a common environment where data
 is given a well-defined meaning,
 better allowing machines to comprehend and
-work with heterogeneous data form different sources.
+work with heterogeneous data from different sources.
 Through the <a property="schema:citation http://purl.org/spar/cito/cites" href="http://www.w3.org/TR/rdf11-concepts/"><abbr title='Resource Description Framework'>RDF</abbr> specification</a> <span class="references">[<a href="#ref-19">19</a>]</span>,
 Linked Data is described using a graph-based model, where
 each node in the graph represents a concept, object or
-literal value in the world and each edge represents
-the logical relation between two of them.</p>
+literal value in the world, and each edge represents
+the logical relation between two of them.
+This graph can be queried upon using the <a property="schema:citation http://purl.org/spar/cito/cites" href="http://www.w3.org/TR/sparql11-query"><abbr title='SPARQL Procotol and RDF Query Language'>SPARQL</abbr></a> <span class="references">[<a href="#ref-20">20</a>]</span> query language,
+which is the <abbr title=' World Wide Web Consortium'>W3C</abbr> recommendation to query <abbr title='Resource Description Framework'>RDF</abbr>.</p>
 
     <p>In this section I present an overview
 of different aspects related to the problem
@@ -201,7 +203,7 @@ and foster the creation of new and innovative services.
 Tim Berners-Lee introduced a set of principles<sup id="fnref:ldprinciples"><a href="#fn:ldprinciples" class="footnote">9</a></sup> for
 publishing data as Linked Data on the Web.
 Extending this principles, the <abbr title=' World Wide Web Consortium'>W3C</abbr> published a document of <a property="schema:citation http://purl.org/spar/cito/cites" href="https://www.w3.org/TR/ld-bp/">best practices
-for publishing Linked Data</a> <span class="references">[<a href="#ref-20">20</a>]</span>.</p>
+for publishing Linked Data</a> <span class="references">[<a href="#ref-21">21</a>]</span>.</p>
 
     <p>Traditionally, data is published on the Web following one of two approaches:
 (i) as a data dump or (ii) through an <abbr title=' Application Programming Interface'>API</abbr>.
@@ -209,18 +211,18 @@ In the public transport domain,
 <a property="schema:citation http://purl.org/spar/cito/cites" href="https://developers.google.com/transit/gtfs/"><abbr title='General Transit Feed Specification'>GTFS</abbr></a> <span class="references">[<a href="#ref-16">16</a>]</span>, regarded as the de-facto standard
 for describing and exchanging transit schedules,
 is a common example of data dump publishing.
-The European Committee for Standardization released the <a property="schema:citation http://purl.org/spar/cito/cites" href="http://netex-cen.eu/"><abbr title=' Network and Timetable Exchange'>NeTEx</abbr> standard</a> <span class="references">[<a href="#ref-21">21</a>]</span>
+The European Committee for Standardization released the <a property="schema:citation http://purl.org/spar/cito/cites" href="http://netex-cen.eu/"><abbr title=' Network and Timetable Exchange'>NeTEx</abbr> standard</a> <span class="references">[<a href="#ref-22">22</a>]</span>
 as a general purpose format for exchanging public transport schedules and related data.
 Transport related data is also offered on the Web as route planning APIs.
 Navitia.io<sup id="fnref:navitia"><a href="#fn:navitia" class="footnote">10</a></sup>, Plannerstack<sup id="fnref:plannerstack"><a href="#fn:plannerstack" class="footnote">11</a></sup>, CityMapper
 or the open source Open Trip Planner are some examples.
-Geo-spatial data is also fundamental for route planning applications.
-Different initiatives exist for publishing geo-spatial data on the Web.
-For instance, <a property="schema:citation http://purl.org/spar/cito/cites" href="https://www.openstreetmap.org/">OpenStreetMap</a> <span class="references">[<a href="#ref-22">22</a>]</span>(<abbr title=' OpenStreetMap'>OSM</abbr>) stands as a community-driven
+Geospatial data is also fundamental for route planning applications.
+Different initiatives exist for publishing geospatial data on the Web.
+For instance, <a property="schema:citation http://purl.org/spar/cito/cites" href="https://www.openstreetmap.org/">OpenStreetMap</a> <span class="references">[<a href="#ref-23">23</a>]</span>(<abbr title=' OpenStreetMap'>OSM</abbr>) stands as a community-driven
 rich source of freely available spatial data.
-<a property="schema:citation http://purl.org/spar/cito/cites" href="https://link.springer.com/chapter/10.1007/978-3-642-04930-9_46">LinkedGeoData</a> <span class="references">[<a href="#ref-23">23</a>]</span> publishes a spatial knowledge base
+<a property="schema:citation http://purl.org/spar/cito/cites" href="https://link.springer.com/chapter/10.1007/978-3-642-04930-9_46">LinkedGeoData</a> <span class="references">[<a href="#ref-24">24</a>]</span> publishes a spatial knowledge base
 derived from <abbr title=' OpenStreetMap'>OSM</abbr> that uses <abbr title='Resource Description Framework'>RDF</abbr> as its data model.
-Also <a property="schema:citation http://purl.org/spar/cito/cites" href="https://www.geonames.org/">GeoNames</a> <span class="references">[<a href="#ref-24">24</a>]</span> publishes over 25 million geographical names
+Also <a property="schema:citation http://purl.org/spar/cito/cites" href="https://www.geonames.org/">GeoNames</a> <span class="references">[<a href="#ref-25">25</a>]</span> publishes over 25 million geographical names
 using stable URIs and a semantic vocabulary<sup id="fnref:gnontology"><a href="#fn:gnontology" class="footnote">12</a></sup>.</p>
 
     <p>On the one hand, data dumps offer full flexibility over the data
@@ -229,22 +231,57 @@ with integration of complete datasets.
 On the other hand, APIs offer simpler access to data,
 but are expensive for data publishers
 and limit query flexibility for clients.
-The <a property="schema:citation http://purl.org/spar/cito/cites" href="http://ceur-ws.org/Vol-1184/ldow2014_paper_04.pdf">Linked Data Fragments (<abbr title=' Linked Data Fragments'>LDF</abbr>) framework</a> <span class="references">[<a href="#ref-25">25</a>]</span>
+The <a property="schema:citation http://purl.org/spar/cito/cites" href="http://ceur-ws.org/Vol-1184/ldow2014_paper_04.pdf">Linked Data Fragments (<abbr title=' Linked Data Fragments'>LDF</abbr>) framework</a> <span class="references">[<a href="#ref-26">26</a>]</span>
 explores the different trade-offs in terms of query flexibility
 and computational costs of <em>in between</em> Web interfaces
 determined by <em>fragmenting</em> datasets and publishing
 them on the Web. Based on the concept introduced by <abbr title=' Linked Data Fragments'>LDF</abbr>,
-Colpaert introduces <a property="schema:citation http://purl.org/spar/cito/cites" href="https://link.springer.com/chapter/10.1007/978-3-319-60131-1_26">Linked Connections</a> <span class="references">[<a href="#ref-26">26</a>]</span>,
+Colpaert introduces <a property="schema:citation http://purl.org/spar/cito/cites" href="https://link.springer.com/chapter/10.1007/978-3-319-60131-1_26">Linked Connections</a> <span class="references">[<a href="#ref-27">27</a>]</span>,
 a light-weight data interface for publishing public transit schedules
 that allows to perform route planning on the client-side.
-Furthermore, in his <a property="schema:citation http://purl.org/spar/cito/cites" href="https://phd.pietercolpaert.be">PhD dissertation</a> <span class="references">[<a href="#ref-27">27</a>]</span> Colpaert
+Furthermore, in his <a property="schema:citation http://purl.org/spar/cito/cites" href="https://phd.pietercolpaert.be">PhD dissertation</a> <span class="references">[<a href="#ref-28">28</a>]</span> Colpaert
 presents the Linked Connections Ontology<sup id="fnref:lcontology"><a href="#fn:lcontology" class="footnote">13</a></sup>
 and the Linked <abbr title='General Transit Feed Specification'>GTFS</abbr> vocabulary<sup id="fnref:linkedgtfs"><a href="#fn:linkedgtfs" class="footnote">14</a></sup> used to describe
 vehicle departures in public transport networks.</p>
 
     <h3 id="data-discovery-on-the-web">Data Discovery on the Web</h3>
 
-    <p>Miel’s paper, Hypermedia, Multidimensional Interfaces.</p>
+    <p>In order to dynamically integrate data sources available on the Web
+into route planning applications,
+discovering which data sources are relevant for resolving a certain query
+is a necessary previous step.
+One approach to enable automated discovery of datasets
+is using data catalogs descriptions.
+For instance, the <a property="schema:citation http://purl.org/spar/cito/cites" href="https://www.w3.org/TR/vocab-dcat/">DCAT vocabulary</a> <span class="references">[<a href="#ref-29">29</a>]</span>
+is used to describe high-level metadata (keywords,
+location, data format, etc.) of datasets,
+enabling clients to discover what kind of data
+is contained on a certain dataset and how to access it.
+Given the graph-based nature of Linked Data on the Web,
+active approaches such as link traversal can be used
+to discover data during query execution.
+In <span class="references">[<a href="#ref-30">30</a>]</span> several link traversal approaches
+are studied showing significant improvements in query response time
+compared to a naive approach.</p>
+
+    <p>Hypermedia-based approaches are also considered in the literature
+for enabling automated discovery of data.
+The approach presented in <span class="references">[<a href="#ref-31">31</a>]</span> describes
+how to perform data source selection based on hypermedia links and controls.
+Hypermedia is also used to semantically describe responses
+of Web APIs in <span class="references">[<a href="#ref-32">32</a>]</span>, following a shape-based approach
+using <a property="schema:citation http://purl.org/spar/cito/cites" href="https://www.w3.org/TR/2017/REC-shacl-20170720/">SHACL</a> <span class="references">[<a href="#ref-33">33</a>]</span>, to declare a parameterized response structure.</p>
+
+    <p>The use of data summaries as a strategy to enable
+more precise data discovery to improve query response times
+is explored in <span class="references">[<a href="#ref-34">34</a>]</span>.
+In the same direction, <a property="schema:citation http://purl.org/spar/cito/cites" href="http://ceur-ws.org/Vol-1666/paper-03.pdf">Multidimensional Interfaces</a> <span class="references">[<a href="#ref-35">35</a>]</span> are
+defined to semantically describe ordinal ranges within datasets,
+e.g. time-based or geospatial-based ranges,
+which are inherent dimensions to the nature
+of route planning related datasets,
+such as public transport network topologies (geospatial dimension)
+and their schedules (time dimension).</p>
 
     <h3 id="route-planning">Route Planning</h3>
 
@@ -345,70 +382,87 @@ vehicle departures in public transport networks.</p>
   <dt id="ref-19">[19]</dt>
   <dd resource="http://www.w3.org/TR/rdf11-concepts/" typeof="schema:CreativeWork">Cyganiak, R., Wood, D., Lanthaler, M.: <abbr title='Resource Description Framework'>RDF</abbr> 1.1 Concepts and Abstract Syntax. World Wide Web Consortium, <a href="http://www.w3.org/TR/rdf11-concepts/">http:/​/​www.w3.org/TR/rdf11-concepts/</a> (2014).</dd>
   <dt id="ref-20">[20]</dt>
-  <dd resource="https://www.w3.org/TR/ld-bp/" typeof="schema:CreativeWork">Hyland, B., Atemezing, G., Villazón-Terrazas, B.: Best Practices for Publishing Linked Data. World Wide Web Consortium, <a href="https://www.w3.org/TR/ld-bp/">https:/​/​www.w3.org/TR/ld-bp/</a> (2014).</dd>
+  <dd resource="http://www.w3.org/TR/sparql11-query" typeof="schema:CreativeWork">Prud’hommeaux, E., Harris, S., Seaborne, A. eds: <abbr title='SPARQL Procotol and RDF Query Language'>SPARQL</abbr> 1.1 Query Language. <abbr title=' World Wide Web Consortium'>W3C</abbr>, <a href="http://www.w3.org/TR/sparql11-query">http:/​/​www.w3.org/TR/sparql11-query</a> (2013).</dd>
   <dt id="ref-21">[21]</dt>
-  <dd resource="http://netex-cen.eu/" typeof="schema:CreativeWork">Network and Timetable Exchange. <a href="http://netex-cen.eu/">http:/​/​netex-cen.eu/</a> (2014).</dd>
+  <dd resource="https://www.w3.org/TR/ld-bp/" typeof="schema:CreativeWork">Hyland, B., Atemezing, G., Villazón-Terrazas, B.: Best Practices for Publishing Linked Data. World Wide Web Consortium, <a href="https://www.w3.org/TR/ld-bp/">https:/​/​www.w3.org/TR/ld-bp/</a> (2014).</dd>
   <dt id="ref-22">[22]</dt>
-  <dd resource="https://www.openstreetmap.org/" typeof="schema:CreativeWork">OpenStreetMap. <a href="https://www.openstreetmap.org/">https:/​/​www.openstreetmap.org/</a> (2004).</dd>
+  <dd resource="http://netex-cen.eu/" typeof="schema:CreativeWork">Network and Timetable Exchange. <a href="http://netex-cen.eu/">http:/​/​netex-cen.eu/</a> (2014).</dd>
   <dt id="ref-23">[23]</dt>
-  <dd resource="https://link.springer.com/chapter/10.1007/978-3-642-04930-9_46" typeof="schema:Article">Auer, S., Lehmann, J., Hellmann, S.: LinkedGeoData: Adding a Spatial Dimension to the Web of Data. In: The Semantic Web - ISWC 2009. pp. 731–746. Springer Berlin Heidelberg (2009).</dd>
+  <dd resource="https://www.openstreetmap.org/" typeof="schema:CreativeWork">OpenStreetMap. <a href="https://www.openstreetmap.org/">https:/​/​www.openstreetmap.org/</a> (2004).</dd>
   <dt id="ref-24">[24]</dt>
-  <dd resource="https://www.geonames.org/" typeof="schema:CreativeWork">GeoNames. <a href="https://www.geonames.org/">https:/​/​www.geonames.org/</a></dd>
+  <dd resource="https://link.springer.com/chapter/10.1007/978-3-642-04930-9_46" typeof="schema:Article">Auer, S., Lehmann, J., Hellmann, S.: LinkedGeoData: Adding a Spatial Dimension to the Web of Data. In: The Semantic Web - ISWC 2009. pp. 731–746. Springer Berlin Heidelberg (2009).</dd>
   <dt id="ref-25">[25]</dt>
-  <dd resource="http://ceur-ws.org/Vol-1184/ldow2014_paper_04.pdf" typeof="schema:Article">Verborgh, R., Vander Sande, M., Colpaert, P., Coppens, S., Mannens, E., Van de Walle, R.: Web-Scale Querying through Linked Data Fragments. In: Bizer, C., Heath, T., Auer, S., and Berners-Lee, T. (eds.) Proceedings of the 7th Workshop on Linked Data on the Web (2014).</dd>
+  <dd resource="https://www.geonames.org/" typeof="schema:CreativeWork">GeoNames. <a href="https://www.geonames.org/">https:/​/​www.geonames.org/</a></dd>
   <dt id="ref-26">[26]</dt>
-  <dd resource="https://link.springer.com/chapter/10.1007/978-3-319-60131-1_26" typeof="schema:Article">Colpaert, P., Verborgh, R., Mannens, E.: Public Transit Route Planning Through Lightweight Linked Data Interfaces. In: Cabot, J., De Virgilio, R., and Torlone, R. (eds.) Web Engineering. pp. 403–411. Springer International Publishing (2017).</dd>
+  <dd resource="http://ceur-ws.org/Vol-1184/ldow2014_paper_04.pdf" typeof="schema:Article">Verborgh, R., Vander Sande, M., Colpaert, P., Coppens, S., Mannens, E., Van de Walle, R.: Web-Scale Querying through Linked Data Fragments. In: Bizer, C., Heath, T., Auer, S., and Berners-Lee, T. (eds.) Proceedings of the 7th Workshop on Linked Data on the Web (2014).</dd>
   <dt id="ref-27">[27]</dt>
+  <dd resource="https://link.springer.com/chapter/10.1007/978-3-319-60131-1_26" typeof="schema:Article">Colpaert, P., Verborgh, R., Mannens, E.: Public Transit Route Planning Through Lightweight Linked Data Interfaces. In: Cabot, J., De Virgilio, R., and Torlone, R. (eds.) Web Engineering. pp. 403–411. Springer International Publishing (2017).</dd>
+  <dt id="ref-28">[28]</dt>
   <dd resource="https://phd.pietercolpaert.be" typeof="schema:Thesis">Colpaert, P.: Publishing Transport Data for Maximum Reuse. <a href="https://phd.pietercolpaert.be">https:/​/​phd.pietercolpaert.be</a> (2017).</dd>
+  <dt id="ref-29">[29]</dt>
+  <dd resource="https://www.w3.org/TR/vocab-dcat/" typeof="schema:CreativeWork">Maali, F., Erickson, J.: Data Catalog Vocabulary (DCAT). <a href="https://www.w3.org/TR/vocab-dcat/">https:/​/​www.w3.org/TR/vocab-dcat/</a> (2014).</dd>
+  <dt id="ref-30">[30]</dt>
+  <dd resource="https://link.springer.com/chapter/10.1007/978-3-319-46523-4_19" typeof="schema:Article">Hartig, O., Özsu, M.T.: Walking Without a Map: Ranking-Based Traversal for Querying Linked Data. In: The Semantic Web – ISWC 2016. pp. 305–324. Springer International Publishing (2016).</dd>
+  <dt id="ref-31">[31]</dt>
+  <dd resource="https://dx.doi.org/10.4018/IJSWIS.2016070103" typeof="schema:Article">Vander Sande, M., Verborgh, R., Dimou, A., Colpaert, P., Mannens, E.: Hypermedia-based Discovery for Source Selection using Low-Cost Linked Data Interfaces. International Journal on Semantic Web and Information Systems. 12, 79–110 (2016).</dd>
+  <dt id="ref-32">[32]</dt>
+  <dd resource="https://linkeddatafragments.github.io/Article-Declarative-Hypermedia-Responses/" typeof="schema:Article">Taelman, R., Verborgh, R.: Declaratively Describing Responses of Hypermedia-Driven Web APIs. In: Proceedings of the 9th International Conference on Knowledge Capture (2017).</dd>
+  <dt id="ref-33">[33]</dt>
+  <dd resource="https://www.w3.org/TR/2017/REC-shacl-20170720/" typeof="schema:CreativeWork">Knublauch, H., Dimitris, K.: Shapes Constraint Language (SHACL). <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/">https:/​/​www.w3.org/TR/2017/REC-shacl-20170720/</a> (2017).</dd>
+  <dt id="ref-34">[34]</dt>
+  <dd resource="#saleem2014" typeof="schema:Article">Saleem, M., Ngonga Ngomo, A.-C.: HiBISCuS: Hypergraph-Based Source Selection for <abbr title='SPARQL Procotol and RDF Query Language'>SPARQL</abbr> Endpoint Federation. In: The Semantic Web: Trends and Challenges. pp. 176–191. Springer International Publishing, Cham (2014).</dd>
+  <dt id="ref-35">[35]</dt>
+  <dd resource="http://ceur-ws.org/Vol-1666/paper-03.pdf" typeof="schema:Article">Taelman, R., Colpaert, P., Verborgh, R., Mannens, E.: Multidimensional Interfaces for Selecting Data within Ordinal Ranges. In: Hartig, O., Sequeda, J., and Hogan, A. (eds.) Proceedings of the 7th International Workshop on Consuming Linked Data (2016).</dd>
 </dl>
 </section>
 <section id="footnotes">
     <h2>Footnotes</h2>
     <ol>
-      <li id="fn:portland">
-        <p><a href="https://trimet.org/#/planner">https:/​/​trimet.org/#/planner</a> <a href="#fnref:portland" class="reversefootnote">&#8617;</a></p>
-      </li>
-      <li id="fn:london">
-        <p><a href="https://tfl.gov.uk/plan-a-journey/">https:/​/​tfl.gov.uk/plan-a-journey/</a> <a href="#fnref:london" class="reversefootnote">&#8617;</a></p>
-      </li>
-      <li id="fn:antwerp">
-        <p><a href="https://www.slimnaarantwerpen.be/en/home">https:/​/​www.slimnaarantwerpen.be/en/home</a> <a href="#fnref:antwerp" class="reversefootnote">&#8617;</a></p>
-      </li>
-      <li id="fn:googlemaps">
-        <p><a href="http://maps.google.com/landing/transit/index.html">http:/​/​maps.google.com/landing/transit/index.html</a> <a href="#fnref:googlemaps" class="reversefootnote">&#8617;</a></p>
-      </li>
-      <li id="fn:citymapper">
-        <p><a href="https://citymapper.com/">https:/​/​citymapper.com/</a> <a href="#fnref:citymapper" class="reversefootnote">&#8617;</a></p>
-      </li>
-      <li id="fn:moovit">
-        <p><a href="https://moovitapp.com/">https:/​/​moovitapp.com/</a> <a href="#fnref:moovit" class="reversefootnote">&#8617;</a></p>
-      </li>
-      <li id="fn:process">
-        <p>For a more detailed overview see for example the process to setup Open Trip Planner, a widely used open source route planning application: <a href="https://github.com/opentripplanner/OpenTripPlanner/blob/dev-1.x/docs/Configuration.md">https:/​/​github.com/opentripplanner/OpenTripPlanner/blob/dev-1.x/docs/Configuration.md</a> <a href="#fnref:process" class="reversefootnote">&#8617;</a></p>
-      </li>
-      <li id="fn:airquality">
-        <p>Latest measurments from Europe’s air quality monitoring network: <a href="https://www.eea.europa.eu/data-and-maps/explore-interactive-maps/up-to-date-air-quality-data">https:/​/​www.eea.europa.eu/data-and-maps/explore-interactive-maps/up-to-date-air-quality-data</a> <a href="#fnref:airquality" class="reversefootnote">&#8617;</a></p>
-      </li>
-      <li id="fn:ldprinciples">
-        <p><a href="https://www.w3.org/DesignIssues/LinkedData.html">https:/​/​www.w3.org/DesignIssues/LinkedData.html</a> <a href="#fnref:ldprinciples" class="reversefootnote">&#8617;</a></p>
-      </li>
-      <li id="fn:navitia">
-        <p><a href="http://navitia.io/">http:/​/​navitia.io/</a> <a href="#fnref:navitia" class="reversefootnote">&#8617;</a></p>
-      </li>
-      <li id="fn:plannerstack">
-        <p><a href="http://www.plannerstack.org/">http:/​/​www.plannerstack.org/</a> <a href="#fnref:plannerstack" class="reversefootnote">&#8617;</a></p>
-      </li>
-      <li id="fn:gnontology">
-        <p><a href="http://www.geonames.org/ontology/ontology_v3.1.rdf">http:/​/​www.geonames.org/ontology/ontology_v3.1.rdf</a> <a href="#fnref:gnontology" class="reversefootnote">&#8617;</a></p>
-      </li>
-      <li id="fn:lcontology">
-        <p><a href="http://semweb.mmlab.be/ns/linkedconnections#">http:/​/​semweb.mmlab.be/ns/linkedconnections#</a> <a href="#fnref:lcontology" class="reversefootnote">&#8617;</a></p>
-      </li>
-      <li id="fn:linkedgtfs">
-        <p><a href="http://vocab.gtfs.org/gtfs.ttl#">http:/​/​vocab.gtfs.org/gtfs.ttl#</a> <a href="#fnref:linkedgtfs" class="reversefootnote">&#8617;</a></p>
-      </li>
-    </ol>
-</section>
+        <li id="fn:portland">
+          <p><a href="https://trimet.org/#/planner">https:/​/​trimet.org/#/planner</a> <a href="#fnref:portland" class="reversefootnote">&#8617;</a></p>
+        </li>
+        <li id="fn:london">
+          <p><a href="https://tfl.gov.uk/plan-a-journey/">https:/​/​tfl.gov.uk/plan-a-journey/</a> <a href="#fnref:london" class="reversefootnote">&#8617;</a></p>
+        </li>
+        <li id="fn:antwerp">
+          <p><a href="https://www.slimnaarantwerpen.be/en/home">https:/​/​www.slimnaarantwerpen.be/en/home</a> <a href="#fnref:antwerp" class="reversefootnote">&#8617;</a></p>
+        </li>
+        <li id="fn:googlemaps">
+          <p><a href="http://maps.google.com/landing/transit/index.html">http:/​/​maps.google.com/landing/transit/index.html</a> <a href="#fnref:googlemaps" class="reversefootnote">&#8617;</a></p>
+        </li>
+        <li id="fn:citymapper">
+          <p><a href="https://citymapper.com/">https:/​/​citymapper.com/</a> <a href="#fnref:citymapper" class="reversefootnote">&#8617;</a></p>
+        </li>
+        <li id="fn:moovit">
+          <p><a href="https://moovitapp.com/">https:/​/​moovitapp.com/</a> <a href="#fnref:moovit" class="reversefootnote">&#8617;</a></p>
+        </li>
+        <li id="fn:process">
+          <p>For a more detailed overview see for example the process to setup Open Trip Planner, a widely used open source route planning application: <a href="https://github.com/opentripplanner/OpenTripPlanner/blob/dev-1.x/docs/Configuration.md">https:/​/​github.com/opentripplanner/OpenTripPlanner/blob/dev-1.x/docs/Configuration.md</a> <a href="#fnref:process" class="reversefootnote">&#8617;</a></p>
+        </li>
+        <li id="fn:airquality">
+          <p>Latest measurments from Europe’s air quality monitoring network: <a href="https://www.eea.europa.eu/data-and-maps/explore-interactive-maps/up-to-date-air-quality-data">https:/​/​www.eea.europa.eu/data-and-maps/explore-interactive-maps/up-to-date-air-quality-data</a> <a href="#fnref:airquality" class="reversefootnote">&#8617;</a></p>
+        </li>
+        <li id="fn:ldprinciples">
+          <p><a href="https://www.w3.org/DesignIssues/LinkedData.html">https:/​/​www.w3.org/DesignIssues/LinkedData.html</a> <a href="#fnref:ldprinciples" class="reversefootnote">&#8617;</a></p>
+        </li>
+        <li id="fn:navitia">
+          <p><a href="http://navitia.io/">http:/​/​navitia.io/</a> <a href="#fnref:navitia" class="reversefootnote">&#8617;</a></p>
+        </li>
+        <li id="fn:plannerstack">
+          <p><a href="http://www.plannerstack.org/">http:/​/​www.plannerstack.org/</a> <a href="#fnref:plannerstack" class="reversefootnote">&#8617;</a></p>
+        </li>
+        <li id="fn:gnontology">
+          <p><a href="http://www.geonames.org/ontology/ontology_v3.1.rdf">http:/​/​www.geonames.org/ontology/ontology_v3.1.rdf</a> <a href="#fnref:gnontology" class="reversefootnote">&#8617;</a></p>
+        </li>
+        <li id="fn:lcontology">
+          <p><a href="http://semweb.mmlab.be/ns/linkedconnections#">http:/​/​semweb.mmlab.be/ns/linkedconnections#</a> <a href="#fnref:lcontology" class="reversefootnote">&#8617;</a></p>
+        </li>
+        <li id="fn:linkedgtfs">
+          <p><a href="http://vocab.gtfs.org/gtfs.ttl#">http:/​/​vocab.gtfs.org/gtfs.ttl#</a> <a href="#fnref:linkedgtfs" class="reversefootnote">&#8617;</a></p>
+        </li>
+      </ol>
+  </section>
 </footer>
+
 </body>
 </html>
