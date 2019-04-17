@@ -3,7 +3,7 @@
 
 Currently available route planning applications
 are built following a centralized data strategy.
-For example, a route planner calculating routes
+For example[^process], a route planner calculating routes
 using both the bus and metro public transport services in a certain city:
 
 * First collects the dataset of each transport mode,
@@ -16,7 +16,7 @@ Usually a graph-based model.
 
 * Finally, a route planning algorithm tailored
 to run over the predefined data model,
-is used to calculate available routes[^process].
+is used to calculate available routes.
 
 The route planner service offered by Google Maps for example, follows this approach.
 By encouraging public transport operators around the world
@@ -48,6 +48,6 @@ which could serve as an explanation of why route planning applications
 such as Google Maps or Open Trip Planner do not allow to query for routes that consider,
 for example air quality, even though this type of data can be found published on the Web as Open Data[^airquality].
 
-[^process]: For a more detailed overview see for example the process to setup Open Trip Planner, a widely used open source route planning application: <a href="https://github.com/opentripplanner/OpenTripPlanner/blob/dev-1.x/docs/Configuration.md">https://github.com/opentripplanner/OpenTripPlanner/blob/dev-1.x/docs/Configuration.md</a>
+[^process]: See Open Trip Planner's case, a widely used open source route planning application: <a href="https://github.com/opentripplanner/OpenTripPlanner/blob/dev-1.x/docs/Configuration.md">https://github.com/opentripplanner/OpenTripPlanner/blob/dev-1.x/docs/Configuration.md</a>
 
 [^airquality]: Latest measurments from Europe's air quality monitoring network: <a href="https://www.eea.europa.eu/data-and-maps/explore-interactive-maps/up-to-date-air-quality-data">https://www.eea.europa.eu/data-and-maps/explore-interactive-maps/up-to-date-air-quality-data</a>
