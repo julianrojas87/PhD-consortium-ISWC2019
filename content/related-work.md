@@ -138,7 +138,7 @@ There is no consensus about the criteria
 that route planning algorithms should support.
 The parameters supported by route planning algorithms
 change from one approach to another depending on the data model,
-the algorithm implementation and the use case.
+the algorithm implementation and the use-case.
 In [](cite:cites kelly2011) a list of data requirements
 for _ideal multimodal route planners_ is introduced.
 It identifies 22 different parameters from traditional data sources such as GTFS feeds and OSM.
@@ -147,7 +147,7 @@ that considers among others, accessibility, via and trip fares parameters.
 A extensive analysis of formal languages using regular expressions
 to define constrained shortest path queries is presented in [](cite:cites barret2000).
 Furthermore, the Web of Data opens the door for new possibilities
-and use cases that need to be supported by route planning algorithms.
+and use-cases that need to be supported by route planning algorithms.
 For instance, the Multi-Criteria RAPTOR algorithm supports
 route calculation with an arbitrary number of input parameters.
 However, additional criteria has a significant impact on the algorithm performance,

@@ -155,7 +155,7 @@ for every new data source that enables to support more diverse queries
 does not scale, considering the highly diverse data sources found on the Web.</p>
 
     <dl>
-      <dt><em>Problem Statement -</em></dt>
+      <dt>Problem Statement -</dt>
       <dd><em>Integrating new heterogeneous data sources</em>
 <em>to extend route planners capabilities requires human intervention</em>
 <em>to adapt the subjacent data models and route planning algorithm implementations,</em>
@@ -309,7 +309,7 @@ to calculate routes directly on the timetables.</p>
 that route planning algorithms should support.
 The parameters supported by route planning algorithms
 change from one approach to another depending on the data model,
-the algorithm implementation and the use case.
+the algorithm implementation and the use-case.
 In <span class="references">[<a href="#ref-8">8</a>]</span> a list of data requirements
 for <em>ideal multimodal route planners</em> is introduced.
 It identifies 22 different parameters from traditional data sources such as <abbr title='General Transit Feed Specification'>GTFS</abbr> feeds and <abbr title=' OpenStreetMap'>OSM</abbr>.
@@ -318,7 +318,7 @@ that considers among others, accessibility, via and trip fares parameters.
 A extensive analysis of formal languages using regular expressions
 to define constrained shortest path queries is presented in <span class="references">[<a href="#ref-43">43</a>]</span>.
 Furthermore, the Web of Data opens the door for new possibilities
-and use cases that need to be supported by route planning algorithms.
+and use-cases that need to be supported by route planning algorithms.
 For instance, the Multi-Criteria <abbr title=' Round-Based Public Transit Routing'>RAPTOR</abbr> algorithm supports
 route calculation with an arbitrary number of input parameters.
 However, additional criteria has a significant impact on the algorithm performance,
@@ -345,30 +345,50 @@ published by the Finish Transit Agency<sup id="fnref:graphql"><a href="#fn:graph
   <section id="research-questions">
     <h2>Research Questions</h2>
 
-    <p>Given the related work, is possible to highlight the need for
+    <p>Given the related work,
+the need for a structured and declarative approach
+to express route planning queries,
+that allows identifying specific data requirements becomes apparent.
+Also, is possible to highlight the need for
 a publishing strategy of heterogeneous data on the Web,
 that enables automated discovery of relevant data for route planning purposes.
-Also, the need for a structured and declarative approach to express
-route planning queries, that allows identifying specific data requirements becomes apparent.
 Finally, a generic and flexible route planning algorithm,
 capable of dynamically integrating multiple heterogeneous data sources
 while remaining useful in practice, is needed.
 I thus investigate the following research questions:</p>
 
     <dl>
-      <dt>Research Question 1</dt>
-      <dd>What are the minimum requirements for publishing heterogeneous data on the Web that enable automated discovery of relevant data sources for route planning purposes?</dd>
-      <dt>Research Question 2</dt>
-      <dd>Which query language syntax is the most adequate to declaratively express route planning queries?</dd>
-      <dt>Research Question 3</dt>
-      <dd>Which route planning algorithm is best suited to calculate route alternatives using heterogeneous data while remaining useful in practice?</dd>
+      <dt>Research Question 1 -</dt>
+      <dd><em>How can route planning queries be expressed in a use-case independent and declarative way that allows identifying data requirements?</em></dd>
+      <dt>Research Question 2 -</dt>
+      <dd><em>How can heterogeneous data be published on the Web to enable automated discovery of relevant data sources for route planning purposes?</em></dd>
+      <dt>Research Question 3 -</dt>
+      <dd><em>Which route planning algorithm is best suited to calculate route alternatives using heterogeneous data while remaining useful in practice?</em></dd>
     </dl>
   </section>
 
   <section id="hypotheses">
     <h2>Hypotheses</h2>
 
-    <p class="todo">Hypotheses…</p>
+    <p>The first research question is related to the need
+of having a declarative and use-case independent mechanism
+to express route planning queries that allows for the inclusion of arbitrary constraints,
+while being self-describing about the type of data that will be needed to answer the query.
+Existing solutions are usually tightly coupled
+to the subjacent data model and algorithm implementation,
+limiting the type of queries that can be expressed.
+Also, implementation independent approaches
+such as regular expression-based syntaxes do not allow
+for automated identification of data requirements.
+Therefore, I define the following Hypothesis related to <em>Research Question 1</em>:</p>
+
+    <dl>
+      <dt>Hypothesis 1 -</dt>
+      <dd><em>A shape-based semantic model for expressing route planning queries is at least as expressive as state of the art approaches and allow for complete and automatic identification for query solving data requirements.</em></dd>
+    </dl>
+
+    <p>the publication approach
+needed to allow automated discovery</p>
   </section>
 
   <section id="preliminary-results">
@@ -503,6 +523,7 @@ I thus investigate the following research questions:</p>
   <dd resource="https://dx.doi.org/10.1145/2960414.2960420" typeof="schema:Article">Rutgers, P., Martella, C., Voulgaris, S., Boncz, P.: Powerful and Efficient Bulk Shortest-path Queries: Cypher Language Extension &#38; Giraph Implementation. In: Proceedings of the Fourth International Workshop on Graph Data Management Experiences and Systems. pp. 6:1–6:7. ACM, New York, NY, USA (2016).</dd>
 </dl>
 </section>
+
 <section id="footnotes">
     <h2>Footnotes</h2>
     <ol>

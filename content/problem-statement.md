@@ -37,7 +37,7 @@ Manually adapting implementations of route planning applications
 for every new data source that enables to support more diverse queries
 does not scale, considering the highly diverse data sources found on the Web.
 
-_Problem Statement -_
+Problem Statement -
 : _Integrating new heterogeneous data sources_
 _to extend route planners capabilities requires human intervention_
 _to adapt the subjacent data models and route planning algorithm implementations,_
