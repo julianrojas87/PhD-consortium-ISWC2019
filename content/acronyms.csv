@@ -7,4 +7,8 @@ GTFS,General Transit Feed Specification
 API, Application Programming Interface
 W3C, World Wide Web Consortium
 NeTEx, Network and Timetable Exchange
-OSM, OpenStreetMap
+OSM, OpenStreetMap,
+RAPTOR, Round-Based Public Transit Routing
+CSA, Connection Scan Algorithm
+PP, Property Paths
+LDQL, Linked Data Query Language

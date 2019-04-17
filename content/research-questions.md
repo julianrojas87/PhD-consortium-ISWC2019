@@ -1,5 +1,5 @@
 ## Research Questions
 {:#research-questions}
 
-Research questions...
-{:.todo}
+What are the minimum requirements for publishing data on the Web that enables decentralized rout planning?
+{:.todo}  

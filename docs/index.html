@@ -197,18 +197,20 @@ applications.</p>
 
     <h3 id="data-publishing-on-the-web">Data Publishing on the Web</h3>
 
-    <p>When publishing data on the Web,
-one of the main goals is to enable its adoption
+    <p>Millions of datasets are published on the Web <span class="references">[<a href="#ref-11">11</a>]</span>.
+Following the right strategy when publishing data
+is key to increase the interoperability and reusability of data,
 and foster the creation of new and innovative services.
-Tim Berners-Lee introduced a set of principles<sup id="fnref:ldprinciples"><a href="#fn:ldprinciples" class="footnote">9</a></sup> for
+In this direction, Tim Berners-Lee introduced a set of principles<sup id="fnref:ldprinciples"><a href="#fn:ldprinciples" class="footnote">9</a></sup> for
 publishing data as Linked Data on the Web.
 Extending this principles, the <abbr title=' World Wide Web Consortium'>W3C</abbr> published a document of <a property="schema:citation http://purl.org/spar/cito/cites" href="https://www.w3.org/TR/ld-bp/">best practices
-for publishing Linked Data</a> <span class="references">[<a href="#ref-21">21</a>]</span>.</p>
+for publishing Linked Data</a> <span class="references">[<a href="#ref-21">21</a>]</span>, which provides a set of guidelines
+and design principles aimed at data publishers.</p>
 
     <p>Traditionally, data is published on the Web following one of two approaches:
 (i) as a data dump or (ii) through an <abbr title=' Application Programming Interface'>API</abbr>.
 In the public transport domain,
-<a property="schema:citation http://purl.org/spar/cito/cites" href="https://developers.google.com/transit/gtfs/"><abbr title='General Transit Feed Specification'>GTFS</abbr></a> <span class="references">[<a href="#ref-16">16</a>]</span>, regarded as the de-facto standard
+<a property="schema:citation http://purl.org/spar/cito/cites" href="https://developers.google.com/transit/gtfs/"><abbr title='General Transit Feed Specification'>GTFS</abbr></a> <span class="references">[<a href="#ref-16">16</a>]</span>, which is regarded as the de-facto standard
 for describing and exchanging transit schedules,
 is a common example of data dump publishing.
 The European Committee for Standardization released the <a property="schema:citation http://purl.org/spar/cito/cites" href="http://netex-cen.eu/"><abbr title=' Network and Timetable Exchange'>NeTEx</abbr> standard</a> <span class="references">[<a href="#ref-22">22</a>]</span>
@@ -223,7 +225,7 @@ rich source of freely available spatial data.
 <a property="schema:citation http://purl.org/spar/cito/cites" href="https://link.springer.com/chapter/10.1007/978-3-642-04930-9_46">LinkedGeoData</a> <span class="references">[<a href="#ref-24">24</a>]</span> publishes a spatial knowledge base
 derived from <abbr title=' OpenStreetMap'>OSM</abbr> that uses <abbr title='Resource Description Framework'>RDF</abbr> as its data model.
 Also <a property="schema:citation http://purl.org/spar/cito/cites" href="https://www.geonames.org/">GeoNames</a> <span class="references">[<a href="#ref-25">25</a>]</span> publishes over 25 million geographical names
-using stable URIs and a semantic vocabulary<sup id="fnref:gnontology"><a href="#fn:gnontology" class="footnote">12</a></sup>.</p>
+using stable URIs and a semantically annotated vocabulary<sup id="fnref:gnontology"><a href="#fn:gnontology" class="footnote">12</a></sup>.</p>
 
     <p>On the one hand, data dumps offer full flexibility over the data
 but are expensive for clients who need to deal
@@ -234,19 +236,18 @@ and limit query flexibility for clients.
 The <a property="schema:citation http://purl.org/spar/cito/cites" href="http://ceur-ws.org/Vol-1184/ldow2014_paper_04.pdf">Linked Data Fragments (<abbr title=' Linked Data Fragments'>LDF</abbr>) framework</a> <span class="references">[<a href="#ref-26">26</a>]</span>
 explores the different trade-offs in terms of query flexibility
 and computational costs of <em>in between</em> Web interfaces
-determined by <em>fragmenting</em> datasets and publishing
-them on the Web. Based on the concept introduced by <abbr title=' Linked Data Fragments'>LDF</abbr>,
-Colpaert introduces <a property="schema:citation http://purl.org/spar/cito/cites" href="https://link.springer.com/chapter/10.1007/978-3-319-60131-1_26">Linked Connections</a> <span class="references">[<a href="#ref-27">27</a>]</span>,
-a light-weight data interface for publishing public transit schedules
-that allows to perform route planning on the client-side.
-Furthermore, in his <a property="schema:citation http://purl.org/spar/cito/cites" href="https://phd.pietercolpaert.be">PhD dissertation</a> <span class="references">[<a href="#ref-28">28</a>]</span> Colpaert
-presents the Linked Connections Ontology<sup id="fnref:lcontology"><a href="#fn:lcontology" class="footnote">13</a></sup>
-and the Linked <abbr title='General Transit Feed Specification'>GTFS</abbr> vocabulary<sup id="fnref:linkedgtfs"><a href="#fn:linkedgtfs" class="footnote">14</a></sup> used to describe
-vehicle departures in public transport networks.</p>
+determined by <em>fragmenting</em> datasets and publishing them on the Web.
+Based on the <abbr title=' Linked Data Fragments'>LDF</abbr> concept,
+the <a property="schema:citation http://purl.org/spar/cito/cites" href="https://link.springer.com/chapter/10.1007/978-3-319-60131-1_26">Linked Connections specification</a> <span class="references">[<a href="#ref-27">27</a>]</span> was introduced.
+Defined as a light-weight data interface for publishing public transit schedules
+that allows to perform route planning on the client-side,
+it uses the Linked Connections Ontology<sup id="fnref:lcontology"><a href="#fn:lcontology" class="footnote">13</a></sup>
+and the Linked <abbr title='General Transit Feed Specification'>GTFS</abbr> vocabulary<sup id="fnref:linkedgtfs"><a href="#fn:linkedgtfs" class="footnote">14</a></sup> to describe
+vehicle departures in public transport networks <span class="references">[<a href="#ref-28">28</a>]</span>.</p>
 
     <h3 id="data-discovery-on-the-web">Data Discovery on the Web</h3>
 
-    <p>In order to dynamically integrate data sources available on the Web
+    <p>To dynamically integrate data sources available on the Web
 into route planning applications,
 discovering which data sources are relevant for resolving a certain query
 is a necessary previous step.
@@ -269,8 +270,9 @@ for enabling automated discovery of data.
 The approach presented in <span class="references">[<a href="#ref-31">31</a>]</span> describes
 how to perform data source selection based on hypermedia links and controls.
 Hypermedia is also used to semantically describe responses
-of Web APIs in <span class="references">[<a href="#ref-32">32</a>]</span>, following a shape-based approach
-using <a property="schema:citation http://purl.org/spar/cito/cites" href="https://www.w3.org/TR/2017/REC-shacl-20170720/">SHACL</a> <span class="references">[<a href="#ref-33">33</a>]</span>, to declare a parameterized response structure.</p>
+of Web APIs in <span class="references">[<a href="#ref-32">32</a>]</span>. A shape-based approach
+using <a property="schema:citation http://purl.org/spar/cito/cites" href="https://www.w3.org/TR/2017/REC-shacl-20170720/">SHACL</a> <span class="references">[<a href="#ref-33">33</a>]</span>, is used to declare a parameterized structure 
+of <abbr title=' Application Programming Interface'>API</abbr> responses.</p>
 
     <p>The use of data summaries as a strategy to enable
 more precise data discovery to improve query response times
@@ -278,27 +280,72 @@ is explored in <span class="references">[<a href="#ref-34">34</a>]</span>.
 In the same direction, <a property="schema:citation http://purl.org/spar/cito/cites" href="http://ceur-ws.org/Vol-1666/paper-03.pdf">Multidimensional Interfaces</a> <span class="references">[<a href="#ref-35">35</a>]</span> are
 defined to semantically describe ordinal ranges within datasets,
 e.g. time-based or geospatial-based ranges,
-which are inherent dimensions to the nature
+which are inherent to the nature
 of route planning related datasets,
-such as public transport network topologies (geospatial dimension)
-and their schedules (time dimension).</p>
+such as public transport network topologies (geospatial range)
+and their schedules (time range).</p>
 
     <h3 id="route-planning">Route Planning</h3>
 
-    <p>Route Planning has been extensively studied…</p>
+    <p>Route Planning has been extensively studied throughout the years.
+Multiple algorithms have been proposed to calculate routes
+over different types of networks (e.g. road, public transport, multimodal, etc),
+and using different criteria (e.g. shortest path, travel time, number of transfers, etc).
+The authors in <span class="references">[<a href="#ref-36">36</a>]</span> and <span class="references">[<a href="#ref-37">37</a>]</span> present
+a comparative analysis of multiple route planning algorithms
+for road, public transit and multimodal networks.
+Most algorithms use subjacent graph-based data models
+to represent the different transportation networks over which they operate,
+and are defined as extensions of <span property="schema:citation http://purl.org/spar/cito/cites" resource="https://dx.doi.org/10.1007/BF01386390"><a href="https://doi.org/10.1007/BF01386390">Dijkstra’s algorithm</a></span> <span class="references">[<a href="#ref-38">38</a>]</span>.
+In recent years, different approaches
+that disregard Dijkstra-like graph algorithms,
+have been introduced for public transport and multimodal networks.
+<span property="schema:citation http://purl.org/spar/cito/cites" resource="https://dx.doi.org/10.1137/1.9781611975499.5"><a href="https://doi.org/10.1137/1.9781611975499.5"><abbr title=' Round-Based Public Transit Routing'>RAPTOR</abbr></a></span> <span class="references">[<a href="#ref-39">39</a>]</span>, <span property="schema:citation http://purl.org/spar/cito/cites" resource="https://dx.doi.org/10.1145/3274661"><a href="http://doi.acm.org/10.1145/3274661"><abbr title=' Connection Scan Algorithm'>CSA</abbr></a></span> <span class="references">[<a href="#ref-40">40</a>]</span>, <span property="schema:citation http://purl.org/spar/cito/cites" resource="https://dx.doi.org/10.1137/1.9781611974317.2"><a href="https://epubs.siam.org/doi/abs/10.1137/1.9781611974317.2">Transfer Patters</a></span> <span class="references">[<a href="#ref-41">41</a>]</span>,
+<a property="schema:citation http://purl.org/spar/cito/cites" href="https://arxiv.org/pdf/1607.01299.pdf">Trip-based routing</a> <span class="references">[<a href="#ref-42">42</a>]</span> are among the approaches
+that exploit the basic elements of public transport networks
+to calculate routes directly on the timetables.</p>
 
-    <h4 id="route-planning-queries">Route Planning Queries</h4>
-    <p>Shortest Path, EAT, Profile, Multi-criteria -&gt; <abbr title='SPARQL Procotol and RDF Query Language'>SPARQL</abbr>-Path, LDQL, CypherQL, GraphQL.</p>
+    <p>There is no consensus about the criteria
+that route planning algorithms should support.
+The parameters supported by route planning algorithms
+change from one approach to another depending on the data model,
+the algorithm implementation and the use case.
+In <span class="references">[<a href="#ref-8">8</a>]</span> a list of data requirements
+for <em>ideal multimodal route planners</em> is introduced.
+It identifies 22 different parameters from traditional data sources such as <abbr title='General Transit Feed Specification'>GTFS</abbr> feeds and <abbr title=' OpenStreetMap'>OSM</abbr>.
+The <abbr title=' Network and Timetable Exchange'>NeTEx</abbr> standard defines also a <em>Trip Plan Query Model</em><sup id="fnref:netexquery"><a href="#fn:netexquery" class="footnote">15</a></sup>
+that considers among others, accessibility, via and trip fares parameters.
+A extensive analysis of formal languages using regular expressions
+to define constrained shortest path queries is presented in <span class="references">[<a href="#ref-43">43</a>]</span>.
+Furthermore, the Web of Data opens the door for new possibilities
+and use cases that need to be supported by route planning algorithms.
+For instance, the Multi-Criteria <abbr title=' Round-Based Public Transit Routing'>RAPTOR</abbr> algorithm supports
+route calculation with an arbitrary number of input parameters.
+However, additional criteria has a significant impact on the algorithm performance,
+causing it to become too slow for practical use <span class="references">[<a href="#ref-39">39</a>]</span>.</p>
 
-    <h4 id="route-planning-algorithms">Route Planning Algorithms</h4>
-    <p>Graph-based (time-expanded, time-dependant), RAPTOR, CSA, Trip-based.</p>
+    <p>Given that Linked Data is also described using a graph-based model,
+the problem of finding routes between nodes have been previously studied.
+<abbr title='SPARQL Procotol and RDF Query Language'>SPARQL</abbr> 1.1 introduced the Property Paths (<abbr title=' Property Paths'>PP</abbr>) syntax
+that allow query engines to test for path existence between nodes.
+In <span class="references">[<a href="#ref-44">44</a>]</span> an extension for <abbr title=' Property Paths'>PP</abbr> syntax is proposed
+to compute the top-k shortest paths of a given path expression between two nodes.
+An extension of the query semantics of <abbr title=' Property Paths'>PP</abbr> is presented in <span class="references">[<a href="#ref-45">45</a>]</span>
+to support navigation of <abbr title=' Property Paths'>PP</abbr> over the Web of Data instead of over single <abbr title='Resource Description Framework'>RDF</abbr> graphs.
+A more expressive alternative is later introduced as the <span property="schema:citation http://purl.org/spar/cito/cites" resource="https://dx.doi.org/https://doi.org/10.1016/j.websem.2016.10.001"><a href="http://www.sciencedirect.com/science/article/pii/S1570826816300476">Linked Data Query Language (<abbr title=' Linked Data Query Language'>LDQL</abbr>)</a></span> <span class="references">[<a href="#ref-46">46</a>]</span>
+that allows expressing query graph patterns and navigation paths independently.
+Another approach is introduced in <span class="references">[<a href="#ref-47">47</a>]</span> as an extension of the property graph query language
+CypherQL<sup id="fnref:cypher"><a href="#fn:cypher" class="footnote">16</a></sup>, which allows for top-k shortest paths queries,
+calculated path weights and filtering on path edges and nodes.
+Lastly, multimodal route plans are calculated using a GraphQL interface
+published by the Finish Transit Agency<sup id="fnref:graphql"><a href="#fn:graphql" class="footnote">17</a></sup>.</p>
 
   </section>
 
   <section id="research-questions">
     <h2>Research Questions</h2>
 
-    <p class="todo">Research questions…</p>
+    <p class="todo">What are the minimum requirements for publishing data on the Web that enables decentralized rout planning?</p>
   </section>
 
   <section id="hypotheses">
@@ -413,6 +460,30 @@ and their schedules (time dimension).</p>
   <dd resource="#saleem2014" typeof="schema:Article">Saleem, M., Ngonga Ngomo, A.-C.: HiBISCuS: Hypergraph-Based Source Selection for <abbr title='SPARQL Procotol and RDF Query Language'>SPARQL</abbr> Endpoint Federation. In: The Semantic Web: Trends and Challenges. pp. 176–191. Springer International Publishing, Cham (2014).</dd>
   <dt id="ref-35">[35]</dt>
   <dd resource="http://ceur-ws.org/Vol-1666/paper-03.pdf" typeof="schema:Article">Taelman, R., Colpaert, P., Verborgh, R., Mannens, E.: Multidimensional Interfaces for Selecting Data within Ordinal Ranges. In: Hartig, O., Sequeda, J., and Hogan, A. (eds.) Proceedings of the 7th International Workshop on Consuming Linked Data (2016).</dd>
+  <dt id="ref-36">[36]</dt>
+  <dd resource="http://arxiv.org/abs/1504.05140" typeof="schema:Article">Bast, H., Delling, D., Goldberg, A.V., Müller-Hannemann, M., Pajor, T., Sanders, P., Wagner, D., Werneck, R.F.: Route Planning in Transportation Networks. CoRR. abs/1504.05140, (2015).</dd>
+  <dt id="ref-37">[37]</dt>
+  <dd resource="https://d-nb.info/1058165240/34" typeof="schema:Thesis">Pajor, T.: Algorithm Engineering for Realistic Journey Planning in Transportation Networks. <a href="https://d-nb.info/1058165240/34">https:/​/​d-nb.info/1058165240/34</a> (2013).</dd>
+  <dt id="ref-38">[38]</dt>
+  <dd resource="https://dx.doi.org/10.1007/BF01386390" typeof="schema:Article">Dijkstra, E.W.: A note on two problems in connexion with graphs. Numerische Mathematik. 1, 269–271 (1959).</dd>
+  <dt id="ref-39">[39]</dt>
+  <dd resource="https://dx.doi.org/10.1137/1.9781611975499.5" typeof="schema:Article">Delling, D., Dibbelt, J., Pajor, T.: Fast and Exact Public Transit Routing with Restricted Pareto Sets. In: Proceedings of the Twenty-First Workshop on Algorithm Engineering and Experiments, ALENEX 2019, San Diego, CA, USA, January 7-8, 2019. pp. 54–65 (2019).</dd>
+  <dt id="ref-40">[40]</dt>
+  <dd resource="https://dx.doi.org/10.1145/3274661" typeof="schema:Article">Dibbelt, J., Pajor, T., Strasser, B., Wagner, D.: Connection Scan Algorithm. J. Exp. Algorithmics. 23, 1.7:1–1.7:56 (2018).</dd>
+  <dt id="ref-41">[41]</dt>
+  <dd resource="https://dx.doi.org/10.1137/1.9781611974317.2" typeof="schema:CreativeWork">Bast, H., Hertel, M., Storandt, S.: Scalable Transfer Patterns. In: 2016 Proceedings of the Eighteenth Workshop on Algorithm Engineering and Experiments (ALENEX). pp. 15–29</dd>
+  <dt id="ref-42">[42]</dt>
+  <dd resource="https://arxiv.org/pdf/1607.01299.pdf" typeof="schema:Article">Witt, S.: Trip-Based Public Transit Routing Using Condensed Search Trees. In: ATMOS (2016).</dd>
+  <dt id="ref-43">[43]</dt>
+  <dd resource="https://dx.doi.org/10.1137/S0097539798337716" typeof="schema:Article">Barrett, C., Jacob, R., Marathe, M.: Formal-Language-Constrained Path Problems. SIAM Journal on Computing. 30, 809–837 (2000).</dd>
+  <dt id="ref-44">[44]</dt>
+  <dd resource="https://dx.doi.org/10.1145/3132218.3132239" typeof="schema:Article">Savenkov, V., Mehmood, Q., Umbrich, J., Polleres, A.: Counting to K or How SPARQL1.1 Property Paths Can Be Extended to Top-k Path Queries. In: Proceedings of the 13th International Conference on Semantic Systems. pp. 97–103. ACM, New York, NY, USA (2017).</dd>
+  <dt id="ref-45">[45]</dt>
+  <dd resource="#hartig2015" typeof="schema:Article">Hartig, O., Pirrò, G.: A Context-Based Semantics for <abbr title='SPARQL Procotol and RDF Query Language'>SPARQL</abbr> Property Paths Over the Web. In: The Semantic Web. Latest Advances and New Domains. pp. 71–87. Springer International Publishing, Cham (2015).</dd>
+  <dt id="ref-46">[46]</dt>
+  <dd resource="https://dx.doi.org/https://doi.org/10.1016/j.websem.2016.10.001" typeof="schema:Article">Hartig, O., Pérez, J.: <abbr title=' Linked Data Query Language'>LDQL</abbr>: A query language for the Web of Linked Data. Journal of Web Semantics. 41, 9–29 (2016).</dd>
+  <dt id="ref-47">[47]</dt>
+  <dd resource="https://dx.doi.org/10.1145/2960414.2960420" typeof="schema:Article">Rutgers, P., Martella, C., Voulgaris, S., Boncz, P.: Powerful and Efficient Bulk Shortest-path Queries: Cypher Language Extension &#38; Giraph Implementation. In: Proceedings of the Fourth International Workshop on Graph Data Management Experiences and Systems. pp. 6:1–6:7. ACM, New York, NY, USA (2016).</dd>
 </dl>
 </section>
 <section id="footnotes">
@@ -460,8 +531,17 @@ and their schedules (time dimension).</p>
         <li id="fn:linkedgtfs">
           <p><a href="http://vocab.gtfs.org/gtfs.ttl#">http:/​/​vocab.gtfs.org/gtfs.ttl#</a> <a href="#fnref:linkedgtfs" class="reversefootnote">&#8617;</a></p>
         </li>
+        <li id="fn:netexquery">
+          <p><a href="http://www.netex-cen.eu/model/conceptual/passenger_info/index.htm">http:/​/​www.netex-cen.eu/model/conceptual/passenger_info/index.htm</a> <a href="#fnref:netexquery" class="reversefootnote">&#8617;</a></p>
+        </li>
+        <li id="fn:cypher">
+          <p><a href="https://neo4j.com/developer/cypher-query-language/">https:/​/​neo4j.com/developer/cypher-query-language/</a> <a href="#fnref:cypher" class="reversefootnote">&#8617;</a></p>
+        </li>
+        <li id="fn:graphql">
+          <p><a href="https://digitransit.fi/en/developers/apis/1-routing-api/itinerary-planning/">https:/​/​digitransit.fi/en/developers/apis/1-routing-api/itinerary-planning/</a> <a href="#fnref:graphql" class="reversefootnote">&#8617;</a></p>
+        </li>
       </ol>
-  </section>
+</section>
 </footer>
 
 </body>
