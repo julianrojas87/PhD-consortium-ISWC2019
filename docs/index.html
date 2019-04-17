@@ -345,7 +345,24 @@ published by the Finish Transit Agency<sup id="fnref:graphql"><a href="#fn:graph
   <section id="research-questions">
     <h2>Research Questions</h2>
 
-    <p class="todo">What are the minimum requirements for publishing data on the Web that enables decentralized rout planning?</p>
+    <p>Given the related work, is possible to highlight the need for
+a publishing strategy of heterogeneous data on the Web,
+that enables automated discovery of relevant data for route planning purposes.
+Also, the need for a structured and declarative approach to express
+route planning queries, that allows identifying specific data requirements becomes apparent.
+Finally, a generic and flexible route planning algorithm,
+capable of dynamically integrating multiple heterogeneous data sources
+while remaining useful in practice, is needed.
+I thus investigate the following research questions:</p>
+
+    <dl>
+      <dt>Research Question 1</dt>
+      <dd>What are the minimum requirements for publishing heterogeneous data on the Web that enable automated discovery of relevant data sources for route planning purposes?</dd>
+      <dt>Research Question 2</dt>
+      <dd>Which query language syntax is the most adequate to declaratively express route planning queries?</dd>
+      <dt>Research Question 3</dt>
+      <dd>Route planning algorithm?</dd>
+    </dl>
   </section>
 
   <section id="hypotheses">
@@ -489,58 +506,58 @@ published by the Finish Transit Agency<sup id="fnref:graphql"><a href="#fn:graph
 <section id="footnotes">
     <h2>Footnotes</h2>
     <ol>
-        <li id="fn:portland">
-          <p><a href="https://trimet.org/#/planner">https:/​/​trimet.org/#/planner</a> <a href="#fnref:portland" class="reversefootnote">&#8617;</a></p>
-        </li>
-        <li id="fn:london">
-          <p><a href="https://tfl.gov.uk/plan-a-journey/">https:/​/​tfl.gov.uk/plan-a-journey/</a> <a href="#fnref:london" class="reversefootnote">&#8617;</a></p>
-        </li>
-        <li id="fn:antwerp">
-          <p><a href="https://www.slimnaarantwerpen.be/en/home">https:/​/​www.slimnaarantwerpen.be/en/home</a> <a href="#fnref:antwerp" class="reversefootnote">&#8617;</a></p>
-        </li>
-        <li id="fn:googlemaps">
-          <p><a href="http://maps.google.com/landing/transit/index.html">http:/​/​maps.google.com/landing/transit/index.html</a> <a href="#fnref:googlemaps" class="reversefootnote">&#8617;</a></p>
-        </li>
-        <li id="fn:citymapper">
-          <p><a href="https://citymapper.com/">https:/​/​citymapper.com/</a> <a href="#fnref:citymapper" class="reversefootnote">&#8617;</a></p>
-        </li>
-        <li id="fn:moovit">
-          <p><a href="https://moovitapp.com/">https:/​/​moovitapp.com/</a> <a href="#fnref:moovit" class="reversefootnote">&#8617;</a></p>
-        </li>
-        <li id="fn:process">
-          <p>For a more detailed overview see for example the process to setup Open Trip Planner, a widely used open source route planning application: <a href="https://github.com/opentripplanner/OpenTripPlanner/blob/dev-1.x/docs/Configuration.md">https:/​/​github.com/opentripplanner/OpenTripPlanner/blob/dev-1.x/docs/Configuration.md</a> <a href="#fnref:process" class="reversefootnote">&#8617;</a></p>
-        </li>
-        <li id="fn:airquality">
-          <p>Latest measurments from Europe’s air quality monitoring network: <a href="https://www.eea.europa.eu/data-and-maps/explore-interactive-maps/up-to-date-air-quality-data">https:/​/​www.eea.europa.eu/data-and-maps/explore-interactive-maps/up-to-date-air-quality-data</a> <a href="#fnref:airquality" class="reversefootnote">&#8617;</a></p>
-        </li>
-        <li id="fn:ldprinciples">
-          <p><a href="https://www.w3.org/DesignIssues/LinkedData.html">https:/​/​www.w3.org/DesignIssues/LinkedData.html</a> <a href="#fnref:ldprinciples" class="reversefootnote">&#8617;</a></p>
-        </li>
-        <li id="fn:navitia">
-          <p><a href="http://navitia.io/">http:/​/​navitia.io/</a> <a href="#fnref:navitia" class="reversefootnote">&#8617;</a></p>
-        </li>
-        <li id="fn:plannerstack">
-          <p><a href="http://www.plannerstack.org/">http:/​/​www.plannerstack.org/</a> <a href="#fnref:plannerstack" class="reversefootnote">&#8617;</a></p>
-        </li>
-        <li id="fn:gnontology">
-          <p><a href="http://www.geonames.org/ontology/ontology_v3.1.rdf">http:/​/​www.geonames.org/ontology/ontology_v3.1.rdf</a> <a href="#fnref:gnontology" class="reversefootnote">&#8617;</a></p>
-        </li>
-        <li id="fn:lcontology">
-          <p><a href="http://semweb.mmlab.be/ns/linkedconnections#">http:/​/​semweb.mmlab.be/ns/linkedconnections#</a> <a href="#fnref:lcontology" class="reversefootnote">&#8617;</a></p>
-        </li>
-        <li id="fn:linkedgtfs">
-          <p><a href="http://vocab.gtfs.org/gtfs.ttl#">http:/​/​vocab.gtfs.org/gtfs.ttl#</a> <a href="#fnref:linkedgtfs" class="reversefootnote">&#8617;</a></p>
-        </li>
-        <li id="fn:netexquery">
-          <p><a href="http://www.netex-cen.eu/model/conceptual/passenger_info/index.htm">http:/​/​www.netex-cen.eu/model/conceptual/passenger_info/index.htm</a> <a href="#fnref:netexquery" class="reversefootnote">&#8617;</a></p>
-        </li>
-        <li id="fn:cypher">
-          <p><a href="https://neo4j.com/developer/cypher-query-language/">https:/​/​neo4j.com/developer/cypher-query-language/</a> <a href="#fnref:cypher" class="reversefootnote">&#8617;</a></p>
-        </li>
-        <li id="fn:graphql">
-          <p><a href="https://digitransit.fi/en/developers/apis/1-routing-api/itinerary-planning/">https:/​/​digitransit.fi/en/developers/apis/1-routing-api/itinerary-planning/</a> <a href="#fnref:graphql" class="reversefootnote">&#8617;</a></p>
-        </li>
-      </ol>
+      <li id="fn:portland">
+        <p><a href="https://trimet.org/#/planner">https:/​/​trimet.org/#/planner</a> <a href="#fnref:portland" class="reversefootnote">&#8617;</a></p>
+      </li>
+      <li id="fn:london">
+        <p><a href="https://tfl.gov.uk/plan-a-journey/">https:/​/​tfl.gov.uk/plan-a-journey/</a> <a href="#fnref:london" class="reversefootnote">&#8617;</a></p>
+      </li>
+      <li id="fn:antwerp">
+        <p><a href="https://www.slimnaarantwerpen.be/en/home">https:/​/​www.slimnaarantwerpen.be/en/home</a> <a href="#fnref:antwerp" class="reversefootnote">&#8617;</a></p>
+      </li>
+      <li id="fn:googlemaps">
+        <p><a href="http://maps.google.com/landing/transit/index.html">http:/​/​maps.google.com/landing/transit/index.html</a> <a href="#fnref:googlemaps" class="reversefootnote">&#8617;</a></p>
+      </li>
+      <li id="fn:citymapper">
+        <p><a href="https://citymapper.com/">https:/​/​citymapper.com/</a> <a href="#fnref:citymapper" class="reversefootnote">&#8617;</a></p>
+      </li>
+      <li id="fn:moovit">
+        <p><a href="https://moovitapp.com/">https:/​/​moovitapp.com/</a> <a href="#fnref:moovit" class="reversefootnote">&#8617;</a></p>
+      </li>
+      <li id="fn:process">
+        <p>For a more detailed overview see for example the process to setup Open Trip Planner, a widely used open source route planning application: <a href="https://github.com/opentripplanner/OpenTripPlanner/blob/dev-1.x/docs/Configuration.md">https:/​/​github.com/opentripplanner/OpenTripPlanner/blob/dev-1.x/docs/Configuration.md</a> <a href="#fnref:process" class="reversefootnote">&#8617;</a></p>
+      </li>
+      <li id="fn:airquality">
+        <p>Latest measurments from Europe’s air quality monitoring network: <a href="https://www.eea.europa.eu/data-and-maps/explore-interactive-maps/up-to-date-air-quality-data">https:/​/​www.eea.europa.eu/data-and-maps/explore-interactive-maps/up-to-date-air-quality-data</a> <a href="#fnref:airquality" class="reversefootnote">&#8617;</a></p>
+      </li>
+      <li id="fn:ldprinciples">
+        <p><a href="https://www.w3.org/DesignIssues/LinkedData.html">https:/​/​www.w3.org/DesignIssues/LinkedData.html</a> <a href="#fnref:ldprinciples" class="reversefootnote">&#8617;</a></p>
+      </li>
+      <li id="fn:navitia">
+        <p><a href="http://navitia.io/">http:/​/​navitia.io/</a> <a href="#fnref:navitia" class="reversefootnote">&#8617;</a></p>
+      </li>
+      <li id="fn:plannerstack">
+        <p><a href="http://www.plannerstack.org/">http:/​/​www.plannerstack.org/</a> <a href="#fnref:plannerstack" class="reversefootnote">&#8617;</a></p>
+      </li>
+      <li id="fn:gnontology">
+        <p><a href="http://www.geonames.org/ontology/ontology_v3.1.rdf">http:/​/​www.geonames.org/ontology/ontology_v3.1.rdf</a> <a href="#fnref:gnontology" class="reversefootnote">&#8617;</a></p>
+      </li>
+      <li id="fn:lcontology">
+        <p><a href="http://semweb.mmlab.be/ns/linkedconnections#">http:/​/​semweb.mmlab.be/ns/linkedconnections#</a> <a href="#fnref:lcontology" class="reversefootnote">&#8617;</a></p>
+      </li>
+      <li id="fn:linkedgtfs">
+        <p><a href="http://vocab.gtfs.org/gtfs.ttl#">http:/​/​vocab.gtfs.org/gtfs.ttl#</a> <a href="#fnref:linkedgtfs" class="reversefootnote">&#8617;</a></p>
+      </li>
+      <li id="fn:netexquery">
+        <p><a href="http://www.netex-cen.eu/model/conceptual/passenger_info/index.htm">http:/​/​www.netex-cen.eu/model/conceptual/passenger_info/index.htm</a> <a href="#fnref:netexquery" class="reversefootnote">&#8617;</a></p>
+      </li>
+      <li id="fn:cypher">
+        <p><a href="https://neo4j.com/developer/cypher-query-language/">https:/​/​neo4j.com/developer/cypher-query-language/</a> <a href="#fnref:cypher" class="reversefootnote">&#8617;</a></p>
+      </li>
+      <li id="fn:graphql">
+        <p><a href="https://digitransit.fi/en/developers/apis/1-routing-api/itinerary-planning/">https:/​/​digitransit.fi/en/developers/apis/1-routing-api/itinerary-planning/</a> <a href="#fnref:graphql" class="reversefootnote">&#8617;</a></p>
+      </li>
+    </ol>
 </section>
 </footer>
 
