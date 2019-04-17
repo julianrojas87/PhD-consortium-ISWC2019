@@ -18,4 +18,4 @@ Research Question 2
 : Which query language syntax is the most adequate to declaratively express route planning queries?
 
 Research Question 3
-: Route planning algorithm?
+: Which route planning algorithm is best suited to calculate route alternatives using heterogeneous data while remaining useful in practice?
