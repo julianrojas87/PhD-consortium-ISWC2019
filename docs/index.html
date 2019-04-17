@@ -271,8 +271,8 @@ The approach presented in <span class="references">[<a href="#ref-31">31</a>]</s
 how to perform data source selection based on hypermedia links and controls.
 Hypermedia is also used to semantically describe responses
 of Web APIs in <span class="references">[<a href="#ref-32">32</a>]</span>. A shape-based approach
-using <a property="schema:citation http://purl.org/spar/cito/cites" href="https://www.w3.org/TR/2017/REC-shacl-20170720/">SHACL</a> <span class="references">[<a href="#ref-33">33</a>]</span>, is used to declare a parameterized structure 
-of <abbr title=' Application Programming Interface'>API</abbr> responses.</p>
+using <a property="schema:citation http://purl.org/spar/cito/cites" href="https://www.w3.org/TR/2017/REC-shacl-20170720/">SHACL</a> <span class="references">[<a href="#ref-33">33</a>]</span>, is used by the authors
+to declare a parameterized structure of <abbr title=' Application Programming Interface'>API</abbr> responses.</p>
 
     <p>The use of data summaries as a strategy to enable
 more precise data discovery to improve query response times
@@ -281,7 +281,7 @@ In the same direction, <a property="schema:citation http://purl.org/spar/cito/ci
 defined to semantically describe ordinal ranges within datasets,
 e.g. time-based or geospatial-based ranges,
 which are inherent to the nature
-of route planning related datasets,
+of commonly used route planning related datasets,
 such as public transport network topologies (geospatial range)
 and their schedules (time range).</p>
 
@@ -361,7 +361,7 @@ I thus investigate the following research questions:</p>
       <dt>Research Question 1 -</dt>
       <dd><em>How can route planning queries be expressed in a use-case independent and declarative way that allows identifying data requirements?</em></dd>
       <dt>Research Question 2 -</dt>
-      <dd><em>How can heterogeneous data be published on the Web to enable automated discovery of relevant data sources for route planning purposes?</em></dd>
+      <dd><em>How can heterogeneous data be published on the Web to enable precise automated discovery of relevant data for route planning purposes?</em></dd>
       <dt>Research Question 3 -</dt>
       <dd><em>Which route planning algorithm is best suited to calculate route alternatives using heterogeneous data while remaining useful in practice?</em></dd>
     </dl>
@@ -380,15 +380,43 @@ limiting the type of queries that can be expressed.
 Also, implementation independent approaches
 such as regular expression-based syntaxes do not allow
 for automated identification of data requirements.
-Therefore, I define the following Hypothesis related to <em>Research Question 1</em>:</p>
+Therefore, I define the following Hypothesis related to Research Question 1:</p>
 
     <dl>
       <dt>Hypothesis 1 -</dt>
-      <dd><em>A shape-based semantic model for expressing route planning queries is at least as expressive as state of the art approaches and allow for complete and automatic identification for query solving data requirements.</em></dd>
+      <dd><em>A semantic model for expressing route planning queries is at least as expressive as state of the art approaches and allows for complete and automatic identification of query solving data requirements.</em></dd>
     </dl>
 
-    <p>the publication approach
-needed to allow automated discovery</p>
+    <p>The second research question relates to the problem of automated relevant data discovery.
+Current Linked Data based approaches for publishing data on the Web
+allow for interoperable data integration.
+Moreover, semantically annotated metadata descriptions
+enable relevant data source identification.
+However once discovered, dynamically integrating full datasets during query execution
+render route planning applications unusable for practical use-cases.
+For instance, calculating a route from London to Paris will require discovering
+and integrating data from possible transport modes
+to travel in the UK and France,
+which includes e.g. complete national train networks.
+This causes an impractical overhead,
+since only a subset of such networks is needed in practice.
+Considering this, I define the following Hypothesis related to Research Question 2:</p>
+
+    <dl>
+      <dt>Hypothesis 2 -</dt>
+      <dd><em>A data publishing strategy based on data summaries and declarative metadata containing hypermedia controls allows precise automated relevant data discovery able to reach full completeness in a closed-world environment for route planning query solving.</em></dd>
+    </dl>
+
+    <p>The third research question relates to the performance problem
+of route planning algorithms that support arbitrary multi-criteria queries.
+The performance of current solutions significantly degrades
+with each additional parameter considered for route calculation.
+Therefore, I defined the following Hypothesis related to Research Question 3:</p>
+
+    <dl>
+      <dt>Hypothesis 3 -</dt>
+      <dd><em>A flexible route planning algorithm that adapts to combine multi-criteria graph and non graph-based approaches performs better in terms of query response time than state of the art arbitrary multi-criteria approaches.</em></dd>
+    </dl>
   </section>
 
   <section id="preliminary-results">
@@ -523,7 +551,6 @@ needed to allow automated discovery</p>
   <dd resource="https://dx.doi.org/10.1145/2960414.2960420" typeof="schema:Article">Rutgers, P., Martella, C., Voulgaris, S., Boncz, P.: Powerful and Efficient Bulk Shortest-path Queries: Cypher Language Extension &#38; Giraph Implementation. In: Proceedings of the Fourth International Workshop on Graph Data Management Experiences and Systems. pp. 6:1–6:7. ACM, New York, NY, USA (2016).</dd>
 </dl>
 </section>
-
 <section id="footnotes">
     <h2>Footnotes</h2>
     <ol>

@@ -17,7 +17,7 @@ Research Question 1 -
 : _How can route planning queries be expressed in a use-case independent and declarative way that allows identifying data requirements?_
 
 Research Question 2 -
-: _How can heterogeneous data be published on the Web to enable automated discovery of relevant data sources for route planning purposes?_
+: _How can heterogeneous data be published on the Web to enable precise automated discovery of relevant data for route planning purposes?_
 
 Research Question 3 -
 : _Which route planning algorithm is best suited to calculate route alternatives using heterogeneous data while remaining useful in practice?_

@@ -100,8 +100,8 @@ The approach presented in [](cite:cites vandersande2016) describes
 how to perform data source selection based on hypermedia links and controls.
 Hypermedia is also used to semantically describe responses
 of Web APIs in [](cite:cites taelman2017). A shape-based approach
-using [SHACL](cite:cites shacl), is used to declare a parameterized structure 
-of API responses.
+using [SHACL](cite:cites shacl), is used by the authors
+to declare a parameterized structure of API responses.
 
 The use of data summaries as a strategy to enable
 more precise data discovery to improve query response times
@@ -110,7 +110,7 @@ In the same direction, [Multidimensional Interfaces](cite:cites taelman2016) are
 defined to semantically describe ordinal ranges within datasets,
 e.g. time-based or geospatial-based ranges,
 which are inherent to the nature
-of route planning related datasets,
+of commonly used route planning related datasets,
 such as public transport network topologies (geospatial range)
 and their schedules (time range).
 
