@@ -45,8 +45,8 @@ _resulting in ad-hoc and hence not reusable solutions._
 
 A centralized data approach limits the types of queries supported by route planners,
 which could serve as an explanation of why route planning applications
-such as Google Maps do not allow to query for routes that consider, for example air quality,
-even though this type of data can be found published on the Web as Open Data[^airquality].
+such as Google Maps or Open Trip Planner do not allow to query for routes that consider,
+for example air quality, even though this type of data can be found published on the Web as Open Data[^airquality].
 
 [^process]: For a more detailed overview see for example the process to setup Open Trip Planner, a widely used open source route planning application: <a href="https://github.com/opentripplanner/OpenTripPlanner/blob/dev-1.x/docs/Configuration.md">https://github.com/opentripplanner/OpenTripPlanner/blob/dev-1.x/docs/Configuration.md</a>
 

@@ -16,9 +16,7 @@ for push and pull-based Web interfaces for publishing data streams.
 Also introduce a modular architecture for publishing data summaries
 based on the concepts introduced in [](cite:cites taelman2016).
 Initial results show that push based approaches perform better for
-high frequency data streams.
-
-Also related to Hypothesis 2,
+high frequency data streams. Also related to Hypothesis 2,
 a Linked Data based a approach for publishing road networks is introduced.
 OSM road network data is published in tiles
 allowing clients to dynamically fetch the correct tiles to calculate a route.

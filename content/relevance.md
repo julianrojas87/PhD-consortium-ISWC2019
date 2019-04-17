@@ -18,7 +18,7 @@ They focus on incorporating mobility related data
 about different transport modes into their applications
 to offer more diverse route alternatives.
 
-On the other hand, millions of datasets are [published on the Web](cite:cites noy2019).
+Meanwhile, millions of datasets have been [published on the Web](cite:cites noy2019).
 Following Open Data and Smart City initiatives,
 national and regional governments, private companies and others,
 publish heterogeneous data from multiple domains.

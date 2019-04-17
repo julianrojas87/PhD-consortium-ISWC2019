@@ -82,7 +82,7 @@ They focus on incorporating mobility related data
 about different transport modes into their applications
 to offer more diverse route alternatives.</p>
 
-    <p>On the other hand, millions of datasets are published on the Web <span class="references">[<a href="#ref-11">11</a>]</span>.
+    <p>Meanwhile, millions of datasets have been published on the Web <span class="references">[<a href="#ref-11">11</a>]</span>.
 Following Open Data and Smart City initiatives,
 national and regional governments, private companies and others,
 publish heterogeneous data from multiple domains.
@@ -164,8 +164,8 @@ does not scale, considering the highly diverse data sources found on the Web.</p
 
     <p>A centralized data approach limits the types of queries supported by route planners,
 which could serve as an explanation of why route planning applications
-such as Google Maps do not allow to query for routes that consider, for example air quality,
-even though this type of data can be found published on the Web as Open Data<sup id="fnref:airquality"><a href="#fn:airquality" class="footnote">8</a></sup>.</p>
+such as Google Maps or Open Trip Planner do not allow to query for routes that consider,
+for example air quality, even though this type of data can be found published on the Web as Open Data<sup id="fnref:airquality"><a href="#fn:airquality" class="footnote">8</a></sup>.</p>
 
   </section>
 
@@ -419,6 +419,46 @@ Therefore, I defined the following Hypothesis related to Research Question 3:</p
     </dl>
   </section>
 
+  <section id="approach">
+    <h2>Approach</h2>
+
+    <p>My approach consists of three steps, each related to one of the hypotheses.</p>
+
+    <ol>
+      <li>
+        <p><em>Semantic modeling of route planning queries</em> -
+Definition of a flexible semantic model for route planning queries
+that allows to define the different constraints
+and parameters to be considered during route calculations.
+By using domain vocabularies in a structured way,
+automatic data requirements identification for a given query becomes possible.</p>
+      </li>
+      <li>
+        <p><em>Hypermedia-driven Linked Data summaries</em> -
+Definition of the general requirements needed to
+create and publish data summaries on the Web,
+based on spatial and temporal dimensions
+and including declarative hypermedia controls.
+By interpreting the hypermedia controls,
+route planning applications are able to discover
+and integrate subsets of relevant data sources on the fly.</p>
+      </li>
+      <li>
+        <p><em>Adaptable route planning algorithm</em> -
+Design and implementation of a route planning algorithm
+capable of combining Dijkstra and non Dijkstra-based approaches
+to calculate routes depending on the query data requirements.</p>
+      </li>
+    </ol>
+
+  </section>
+
+  <section id="evaluation-plan">
+    <h2>Evaluation Plan</h2>
+
+    <p class="todo">Evaluation plan…</p>
+  </section>
+
   <section id="preliminary-results">
     <h2>Preliminary Results<sup id="fnref:disclaimer"><a href="#fn:disclaimer" class="footnote">18</a></sup></h2>
 
@@ -437,25 +477,11 @@ for push and pull-based Web interfaces for publishing data streams.
 Also introduce a modular architecture for publishing data summaries
 based on the concepts introduced in <span class="references">[<a href="#ref-35">35</a>]</span>.
 Initial results show that push based approaches perform better for
-high frequency data streams.</p>
-
-    <p>Also related to Hypothesis 2,
+high frequency data streams. Also related to Hypothesis 2,
 a Linked Data based a approach for publishing road networks is introduced.
 <abbr title=' OpenStreetMap'>OSM</abbr> road network data is published in tiles
 allowing clients to dynamically fetch the correct tiles to calculate a route.</p>
 
-  </section>
-
-  <section id="approach">
-    <h2>Approach</h2>
-
-    <p class="todo">Approach…</p>
-  </section>
-
-  <section id="evaluation-plan">
-    <h2>Evaluation Plan</h2>
-
-    <p class="todo">Evaluation plan…</p>
   </section>
 
   <section id="reflections">

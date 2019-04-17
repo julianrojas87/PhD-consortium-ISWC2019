@@ -1,5 +1,0 @@
-## Acknowledgements
-{:#acknowledgements}
-
-Aknowledgements...
-{:.todo}
