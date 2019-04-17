@@ -70,5 +70,8 @@ On the other hand, a route planning API
         <li id="fn:graphql">
         <p><a href="https://digitransit.fi/en/developers/apis/1-routing-api/itinerary-planning/">https:/​/​digitransit.fi/en/developers/apis/1-routing-api/itinerary-planning/</a> <a href="#fnref:graphql" class="reversefootnote">&#8617;</a></p>
         </li>
+        <li id="fn:disclaimer">
+      <p>To comply with the double-blind review process, references to publications on related preliminary work are not provided. <a href="#fnref:disclaimer" class="reversefootnote">&#8617;</a></p>
+    </li>
     </ol>
 </section>

@@ -41,4 +41,4 @@ with each additional parameter considered for route calculation.
 Therefore, I defined the following Hypothesis related to Research Question 3:
 
 Hypothesis 3 -
-: _A flexible route planning algorithm that adapts to combine multi-criteria graph and non graph-based approaches performs better in terms of query response time than state of the art arbitrary multi-criteria approaches._
+: _A flexible route planning algorithm that adapts to combine multi-criteria Dijkstra and non Dijkstra-based approaches performs better in terms of query response time than state of the art arbitrary multi-criteria approaches._

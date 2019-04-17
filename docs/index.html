@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Decentralized Route Planning accross the Web of Data</title>
+  <title>Decentralized Route Planning across the Web of Data</title>
   <link rel="stylesheet" media="screen" href="styles/screen.css" />
   <link rel="stylesheet" media="print"  href="styles/print.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -10,7 +10,7 @@
 </head>
 <body prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs: http://www.w3.org/2000/01/rdf-schema# owl: http://www.w3.org/2002/07/owl# xsd: http://www.w3.org/2001/XMLSchema# dcterms: http://purl.org/dc/terms/ dctypes: http://purl.org/dc/dcmitype/ foaf: http://xmlns.com/foaf/0.1/ v: http://www.w3.org/2006/vcard/ns# pimspace: http://www.w3.org/ns/pim/space# cc: https://creativecommons.org/ns# skos: http://www.w3.org/2004/02/skos/core# prov: http://www.w3.org/ns/prov# qb: http://purl.org/linked-data/cube# schema: http://schema.org/ void: http://rdfs.org/ns/void# rsa: http://www.w3.org/ns/auth/rsa# cert: http://www.w3.org/ns/auth/cert# cal: http://www.w3.org/2002/12/cal/ical# wgs: http://www.w3.org/2003/01/geo/wgs84_pos# org: http://www.w3.org/ns/org# biblio: http://purl.org/net/biblio# bibo: http://purl.org/ontology/bibo/ book: http://purl.org/NET/book/vocab# ov: http://open.vocab.org/terms/ sioc: http://rdfs.org/sioc/ns# doap: http://usefulinc.com/ns/doap# dbr: http://dbpedia.org/resource/ dbp: http://dbpedia.org/property/ sio: http://semanticscience.org/resource/ opmw: http://www.opmw.org/ontology/ deo: http://purl.org/spar/deo/ doco: http://purl.org/spar/doco/ cito: http://purl.org/spar/cito/ fabio: http://purl.org/spar/fabio/ oa: http://www.w3.org/ns/oa# as: https://www.w3.org/ns/activitystreams# ldp: http://www.w3.org/ns/ldp# solid: http://www.w3.org/ns/solid/terms# acl: http://www.w3.org/ns/auth/acl# dio: https://w3id.org/dio# as: https://www.w3.org/ns/activitystreams# oa: http://www.w3.org/ns/oa# ldp: http://www.w3.org/ns/ldp#" typeof="schema:CreativeWork sioc:Post prov:Entity">
   <header>
-  <h1 id="decentralized-route-planning-accross-the-web-of-data">Decentralized Route Planning accross the Web of Data</h1>
+  <h1 id="decentralized-route-planning-across-the-web-of-data">Decentralized Route Planning across the Web of Data</h1>
 
   <!-- <a href="http://www.example.org/" typeof="http://xmlns.com/foaf/0.1/Person" resource="http://www.example.org/#me">John Doe</a>
 
@@ -415,14 +415,35 @@ Therefore, I defined the following Hypothesis related to Research Question 3:</p
 
     <dl>
       <dt>Hypothesis 3 -</dt>
-      <dd><em>A flexible route planning algorithm that adapts to combine multi-criteria graph and non graph-based approaches performs better in terms of query response time than state of the art arbitrary multi-criteria approaches.</em></dd>
+      <dd><em>A flexible route planning algorithm that adapts to combine multi-criteria Dijkstra and non Dijkstra-based approaches performs better in terms of query response time than state of the art arbitrary multi-criteria approaches.</em></dd>
     </dl>
   </section>
 
   <section id="preliminary-results">
-    <h2>Preliminary Results</h2>
+    <h2>Preliminary Results<sup id="fnref:disclaimer"><a href="#fn:disclaimer" class="footnote">18</a></sup></h2>
 
-    <p class="todo">Preliminary results…</p>
+    <p>Preliminary work related to Hypotheses 2 and 3,
+has tested the feasibility of performing decentralized route planning
+over public transport networks including live data.
+Based on the non Dijkstra-based algorithm <span property="schema:citation http://purl.org/spar/cito/cites" resource="https://dx.doi.org/10.1145/3274661"><a href="http://doi.acm.org/10.1145/3274661"><abbr title=' Connection Scan Algorithm'>CSA</abbr></a></span> <span class="references">[<a href="#ref-40">40</a>]</span>
+and a data publishing strategy extended from the proposal given in <span class="references">[<a href="#ref-27">27</a>]</span>,
+clients are able to execute the route planning algorithm on the client-side
+and use hypermedia controls to discover and integrate the data during
+query execution.</p>
+
+    <p>Other preliminary work, related to Hypothesis 2,
+evaluates computational cost and query performance
+for push and pull-based Web interfaces for publishing data streams.
+Also introduce a modular architecture for publishing data summaries
+based on the concepts introduced in <span class="references">[<a href="#ref-35">35</a>]</span>.
+Initial results show that push based approaches perform better for
+high frequency data streams.</p>
+
+    <p>Also related to Hypothesis 2,
+a Linked Data based a approach for publishing road networks is introduced.
+<abbr title=' OpenStreetMap'>OSM</abbr> road network data is published in tiles
+allowing clients to dynamically fetch the correct tiles to calculate a route.</p>
+
   </section>
 
   <section id="approach">
@@ -446,12 +467,6 @@ Therefore, I defined the following Hypothesis related to Research Question 3:</p
 </main>
 
 <footer>
-  <section id="acknowledgements">
-    <h2>Acknowledgements</h2>
-
-    <p class="todo">Aknowledgements…</p>
-  </section>
-
 <section id="references">
 <h2>References</h2>
 <dl class="references">
@@ -605,6 +620,9 @@ Therefore, I defined the following Hypothesis related to Research Question 3:</p
           <li id="fn:graphql">
           <p><a href="https://digitransit.fi/en/developers/apis/1-routing-api/itinerary-planning/">https:/​/​digitransit.fi/en/developers/apis/1-routing-api/itinerary-planning/</a> <a href="#fnref:graphql" class="reversefootnote">&#8617;</a></p>
           </li>
+          <li id="fn:disclaimer">
+        <p>To comply with the double-blind review process, references to publications on related preliminary work are not provided. <a href="#fnref:disclaimer" class="reversefootnote">&#8617;</a></p>
+      </li>
       </ol>
   </section>
 </footer>
