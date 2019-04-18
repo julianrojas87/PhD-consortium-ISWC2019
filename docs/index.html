@@ -28,7 +28,7 @@ tourists discovering attractive routes to go around a new city,
 or bicycle users trying to avoid highly polluted routes
 are some examples where highly individualized route planning is needed.
 <!-- Need         -->
-Current route planning applications lack flexibility.
+Current route planning applications lack query flexibility.
 The types of queries supported by a route planner
 are only determined at design time
 and heavily depend on centralized pre-selected data sources.
@@ -44,7 +44,7 @@ and thus allow creating more flexible
 and personalized route planning applications.
 Semantic Web and Linked Data technologies
 provide a common framework for data integration.
-Yet it remains unclear how relevant data
+Yet it is still unclear how relevant data
 can be automatically discovered
 and reused while remaining independent
 from specific route planning algorithm implementations.
@@ -74,7 +74,7 @@ Public authorities also recognize route planning
 as a mechanism to improve the mobility conditions of their cities and regions,
 by enabling citizens and visitors to move around <a property="schema:citation http://purl.org/spar/cito/cites" href="http://eprints.lse.ac.uk/id/eprint/68875">more efficiently</a> <span class="references">[<a href="#ref-2">2</a>, <a href="#ref-3">3</a>, <a href="#ref-4">4</a>]</span>,
 as it occurs in the case of Portland<sup id="fnref:portland"><a href="#fn:portland" class="footnote">1</a></sup>, London<sup id="fnref:london"><a href="#fn:london" class="footnote">2</a></sup>, Antwerp<sup id="fnref:antwerp"><a href="#fn:antwerp" class="footnote">3</a></sup>, among others.
-In recent years, multimodal route planning has received special <span property="schema:citation http://purl.org/spar/cito/cites" resource="https://dx.doi.org/10.3141/2032-04"><a href="https://doi.org/10.3141/2032-04">attention</a></span> <span class="references">[<a href="#ref-5">5</a>, <a href="#ref-6">6</a>, <a href="#ref-7">7</a>, <a href="#ref-8">8</a>, <a href="#ref-9">9</a>]</span>.
+In recent years, multimodal route planning has received special <a property="schema:citation http://purl.org/spar/cito/cites" href="http://doi.acm.org/10.1145/2699886">attention</a> <span class="references">[<a href="#ref-5">5</a>, <a href="#ref-6">6</a>, <a href="#ref-7">7</a>]</span>.
 Applications like Google Maps<sup id="fnref:googlemaps"><a href="#fn:googlemaps" class="footnote">4</a></sup> or Citymapper<sup id="fnref:citymapper"><a href="#fn:citymapper" class="footnote">5</a></sup>,
 allow users to plan their journeys using multiple transport modes,
 e.g. bus, metro, bicycle or walking.
@@ -82,7 +82,7 @@ They focus on incorporating mobility related data
 about different transport modes into their applications
 to offer more diverse route alternatives.</p>
 
-    <p>Meanwhile, millions of datasets have been published on the Web <span class="references">[<a href="#ref-10">10</a>]</span>.
+    <p>Meanwhile, millions of datasets have been published on the Web <span class="references">[<a href="#ref-8">8</a>]</span>.
 Following Open Data and Smart City initiatives,
 national and regional governments, private companies and others,
 publish heterogeneous data from multiple domains.
@@ -94,8 +94,8 @@ capable of addressing more diverse or specific needs.
 Considering accessibility constraints
 is a very typical scenario for route planning.
 Enabling users to specify for example,
-if they are on a <span property="schema:citation http://purl.org/spar/cito/cites" resource="https://dx.doi.org/10.1145/2596695.2596708"><a href="http://doi.acm.org/10.1145/2596695.2596708">wheelchair</a></span> <span class="references">[<a href="#ref-11">11</a>]</span>
-or if they are visually impaired <span class="references">[<a href="#ref-12">12</a>]</span>,
+if they are on a <span property="schema:citation http://purl.org/spar/cito/cites" resource="https://dx.doi.org/10.1145/2596695.2596708"><a href="http://doi.acm.org/10.1145/2596695.2596708">wheelchair</a></span> <span class="references">[<a href="#ref-9">9</a>]</span>
+or if they are visually impaired <span class="references">[<a href="#ref-10">10</a>]</span>,
 are features that are getting included in existing route planners.</p>
 
     <p>Different types of data available on the Web
@@ -103,7 +103,7 @@ provide virtually unlimited possibilities for extending route planners:
 Environmental data (<em>calculate a route that avoids biking through highly polluted areas</em>),
 meteorological data (<em>calculate a route that limits walking outside under bad weather conditions</em>),
 security-related data (<em>calculate a route that avoid areas with high criminality indexes</em>)
-or even general knowledge bases such as <a property="schema:citation http://purl.org/spar/cito/cites" href="https://link.springer.com/chapter/10.1007/978-3-540-76298-0_52">DBPedia</a> <span class="references">[<a href="#ref-13">13</a>]</span> or <a property="schema:citation http://purl.org/spar/cito/cites" href="http://cacm.acm.org/magazines/2014/10/178785-wikidata/fulltext">Wikidata</a> <span class="references">[<a href="#ref-14">14</a>]</span>
+or even general knowledge bases such as <a property="schema:citation http://purl.org/spar/cito/cites" href="https://link.springer.com/chapter/10.1007/978-3-540-76298-0_52">DBPedia</a> <span class="references">[<a href="#ref-11">11</a>]</span> or <a property="schema:citation http://purl.org/spar/cito/cites" href="http://cacm.acm.org/magazines/2014/10/178785-wikidata/fulltext">Wikidata</a> <span class="references">[<a href="#ref-12">12</a>]</span>
 (<em>calculate a route that pass by the historic monuments of a city</em>)
 are some examples of data that could be used to create enhanced route planners.</p>
 
@@ -113,59 +113,51 @@ are some examples of data that could be used to create enhanced route planners.<
     <h2>Problem Statement</h2>
 
     <p>Currently available route planning applications
-are built following a centralized data strategy.
-For example<sup id="fnref:process"><a href="#fn:process" class="footnote">6</a></sup>, a route planner calculating routes
+are built following a <em>centralized data strategy</em>.
+A route planner<sup id="fnref:process"><a href="#fn:process" class="footnote">6</a></sup> calculating routes
 using both the bus and metro public transport services in a certain city:</p>
 
-    <ul>
+    <ol>
       <li>
-        <p>First collects the dataset of each transport mode,
+        <p>Collects datasets of each transport mode,
 containing the minimum necessary information for route planning,
 i.e. station locations and vehicle schedules.</p>
       </li>
       <li>
-        <p>Then integrates the data
-following a predefined data model in a centralized data store.
-Usually a graph-based model.</p>
+        <p>Integrates the data following a predefined (usually graph-based) data model
+in a centralized data store.</p>
       </li>
       <li>
-        <p>Finally, a route planning algorithm tailored
-to run over the predefined data model,
-is used to calculate available routes.</p>
+        <p>Calculates available routes using a route planning algorithm tailored
+to run over the predefined data model.</p>
       </li>
-    </ul>
+    </ol>
 
     <p>The route planner service offered by Google Maps for example, follows this approach.
 By encouraging public transport operators around the world
-to publish their data using the <a property="schema:citation http://purl.org/spar/cito/cites" href="https://developers.google.com/transit/gtfs/"><abbr title='General Transit Feed Specification'>GTFS</abbr></a> <span class="references">[<a href="#ref-15">15</a>]</span> common format,
+to publish their data using the <a property="schema:citation http://purl.org/spar/cito/cites" href="https://developers.google.com/transit/gtfs/"><abbr title='General Transit Feed Specification'>GTFS</abbr></a> <span class="references">[<a href="#ref-13">13</a>]</span> format,
 Google collects these datasets and integrates them
-into their route planning application.
+into their route planning application.</p>
+
+    <p>However, centralized approaches do not scale
+and limit the query types supported
+when dealing with heterogeneous data.
 As long as data are homogeneous in terms of structure and format,
-i.e. dealing only with public transport data
-defined using a common format as <abbr title='General Transit Feed Specification'>GTFS</abbr>,
+i.e. dealing only with public transport data using a common format as <abbr title='General Transit Feed Specification'>GTFS</abbr>,
 integrating new data sources into a route planning application
 can be easily automated and the same route planning algorithm implementation
 will remain useful without requiring any adaptation.
-However, when dealing with other types of data
-the data model and the route planning algorithm that operates on top of it,
-need to be adapted to support and consider the new data
-when calculating possible routes.
-Manually adapting implementations of route planning applications
-for every new data source that enables to support more diverse queries
-does not scale, considering the highly diverse data sources found on the Web.</p>
+Other types of data make necessary to manually adapt
+the data model and the route planning algorithm that runs on top of it.
+This explains why route planning applications
+such as Google Maps or Open Trip Planner
+do not allow querying for routes that consider, for example air quality,
+even though this type of data can be found published on the Web as Open Data<sup id="fnref:airquality"><a href="#fn:airquality" class="footnote">7</a></sup>.</p>
 
     <dl>
       <dt>Problem Statement -</dt>
-      <dd><em>Integrating new heterogeneous data sources</em>
-<em>to extend route planners capabilities requires human intervention</em>
-<em>to adapt the subjacent data models and route planning algorithm implementations,</em>
-<em>resulting in ad-hoc and hence not reusable solutions.</em></dd>
+      <dd><em>Integrating new heterogeneous data sources to extend route planners capabilities requires adapting the subjacent data models and route planning algorithm implementations, resulting in ad-hoc and hence not reusable solutions.</em></dd>
     </dl>
-
-    <p>A centralized data approach limits the types of queries supported by route planners,
-which could serve as an explanation of why route planning applications
-such as Google Maps or Open Trip Planner do not allow to query for routes that consider,
-for example air quality, even though this type of data can be found published on the Web as Open Data<sup id="fnref:airquality"><a href="#fn:airquality" class="footnote">7</a></sup>.</p>
 
   </section>
 
@@ -175,85 +167,84 @@ for example air quality, even though this type of data can be found published on
     <p>Including new data sources to allow more diverse
 and specific queries in route planning applications
 can be generalized as a data integration problem.
-The <a property="schema:citation http://purl.org/spar/cito/cites" href="http://www.sciam.com/article.cfm?articleID=00048144-10D2-1C70-84A9809EC588EF21">Semantic Web</a> <span class="references">[<a href="#ref-16">16</a>]</span>
-and <a property="schema:citation http://purl.org/spar/cito/cites" href="http://linkeddatabook.com/editions/1.0/">Linked Data</a> <span class="references">[<a href="#ref-17">17</a>]</span> technologies
+The <a property="schema:citation http://purl.org/spar/cito/cites" href="http://www.sciam.com/article.cfm?articleID=00048144-10D2-1C70-84A9809EC588EF21">Semantic Web</a> <span class="references">[<a href="#ref-14">14</a>]</span>
+and <a property="schema:citation http://purl.org/spar/cito/cites" href="http://linkeddatabook.com/editions/1.0/">Linked Data</a> <span class="references">[<a href="#ref-15">15</a>]</span> technologies
 provide a common environment where data
 is given a well-defined meaning,
 better allowing machines to comprehend and
 work with heterogeneous data from different sources.
-Through the <a property="schema:citation http://purl.org/spar/cito/cites" href="http://www.w3.org/TR/rdf11-concepts/"><abbr title='Resource Description Framework'>RDF</abbr> specification</a> <span class="references">[<a href="#ref-18">18</a>]</span>,
-Linked Data is described using a graph-based model, where
-each node in the graph represents a concept, object or
-literal value in the world, and each edge represents
-the logical relation between two of them.
-This graph can be queried upon using the <a property="schema:citation http://purl.org/spar/cito/cites" href="http://www.w3.org/TR/sparql11-query"><abbr title='SPARQL Procotol and RDF Query Language'>SPARQL</abbr></a> <span class="references">[<a href="#ref-19">19</a>]</span> query language,
+Linked Data is described using a graph-based model,
+often materialized in the Resource Description Framework <a property="schema:citation http://purl.org/spar/cito/cites" href="http://www.w3.org/TR/rdf11-concepts/">(<abbr title='Resource Description Framework'>RDF</abbr>)</a> <span class="references">[<a href="#ref-16">16</a>]</span>.
+Each node in the graph represents a concept,
+object or literal value in the world,
+and each edge represents the logical relation between two of them.
+This graph can be queried upon using the <a property="schema:citation http://purl.org/spar/cito/cites" href="http://www.w3.org/TR/sparql11-query"><abbr title='SPARQL Procotol and RDF Query Language'>SPARQL</abbr></a> <span class="references">[<a href="#ref-17">17</a>]</span> query language,
 which is the <abbr title=' World Wide Web Consortium'>W3C</abbr> recommendation to query <abbr title='Resource Description Framework'>RDF</abbr>.</p>
 
     <p>In this section I present an overview
 of different aspects related to the problem
 of dynamically integrating new data sources to enable
 more diverse and specific queries in route planning
-applications.</p>
+applications, such as data publishing and discovery on the Web,
+and route planning algorithms.</p>
 
     <h3 id="data-publishing-on-the-web">Data Publishing on the Web</h3>
 
-    <p>Millions of datasets are published on the Web <span class="references">[<a href="#ref-10">10</a>]</span>.
+    <p>Millions of datasets are published on the Web <span class="references">[<a href="#ref-8">8</a>]</span>.
 Following the right strategy when publishing data
 is key to increase the interoperability and reusability of data,
 and foster the creation of new and innovative services.
 In this direction, Tim Berners-Lee introduced a set of principles<sup id="fnref:ldprinciples"><a href="#fn:ldprinciples" class="footnote">8</a></sup> for
 publishing data as Linked Data on the Web.
 Extending this principles, the <abbr title=' World Wide Web Consortium'>W3C</abbr> published a document of <a property="schema:citation http://purl.org/spar/cito/cites" href="https://www.w3.org/TR/ld-bp/">best practices
-for publishing Linked Data</a> <span class="references">[<a href="#ref-20">20</a>]</span>, which provides a set of guidelines
+for publishing Linked Data</a> <span class="references">[<a href="#ref-18">18</a>]</span>, which provides a set of guidelines
 and design principles aimed at data publishers.</p>
 
-    <p>Traditionally, data is published on the Web following one of two approaches:
-(i) as a data dump or (ii) through an <abbr title=' Application Programming Interface'>API</abbr>.
+    <p>Traditionally, data is often published on the Web
+as a data dump or through an <abbr title=' Application Programming Interface'>API</abbr>.
 In the public transport domain,
-<a property="schema:citation http://purl.org/spar/cito/cites" href="https://developers.google.com/transit/gtfs/"><abbr title='General Transit Feed Specification'>GTFS</abbr></a> <span class="references">[<a href="#ref-15">15</a>]</span>, which is regarded as the de-facto standard
+<a property="schema:citation http://purl.org/spar/cito/cites" href="https://developers.google.com/transit/gtfs/"><abbr title='General Transit Feed Specification'>GTFS</abbr></a> <span class="references">[<a href="#ref-13">13</a>]</span>, which is regarded as the de-facto standard
 for describing and exchanging transit schedules,
 is a common example of data dump publishing.
-The European Committee for Standardization released the <a property="schema:citation http://purl.org/spar/cito/cites" href="http://netex-cen.eu/"><abbr title=' Network and Timetable Exchange'>NeTEx</abbr> standard</a> <span class="references">[<a href="#ref-21">21</a>]</span>
+The European Committee for Standardization released the <a property="schema:citation http://purl.org/spar/cito/cites" href="http://netex-cen.eu/"><abbr title=' Network and Timetable Exchange'>NeTEx</abbr> standard</a> <span class="references">[<a href="#ref-19">19</a>]</span>
 as a general purpose format for exchanging public transport schedules and related data.
 Transport related data is also offered on the Web as route planning APIs.
 Navitia.io<sup id="fnref:navitia"><a href="#fn:navitia" class="footnote">9</a></sup>, Plannerstack<sup id="fnref:plannerstack"><a href="#fn:plannerstack" class="footnote">10</a></sup>, CityMapper
 or the open source Open Trip Planner are some examples.
 Geospatial data is also fundamental for route planning applications.
 Different initiatives exist for publishing geospatial data on the Web.
-For instance, <a property="schema:citation http://purl.org/spar/cito/cites" href="https://www.openstreetmap.org/">OpenStreetMap</a> <span class="references">[<a href="#ref-22">22</a>]</span>(<abbr title=' OpenStreetMap'>OSM</abbr>) stands as a community-driven
+For instance, <a property="schema:citation http://purl.org/spar/cito/cites" href="https://www.openstreetmap.org/">OpenStreetMap</a> <span class="references">[<a href="#ref-20">20</a>]</span>(<abbr title=' OpenStreetMap'>OSM</abbr>) stands as a community-driven
 rich source of freely available spatial data.
-<a property="schema:citation http://purl.org/spar/cito/cites" href="https://link.springer.com/chapter/10.1007/978-3-642-04930-9_46">LinkedGeoData</a> <span class="references">[<a href="#ref-23">23</a>]</span> publishes a spatial knowledge base
+<a property="schema:citation http://purl.org/spar/cito/cites" href="https://link.springer.com/chapter/10.1007/978-3-642-04930-9_46">LinkedGeoData</a> <span class="references">[<a href="#ref-21">21</a>]</span> publishes a spatial knowledge base
 derived from <abbr title=' OpenStreetMap'>OSM</abbr> that uses <abbr title='Resource Description Framework'>RDF</abbr> as its data model.
-Also <a property="schema:citation http://purl.org/spar/cito/cites" href="https://www.geonames.org/">GeoNames</a> <span class="references">[<a href="#ref-24">24</a>]</span> publishes over 25 million geographical names
+Also <a property="schema:citation http://purl.org/spar/cito/cites" href="https://www.geonames.org/">GeoNames</a> <span class="references">[<a href="#ref-22">22</a>]</span> publishes over 25 million geographical names
 using stable URIs and a semantically annotated vocabulary<sup id="fnref:gnontology"><a href="#fn:gnontology" class="footnote">11</a></sup>.</p>
 
-    <p>On the one hand, data dumps offer full flexibility over the data
+    <p>On the one hand, data dumps offer full query flexibility over the data
 but are expensive for clients who need to deal
 with integration of complete datasets.
 On the other hand, APIs offer simpler access to data,
 but are expensive for data publishers
 and limit query flexibility for clients.
-The <a property="schema:citation http://purl.org/spar/cito/cites" href="http://ceur-ws.org/Vol-1184/ldow2014_paper_04.pdf">Linked Data Fragments (<abbr title=' Linked Data Fragments'>LDF</abbr>) framework</a> <span class="references">[<a href="#ref-25">25</a>]</span>
+The <a property="schema:citation http://purl.org/spar/cito/cites" href="http://ceur-ws.org/Vol-1184/ldow2014_paper_04.pdf">Linked Data Fragments (<abbr title=' Linked Data Fragments'>LDF</abbr>) framework</a> <span class="references">[<a href="#ref-23">23</a>]</span>
 explores the different trade-offs in terms of query flexibility
 and computational costs of <em>in between</em> Web interfaces
 determined by <em>fragmenting</em> datasets and publishing them on the Web.
 Based on the <abbr title=' Linked Data Fragments'>LDF</abbr> concept,
-the <a property="schema:citation http://purl.org/spar/cito/cites" href="https://link.springer.com/chapter/10.1007/978-3-319-60131-1_26">Linked Connections specification</a> <span class="references">[<a href="#ref-26">26</a>]</span> was introduced.
-Defined as a light-weight data interface for publishing public transit schedules
-that allows to perform route planning on the client-side,
-it uses the Linked Connections Ontology<sup id="fnref:lcontology"><a href="#fn:lcontology" class="footnote">12</a></sup>
+the <a property="schema:citation http://purl.org/spar/cito/cites" href="https://link.springer.com/chapter/10.1007/978-3-319-60131-1_26">Linked Connections specification</a> <span class="references">[<a href="#ref-24">24</a>]</span> was introduced
+as a light-weight data interface for publishing public transit schedules
+that allows to perform route planning on the client-side.
+It uses the Linked Connections Ontology<sup id="fnref:lcontology"><a href="#fn:lcontology" class="footnote">12</a></sup>
 and the Linked <abbr title='General Transit Feed Specification'>GTFS</abbr> vocabulary<sup id="fnref:linkedgtfs"><a href="#fn:linkedgtfs" class="footnote">13</a></sup> to describe
-vehicle departures in public transport networks <span class="references">[<a href="#ref-27">27</a>]</span>.</p>
+vehicle departures in public transport networks <span class="references">[<a href="#ref-25">25</a>]</span>.</p>
 
     <h3 id="data-discovery-on-the-web">Data Discovery on the Web</h3>
 
-    <p>To dynamically integrate data sources available on the Web
-into route planning applications,
-discovering which data sources are relevant for resolving a certain query
-is a necessary previous step.
-One approach to enable automated discovery of datasets
-is using data catalogs descriptions.
-For instance, the <a property="schema:citation http://purl.org/spar/cito/cites" href="https://www.w3.org/TR/vocab-dcat/">DCAT vocabulary</a> <span class="references">[<a href="#ref-28">28</a>]</span>
+    <p>Discovering data sources which are relevant for resolving a certain query
+is necessary before integrating and reusing new data available on the Web
+in route planning applications.
+<em>Data catalog descriptions</em> enable automated discovery of datasets.
+For instance, the <a property="schema:citation http://purl.org/spar/cito/cites" href="https://www.w3.org/TR/vocab-dcat/">DCAT vocabulary</a> <span class="references">[<a href="#ref-26">26</a>]</span>
 is used to describe high-level metadata (keywords,
 location, data format, etc.) of datasets,
 enabling clients to discover what kind of data
@@ -261,23 +252,22 @@ is contained on a certain dataset and how to access it.
 Given the graph-based nature of Linked Data on the Web,
 active approaches such as link traversal can be used
 to discover data during query execution.
-In <span class="references">[<a href="#ref-29">29</a>]</span> several link traversal approaches
-are studied showing significant improvements in query response time
-compared to a naive approach.</p>
+Hartig et al. <span class="references">[<a href="#ref-27">27</a>]</span> studies several link traversal approaches
+showing significant improvements in query response time compared to a naive approach.</p>
 
-    <p>Hypermedia-based approaches are also considered in the literature
+    <p><em>Hypermedia-based approaches</em> are also considered in the literature
 for enabling automated discovery of data.
-The approach presented in <span class="references">[<a href="#ref-30">30</a>]</span> describes
+The approach presented in Van der Sande et al. <span class="references">[<a href="#ref-28">28</a>]</span> describes
 how to perform data source selection based on hypermedia links and controls.
 Hypermedia is also used to semantically describe responses
-of Web APIs in <span class="references">[<a href="#ref-31">31</a>]</span>. A shape-based approach
-using <a property="schema:citation http://purl.org/spar/cito/cites" href="https://www.w3.org/TR/2017/REC-shacl-20170720/">SHACL</a> <span class="references">[<a href="#ref-32">32</a>]</span>, is used by the authors
-to declare a parameterized structure of <abbr title=' Application Programming Interface'>API</abbr> responses.</p>
+of Web APIs in Tealman et al. <span class="references">[<a href="#ref-29">29</a>]</span>.
+A shape-based approach based on <a property="schema:citation http://purl.org/spar/cito/cites" href="https://www.w3.org/TR/2017/REC-shacl-20170720/">SHACL</a> <span class="references">[<a href="#ref-30">30</a>]</span>,
+is used to define a parameterized structure of <abbr title=' Application Programming Interface'>API</abbr> responses.</p>
 
-    <p>The use of data summaries as a strategy to enable
+    <p>The use of <em>data summaries</em> as a strategy to enable
 more precise data discovery to improve query response times
-is explored in <span class="references">[<a href="#ref-33">33</a>]</span>.
-In the same direction, <a property="schema:citation http://purl.org/spar/cito/cites" href="http://ceur-ws.org/Vol-1666/paper-03.pdf">Multidimensional Interfaces</a> <span class="references">[<a href="#ref-34">34</a>]</span> are
+is explored in Saleem et al. <span class="references">[<a href="#ref-31">31</a>]</span>.
+In the same direction, <a property="schema:citation http://purl.org/spar/cito/cites" href="http://ceur-ws.org/Vol-1666/paper-03.pdf">Multidimensional Interfaces</a> <span class="references">[<a href="#ref-32">32</a>]</span> are
 defined to semantically describe ordinal ranges within datasets,
 e.g. time-based or geospatial-based ranges,
 which are inherent to the nature
@@ -288,20 +278,20 @@ and their schedules (time range).</p>
     <h3 id="route-planning">Route Planning</h3>
 
     <p>Route Planning has been extensively studied throughout the years.
-Multiple algorithms have been proposed to calculate routes
+Multiple algorithms were proposed to calculate routes
 over different types of networks (e.g. road, public transport, multimodal, etc),
 and using different criteria (e.g. shortest path, travel time, number of transfers, etc).
-The authors in <span class="references">[<a href="#ref-35">35</a>]</span> and <span class="references">[<a href="#ref-36">36</a>]</span> present
+Bast et al. <span class="references">[<a href="#ref-33">33</a>]</span> and Pajor <span class="references">[<a href="#ref-34">34</a>]</span> present
 a comparative analysis of multiple route planning algorithms
 for road, public transit and multimodal networks.
 Most algorithms use subjacent graph-based data models
 to represent the different transportation networks over which they operate,
-and are defined as extensions of <span property="schema:citation http://purl.org/spar/cito/cites" resource="https://dx.doi.org/10.1007/BF01386390"><a href="https://doi.org/10.1007/BF01386390">Dijkstra’s algorithm</a></span> <span class="references">[<a href="#ref-37">37</a>]</span>.
+and are defined as extensions of <span property="schema:citation http://purl.org/spar/cito/cites" resource="https://dx.doi.org/10.1007/BF01386390"><a href="https://doi.org/10.1007/BF01386390">Dijkstra’s algorithm</a></span> <span class="references">[<a href="#ref-35">35</a>]</span>.
 In recent years, different approaches
 that disregard Dijkstra-like graph algorithms,
 have been introduced for public transport and multimodal networks.
-<span property="schema:citation http://purl.org/spar/cito/cites" resource="https://dx.doi.org/10.1137/1.9781611975499.5"><a href="https://doi.org/10.1137/1.9781611975499.5"><abbr title=' Round-Based Public Transit Routing'>RAPTOR</abbr></a></span> <span class="references">[<a href="#ref-38">38</a>]</span>, <span property="schema:citation http://purl.org/spar/cito/cites" resource="https://dx.doi.org/10.1145/3274661"><a href="http://doi.acm.org/10.1145/3274661"><abbr title=' Connection Scan Algorithm'>CSA</abbr></a></span> <span class="references">[<a href="#ref-39">39</a>]</span>, <span property="schema:citation http://purl.org/spar/cito/cites" resource="https://dx.doi.org/10.1137/1.9781611974317.2"><a href="https://epubs.siam.org/doi/abs/10.1137/1.9781611974317.2">Transfer Patters</a></span> <span class="references">[<a href="#ref-40">40</a>]</span>,
-<a property="schema:citation http://purl.org/spar/cito/cites" href="https://arxiv.org/pdf/1607.01299.pdf">Trip-based routing</a> <span class="references">[<a href="#ref-41">41</a>]</span> are among the approaches
+<span property="schema:citation http://purl.org/spar/cito/cites" resource="https://dx.doi.org/10.1137/1.9781611975499.5"><a href="https://doi.org/10.1137/1.9781611975499.5"><abbr title=' Round-Based Public Transit Routing'>RAPTOR</abbr></a></span> <span class="references">[<a href="#ref-36">36</a>]</span>, <span property="schema:citation http://purl.org/spar/cito/cites" resource="https://dx.doi.org/10.1145/3274661"><a href="http://doi.acm.org/10.1145/3274661"><abbr title=' Connection Scan Algorithm'>CSA</abbr></a></span> <span class="references">[<a href="#ref-37">37</a>]</span>, <span property="schema:citation http://purl.org/spar/cito/cites" resource="https://dx.doi.org/10.1137/1.9781611974317.2"><a href="https://epubs.siam.org/doi/abs/10.1137/1.9781611974317.2">Transfer Patters</a></span> <span class="references">[<a href="#ref-38">38</a>]</span>,
+<a property="schema:citation http://purl.org/spar/cito/cites" href="https://arxiv.org/pdf/1607.01299.pdf">Trip-based routing</a> <span class="references">[<a href="#ref-39">39</a>]</span> are among the approaches
 that exploit the basic elements of public transport networks
 to calculate routes directly on the timetables.</p>
 
@@ -309,32 +299,33 @@ to calculate routes directly on the timetables.</p>
 that route planning algorithms should support.
 The parameters supported by route planning algorithms
 change from one approach to another depending on the data model,
-the algorithm implementation and the use-case.
-In <span class="references">[<a href="#ref-7">7</a>]</span> a list of data requirements
-for <em>ideal multimodal route planners</em> is introduced.
+the algorithm implementation and use-case.
+Kelly et al. <span class="references">[<a href="#ref-6">6</a>]</span> presents a list of data requirements
+for <em>ideal multimodal route planners</em>.
 It identifies 22 different parameters from traditional data sources such as <abbr title='General Transit Feed Specification'>GTFS</abbr> feeds and <abbr title=' OpenStreetMap'>OSM</abbr>.
 The <abbr title=' Network and Timetable Exchange'>NeTEx</abbr> standard defines also a <em>Trip Plan Query Model</em><sup id="fnref:netexquery"><a href="#fn:netexquery" class="footnote">14</a></sup>
 that considers among others, accessibility, via and trip fares parameters.
 A extensive analysis of formal languages using regular expressions
-to define constrained shortest path queries is presented in <span class="references">[<a href="#ref-42">42</a>]</span>.
+to define constrained shortest path queries is presented in Barret et al. <span class="references">[<a href="#ref-40">40</a>]</span>.
 Furthermore, the Web of Data opens the door for new possibilities
 and use-cases that need to be supported by route planning algorithms.
 For instance, the Multi-Criteria <abbr title=' Round-Based Public Transit Routing'>RAPTOR</abbr> algorithm supports
 route calculation with an arbitrary number of input parameters.
 However, additional criteria has a significant impact on the algorithm performance,
-causing it to become too slow for practical use <span class="references">[<a href="#ref-38">38</a>]</span>.</p>
+causing it to become too slow for practical use <span class="references">[<a href="#ref-36">36</a>]</span>.</p>
 
     <p>Given that Linked Data is also described using a graph-based model,
 the problem of finding routes between nodes have been previously studied.
 <abbr title='SPARQL Procotol and RDF Query Language'>SPARQL</abbr> 1.1 introduced the Property Paths (<abbr title=' Property Paths'>PP</abbr>) syntax
-that allow query engines to test for path existence between nodes.
-In <span class="references">[<a href="#ref-43">43</a>]</span> an extension for <abbr title=' Property Paths'>PP</abbr> syntax is proposed
+that allows query engines to test for path existence between nodes.
+Savenkov et al. <span class="references">[<a href="#ref-41">41</a>]</span> propose an extension for <abbr title=' Property Paths'>PP</abbr> syntax
 to compute the top-k shortest paths of a given path expression between two nodes.
-An extension of the query semantics of <abbr title=' Property Paths'>PP</abbr> is presented in <span class="references">[<a href="#ref-44">44</a>]</span>
+An extension of the query semantics of <abbr title=' Property Paths'>PP</abbr> is also presented in Hartig et al. <span class="references">[<a href="#ref-42">42</a>]</span>
 to support navigation of <abbr title=' Property Paths'>PP</abbr> over the Web of Data instead of over single <abbr title='Resource Description Framework'>RDF</abbr> graphs.
-A more expressive alternative is later introduced as the <span property="schema:citation http://purl.org/spar/cito/cites" resource="https://dx.doi.org/https://doi.org/10.1016/j.websem.2016.10.001"><a href="http://www.sciencedirect.com/science/article/pii/S1570826816300476">Linked Data Query Language (<abbr title=' Linked Data Query Language'>LDQL</abbr>)</a></span> <span class="references">[<a href="#ref-45">45</a>]</span>
+A more expressive alternative is later introduced as the <span property="schema:citation http://purl.org/spar/cito/cites" resource="https://dx.doi.org/https://doi.org/10.1016/j.websem.2016.10.001"><a href="http://www.sciencedirect.com/science/article/pii/S1570826816300476">Linked Data Query Language (<abbr title=' Linked Data Query Language'>LDQL</abbr>)</a></span> <span class="references">[<a href="#ref-43">43</a>]</span>
 that allows expressing query graph patterns and navigation paths independently.
-Another approach is introduced in <span class="references">[<a href="#ref-46">46</a>]</span> as an extension of the property graph query language
+Another approach is introduced in Rutgers et al. <span class="references">[<a href="#ref-44">44</a>]</span>
+as an extension of the property graph query language
 CypherQL<sup id="fnref:cypher"><a href="#fn:cypher" class="footnote">15</a></sup>, which allows for top-k shortest paths queries,
 calculated path weights and filtering on path edges and nodes.
 Lastly, multimodal route plans are calculated using a GraphQL interface
@@ -348,22 +339,22 @@ published by the Finish Transit Agency<sup id="fnref:graphql"><a href="#fn:graph
     <p>Given the related work,
 the need for a structured and declarative approach
 to express route planning queries,
-that allows identifying specific data requirements becomes apparent.
-Also, is possible to highlight the need for
-a publishing strategy of heterogeneous data on the Web,
-that enables automated discovery of relevant data for route planning purposes.
-Finally, a generic and flexible route planning algorithm,
-capable of dynamically integrating multiple heterogeneous data sources
-while remaining useful in practice, is needed.
+that allows identifying specific data requirements
+to resolve them becomes apparent.
+A publishing strategy of heterogeneous data on the Web,
+that enables automated discovery of relevant data for route planning purposes, is also needed.
+Moreover, a generic and flexible route planning algorithm,
+capable of dynamically integrating multiple heterogeneous data
+while remaining usable in practice, is needed.
 I thus investigate the following research questions:</p>
 
     <dl>
       <dt>Research Question 1 -</dt>
-      <dd><em>How can route planning queries be expressed in a use-case independent and declarative way that allows identifying data requirements?</em></dd>
+      <dd><em>How can route planning queries be expressed in a use-case independent and declarative way that allows identifying data requirements for resolving given queries?</em></dd>
       <dt>Research Question 2 -</dt>
       <dd><em>How can heterogeneous data be published on the Web to enable precise automated discovery of relevant data for route planning purposes?</em></dd>
       <dt>Research Question 3 -</dt>
-      <dd><em>Which route planning algorithm is best suited to calculate route alternatives using heterogeneous data while remaining useful in practice?</em></dd>
+      <dd><em>Which route planning algorithm is best suited to calculate route alternatives using heterogeneous data while remaining usable in practice?</em></dd>
     </dl>
   </section>
 
@@ -372,8 +363,8 @@ I thus investigate the following research questions:</p>
 
     <p>The first research question is related to the need
 of having a declarative and use-case independent mechanism
-to express route planning queries that allows for the inclusion of arbitrary constraints,
-while being self-describing about the type of data that will be needed to answer the query.
+to express route planning queries, that allows including arbitrary constraints,
+while being self-describing about the type of data needed to answer a query.
 Existing solutions are usually tightly coupled
 to the subjacent data model and algorithm implementation,
 limiting the type of queries that can be expressed.
@@ -404,18 +395,18 @@ Considering this, I define the following Hypothesis related to Research Question
 
     <dl>
       <dt>Hypothesis 2 -</dt>
-      <dd><em>A data publishing strategy based on data summaries and declarative metadata containing hypermedia controls allows precise automated relevant data discovery able to reach full completeness in a closed-world environment for route planning query solving.</em></dd>
+      <dd><em>A data publishing strategy based on data summaries and declarative metadata containing hypermedia controls enables precise automated data discovery able to reach full completeness in a closed-world environment for route planning query solving.</em></dd>
     </dl>
 
     <p>The third research question relates to the performance problem
 of route planning algorithms that support arbitrary multi-criteria queries.
 The performance of current solutions significantly degrades
 with each additional parameter considered for route calculation.
-Therefore, I defined the following Hypothesis related to Research Question 3:</p>
+Thus, I defined the following Hypothesis related to Research Question 3:</p>
 
     <dl>
       <dt>Hypothesis 3 -</dt>
-      <dd><em>A flexible route planning algorithm that adapts to combine multi-criteria Dijkstra and non Dijkstra-based approaches performs better in terms of query response time and provides answers at least as complete as the state of the art arbitrary multi-criteria approaches.</em></dd>
+      <dd><em>A adaptable route planning algorithm capable of combining multi-criteria Dijkstra and non Dijkstra-based approaches performs better in terms of query response time and provides answers at least as complete as the state of the art arbitrary multi-criteria approaches.</em></dd>
     </dl>
   </section>
 
@@ -427,15 +418,15 @@ Therefore, I defined the following Hypothesis related to Research Question 3:</p
     <ol>
       <li>
         <p><em>Semantic modeling of route planning queries</em> -
-Definition of a flexible semantic model for route planning queries
-that allows to define the different constraints
-and parameters to be considered during route calculations.
+A flexible semantic model to describe route planning queries
+that considers different constraints
+and parameters for route calculations.
 By using domain vocabularies in a structured way,
 automatic data requirements identification for a given query becomes possible.</p>
       </li>
       <li>
         <p><em>Hypermedia-driven Linked Data summaries</em> -
-Definition of the general requirements needed to
+Definition of general requirements to
 create and publish data summaries on the Web,
 based on spatial and temporal dimensions
 and including declarative hypermedia controls.
@@ -487,8 +478,8 @@ route planning algorithms.</p>
     <p>Preliminary work related to Hypotheses 2 and 3,
 has tested the feasibility of performing decentralized route planning
 over public transport networks including live data.
-Based on the non Dijkstra-based algorithm <span property="schema:citation http://purl.org/spar/cito/cites" resource="https://dx.doi.org/10.1145/3274661"><a href="http://doi.acm.org/10.1145/3274661"><abbr title=' Connection Scan Algorithm'>CSA</abbr></a></span> <span class="references">[<a href="#ref-39">39</a>]</span>
-and a data publishing strategy extended from the proposal given in <span class="references">[<a href="#ref-26">26</a>]</span>,
+Based on the non Dijkstra-based algorithm <span property="schema:citation http://purl.org/spar/cito/cites" resource="https://dx.doi.org/10.1145/3274661"><a href="http://doi.acm.org/10.1145/3274661"><abbr title=' Connection Scan Algorithm'>CSA</abbr></a></span> <span class="references">[<a href="#ref-37">37</a>]</span>
+and a data publishing strategy extended from the proposal given in <span class="references">[<a href="#ref-24">24</a>]</span>,
 clients are able to execute the route planning algorithm on the client-side
 and use hypermedia controls to discover and integrate the data during
 query execution.</p>
@@ -497,7 +488,7 @@ query execution.</p>
 evaluates computational cost and query performance
 for push and pull-based Web interfaces for publishing data streams.
 Also introduce a modular architecture for publishing data summaries
-based on the concepts introduced in <span class="references">[<a href="#ref-34">34</a>]</span>.
+based on the concepts introduced in <span class="references">[<a href="#ref-32">32</a>]</span>.
 Initial results show that push based approaches perform better for
 high frequency data streams. Also related to Hypothesis 2,
 a Linked Data based a approach for publishing road networks is introduced.
@@ -510,8 +501,8 @@ allowing clients to dynamically fetch the correct tiles to calculate a route.</p
     <h2>Reflections</h2>
 
     <p>Route planning applications are often showcased as a success story for the Open Data movement.
-How by publishing public transport schedules as Open Data on the Web,
-a wave o innovation was triggered, leading to the creation of applications used by millions.
+By publishing public transport schedules as Open Data on the Web,
+a wave of innovation was triggered, leading to the creation of applications used by millions.
 Today the Web offers a much more diverse world of data
 with virtually unlimited possibilities.
 Bringing the power of the Semantic Web and Linked Data to route planning
@@ -519,7 +510,8 @@ could open the door for the next innovation wave.
 Automating data integration in route planners
 sets the bases for building more flexible
 and personalized applications, able to consider and learn from the needs
-of their users and provide more opportune and significant answers.</p>
+of their users to provide more opportune and significant answers.</p>
+
   </section>
 
 </main>
@@ -537,92 +529,87 @@ of their users and provide more opportune and significant answers.</p>
   <dt id="ref-4">[4]</dt>
   <dd resource="https://ntnuopen.ntnu.no/ntnu-xmlui/handle/11250/2579413" typeof="schema:Article">Ahlers, D., Akerkar, R., Krogstie, J., Opdahl, A.L., Tessem, B., Zhang, W.: Harnessing Mobility Data in Cities: A Case Study From the Bergen Region. Presented at the (2018).</dd>
   <dt id="ref-5">[5]</dt>
-  <dd resource="https://dx.doi.org/10.3141/2032-04" typeof="schema:Article">Aifadopoulou, G., Ziliaskopoulos, A., Chrisohoou, E.: Multiobjective Optimum Path Algorithm for Passenger Pretrip Planning in Multimodal Transportation Networks. Transportation Research Record. 2032, 26–34 (2007).</dd>
-  <dt id="ref-6">[6]</dt>
   <dd resource="http://doi.acm.org/10.1145/2699886" typeof="schema:Article">Dibbelt, J., Pajor, T., Wagner, D.: User-Constrained Multimodal Route Planning. J. Exp. Algorithmics. 19, 1–19 (2015).</dd>
-  <dt id="ref-7">[7]</dt>
+  <dt id="ref-6">[6]</dt>
   <dd resource="https://www.nctr.usf.edu/wp-content/uploads/2011/06/77926.pdf" typeof="schema:CreativeWork">Kelly, T., Miller, R., Datz, A., Hillsman, E., Barbeau, S.: Enabling Cost-Effective Multimodal Trip Planners through Open Transit Data. National Center for Transit Research, <a href="https://www.nctr.usf.edu/wp-content/uploads/2011/06/77926.pdf">https:/​/​www.nctr.usf.edu/wp-content/uploads/2011/06/77926.pdf</a> (2011).</dd>
-  <dt id="ref-8">[8]</dt>
-  <dd resource="https://dx.doi.org/10.1109/TITS.2006.890077" typeof="schema:Article">Rehrl, K., Bruntsch, S., Mentz, H.: Assisting Multimodal Travelers: Design and Prototypical Implementation of a Personal Travel Companion. IEEE Transactions on Intelligent Transportation Systems. 8, 31–42 (2007).</dd>
-  <dt id="ref-9">[9]</dt>
+  <dt id="ref-7">[7]</dt>
   <dd resource="https://dx.doi.org/https://doi.org/10.1016/j.compenvurbsys.2017.08.012" typeof="schema:Article">Kujala, R., Weckström, C., Mladenović, M.N., Saramäki, J.: Travel times and transfers in public transport: Comprehensive accessibility analysis based on Pareto-optimal journeys. Computers, Environment and Urban Systems. 67, 41–54 (2018).</dd>
-  <dt id="ref-10">[10]</dt>
+  <dt id="ref-8">[8]</dt>
   <dd resource="#noy2019" typeof="schema:Article">Noy, N., Burgess, M., Brickley, D.: Google Dataset Search: Building a search engine for datasets in an open Web ecosystem. In: 28th Web Conference (WebConf 2019) (2019).</dd>
-  <dt id="ref-11">[11]</dt>
+  <dt id="ref-9">[9]</dt>
   <dd resource="https://dx.doi.org/10.1145/2596695.2596708" typeof="schema:Article">Ding, C., Wald, M., Wills, G.: A Survey of Open Accessibility Data. In: Proceedings of the 11th Web for All Conference. pp. 37:1–37:4. ACM, New York, NY, USA (2014).</dd>
-  <dt id="ref-12">[12]</dt>
+  <dt id="ref-10">[10]</dt>
   <dd resource="#dornhofer2014" typeof="schema:Article">Dornhofer, M., Bischof, W., Krajnc, E.: Comparison of Open Source routing services with OpenStreetMap Data for blind pedestrians. Presented at the (2014).</dd>
-  <dt id="ref-13">[13]</dt>
+  <dt id="ref-11">[11]</dt>
   <dd resource="https://link.springer.com/chapter/10.1007/978-3-540-76298-0_52" typeof="schema:Article">Auer, S., Bizer, C., Kobilarov, G., Lehmann, J., Cyganiak, R., Ives, Z.: DBpedia: A Nucleus for a Web of Open Data. In: The Semantic Web. pp. 722–735. Springer Berlin Heidelberg, Berlin, Heidelberg (2007).</dd>
-  <dt id="ref-14">[14]</dt>
+  <dt id="ref-12">[12]</dt>
   <dd resource="http://cacm.acm.org/magazines/2014/10/178785-wikidata/fulltext" typeof="schema:Article">Vrandečić, D., Krötzsch, M.: Wikidata: A Free Collaborative Knowledge Base. Communications of the ACM. 57, 78–85 (2014).</dd>
-  <dt id="ref-15">[15]</dt>
+  <dt id="ref-13">[13]</dt>
   <dd resource="https://developers.google.com/transit/gtfs/" typeof="schema:CreativeWork">General Transit Feed Specification. <a href="https://developers.google.com/transit/gtfs/">https:/​/​developers.google.com/transit/gtfs/</a> (2006).</dd>
-  <dt id="ref-16">[16]</dt>
+  <dt id="ref-14">[14]</dt>
   <dd resource="http://www.sciam.com/article.cfm?articleID=00048144-10D2-1C70-84A9809EC588EF21" typeof="schema:Article">Berners-Lee, T., Hendler, J., Lassila, O.: The Semantic Web. Scientific American. 284, 34–43 (2001).</dd>
-  <dt id="ref-17">[17]</dt>
+  <dt id="ref-15">[15]</dt>
   <dd resource="http://linkeddatabook.com/editions/1.0/" typeof="schema:Article">Heath, T., Bizer, C.: Linked Data: Evolving the Web into a Global Data Space. (2011).</dd>
-  <dt id="ref-18">[18]</dt>
+  <dt id="ref-16">[16]</dt>
   <dd resource="http://www.w3.org/TR/rdf11-concepts/" typeof="schema:CreativeWork">Cyganiak, R., Wood, D., Lanthaler, M.: <abbr title='Resource Description Framework'>RDF</abbr> 1.1 Concepts and Abstract Syntax. World Wide Web Consortium, <a href="http://www.w3.org/TR/rdf11-concepts/">http:/​/​www.w3.org/TR/rdf11-concepts/</a> (2014).</dd>
-  <dt id="ref-19">[19]</dt>
+  <dt id="ref-17">[17]</dt>
   <dd resource="http://www.w3.org/TR/sparql11-query" typeof="schema:CreativeWork">Prud’hommeaux, E., Harris, S., Seaborne, A. eds: <abbr title='SPARQL Procotol and RDF Query Language'>SPARQL</abbr> 1.1 Query Language. <abbr title=' World Wide Web Consortium'>W3C</abbr>, <a href="http://www.w3.org/TR/sparql11-query">http:/​/​www.w3.org/TR/sparql11-query</a> (2013).</dd>
-  <dt id="ref-20">[20]</dt>
+  <dt id="ref-18">[18]</dt>
   <dd resource="https://www.w3.org/TR/ld-bp/" typeof="schema:CreativeWork">Hyland, B., Atemezing, G., Villazón-Terrazas, B.: Best Practices for Publishing Linked Data. World Wide Web Consortium, <a href="https://www.w3.org/TR/ld-bp/">https:/​/​www.w3.org/TR/ld-bp/</a> (2014).</dd>
-  <dt id="ref-21">[21]</dt>
+  <dt id="ref-19">[19]</dt>
   <dd resource="http://netex-cen.eu/" typeof="schema:CreativeWork">Network and Timetable Exchange. <a href="http://netex-cen.eu/">http:/​/​netex-cen.eu/</a> (2014).</dd>
-  <dt id="ref-22">[22]</dt>
+  <dt id="ref-20">[20]</dt>
   <dd resource="https://www.openstreetmap.org/" typeof="schema:CreativeWork">OpenStreetMap. <a href="https://www.openstreetmap.org/">https:/​/​www.openstreetmap.org/</a> (2004).</dd>
-  <dt id="ref-23">[23]</dt>
+  <dt id="ref-21">[21]</dt>
   <dd resource="https://link.springer.com/chapter/10.1007/978-3-642-04930-9_46" typeof="schema:Article">Auer, S., Lehmann, J., Hellmann, S.: LinkedGeoData: Adding a Spatial Dimension to the Web of Data. In: The Semantic Web - ISWC 2009. pp. 731–746. Springer Berlin Heidelberg (2009).</dd>
-  <dt id="ref-24">[24]</dt>
+  <dt id="ref-22">[22]</dt>
   <dd resource="https://www.geonames.org/" typeof="schema:CreativeWork">GeoNames. <a href="https://www.geonames.org/">https:/​/​www.geonames.org/</a></dd>
-  <dt id="ref-25">[25]</dt>
+  <dt id="ref-23">[23]</dt>
   <dd resource="http://ceur-ws.org/Vol-1184/ldow2014_paper_04.pdf" typeof="schema:Article">Verborgh, R., Vander Sande, M., Colpaert, P., Coppens, S., Mannens, E., Van de Walle, R.: Web-Scale Querying through Linked Data Fragments. In: Bizer, C., Heath, T., Auer, S., and Berners-Lee, T. (eds.) Proceedings of the 7th Workshop on Linked Data on the Web (2014).</dd>
-  <dt id="ref-26">[26]</dt>
+  <dt id="ref-24">[24]</dt>
   <dd resource="https://link.springer.com/chapter/10.1007/978-3-319-60131-1_26" typeof="schema:Article">Colpaert, P., Verborgh, R., Mannens, E.: Public Transit Route Planning Through Lightweight Linked Data Interfaces. In: Cabot, J., De Virgilio, R., and Torlone, R. (eds.) Web Engineering. pp. 403–411. Springer International Publishing (2017).</dd>
-  <dt id="ref-27">[27]</dt>
+  <dt id="ref-25">[25]</dt>
   <dd resource="https://phd.pietercolpaert.be" typeof="schema:Thesis">Colpaert, P.: Publishing Transport Data for Maximum Reuse. <a href="https://phd.pietercolpaert.be">https:/​/​phd.pietercolpaert.be</a> (2017).</dd>
-  <dt id="ref-28">[28]</dt>
+  <dt id="ref-26">[26]</dt>
   <dd resource="https://www.w3.org/TR/vocab-dcat/" typeof="schema:CreativeWork">Maali, F., Erickson, J.: Data Catalog Vocabulary (DCAT). <a href="https://www.w3.org/TR/vocab-dcat/">https:/​/​www.w3.org/TR/vocab-dcat/</a> (2014).</dd>
-  <dt id="ref-29">[29]</dt>
+  <dt id="ref-27">[27]</dt>
   <dd resource="https://link.springer.com/chapter/10.1007/978-3-319-46523-4_19" typeof="schema:Article">Hartig, O., Özsu, M.T.: Walking Without a Map: Ranking-Based Traversal for Querying Linked Data. In: The Semantic Web – ISWC 2016. pp. 305–324. Springer International Publishing (2016).</dd>
-  <dt id="ref-30">[30]</dt>
+  <dt id="ref-28">[28]</dt>
   <dd resource="https://dx.doi.org/10.4018/IJSWIS.2016070103" typeof="schema:Article">Vander Sande, M., Verborgh, R., Dimou, A., Colpaert, P., Mannens, E.: Hypermedia-based Discovery for Source Selection using Low-Cost Linked Data Interfaces. International Journal on Semantic Web and Information Systems. 12, 79–110 (2016).</dd>
-  <dt id="ref-31">[31]</dt>
+  <dt id="ref-29">[29]</dt>
   <dd resource="https://linkeddatafragments.github.io/Article-Declarative-Hypermedia-Responses/" typeof="schema:Article">Taelman, R., Verborgh, R.: Declaratively Describing Responses of Hypermedia-Driven Web APIs. In: Proceedings of the 9th International Conference on Knowledge Capture (2017).</dd>
-  <dt id="ref-32">[32]</dt>
+  <dt id="ref-30">[30]</dt>
   <dd resource="https://www.w3.org/TR/2017/REC-shacl-20170720/" typeof="schema:CreativeWork">Knublauch, H., Dimitris, K.: Shapes Constraint Language (SHACL). <a href="https://www.w3.org/TR/2017/REC-shacl-20170720/">https:/​/​www.w3.org/TR/2017/REC-shacl-20170720/</a> (2017).</dd>
-  <dt id="ref-33">[33]</dt>
+  <dt id="ref-31">[31]</dt>
   <dd resource="#saleem2014" typeof="schema:Article">Saleem, M., Ngonga Ngomo, A.-C.: HiBISCuS: Hypergraph-Based Source Selection for <abbr title='SPARQL Procotol and RDF Query Language'>SPARQL</abbr> Endpoint Federation. In: The Semantic Web: Trends and Challenges. pp. 176–191. Springer International Publishing, Cham (2014).</dd>
-  <dt id="ref-34">[34]</dt>
+  <dt id="ref-32">[32]</dt>
   <dd resource="http://ceur-ws.org/Vol-1666/paper-03.pdf" typeof="schema:Article">Taelman, R., Colpaert, P., Verborgh, R., Mannens, E.: Multidimensional Interfaces for Selecting Data within Ordinal Ranges. In: Hartig, O., Sequeda, J., and Hogan, A. (eds.) Proceedings of the 7th International Workshop on Consuming Linked Data (2016).</dd>
-  <dt id="ref-35">[35]</dt>
+  <dt id="ref-33">[33]</dt>
   <dd resource="http://arxiv.org/abs/1504.05140" typeof="schema:Article">Bast, H., Delling, D., Goldberg, A.V., Müller-Hannemann, M., Pajor, T., Sanders, P., Wagner, D., Werneck, R.F.: Route Planning in Transportation Networks. CoRR. abs/1504.05140, (2015).</dd>
-  <dt id="ref-36">[36]</dt>
+  <dt id="ref-34">[34]</dt>
   <dd resource="https://d-nb.info/1058165240/34" typeof="schema:Thesis">Pajor, T.: Algorithm Engineering for Realistic Journey Planning in Transportation Networks. <a href="https://d-nb.info/1058165240/34">https:/​/​d-nb.info/1058165240/34</a> (2013).</dd>
-  <dt id="ref-37">[37]</dt>
+  <dt id="ref-35">[35]</dt>
   <dd resource="https://dx.doi.org/10.1007/BF01386390" typeof="schema:Article">Dijkstra, E.W.: A note on two problems in connexion with graphs. Numerische Mathematik. 1, 269–271 (1959).</dd>
-  <dt id="ref-38">[38]</dt>
+  <dt id="ref-36">[36]</dt>
   <dd resource="https://dx.doi.org/10.1137/1.9781611975499.5" typeof="schema:Article">Delling, D., Dibbelt, J., Pajor, T.: Fast and Exact Public Transit Routing with Restricted Pareto Sets. In: Proceedings of the Twenty-First Workshop on Algorithm Engineering and Experiments, ALENEX 2019, San Diego, CA, USA, January 7-8, 2019. pp. 54–65 (2019).</dd>
-  <dt id="ref-39">[39]</dt>
+  <dt id="ref-37">[37]</dt>
   <dd resource="https://dx.doi.org/10.1145/3274661" typeof="schema:Article">Dibbelt, J., Pajor, T., Strasser, B., Wagner, D.: Connection Scan Algorithm. J. Exp. Algorithmics. 23, 1.7:1–1.7:56 (2018).</dd>
-  <dt id="ref-40">[40]</dt>
+  <dt id="ref-38">[38]</dt>
   <dd resource="https://dx.doi.org/10.1137/1.9781611974317.2" typeof="schema:CreativeWork">Bast, H., Hertel, M., Storandt, S.: Scalable Transfer Patterns. In: 2016 Proceedings of the Eighteenth Workshop on Algorithm Engineering and Experiments (ALENEX). pp. 15–29</dd>
-  <dt id="ref-41">[41]</dt>
+  <dt id="ref-39">[39]</dt>
   <dd resource="https://arxiv.org/pdf/1607.01299.pdf" typeof="schema:Article">Witt, S.: Trip-Based Public Transit Routing Using Condensed Search Trees. In: ATMOS (2016).</dd>
-  <dt id="ref-42">[42]</dt>
+  <dt id="ref-40">[40]</dt>
   <dd resource="https://dx.doi.org/10.1137/S0097539798337716" typeof="schema:Article">Barrett, C., Jacob, R., Marathe, M.: Formal-Language-Constrained Path Problems. SIAM Journal on Computing. 30, 809–837 (2000).</dd>
-  <dt id="ref-43">[43]</dt>
+  <dt id="ref-41">[41]</dt>
   <dd resource="https://dx.doi.org/10.1145/3132218.3132239" typeof="schema:Article">Savenkov, V., Mehmood, Q., Umbrich, J., Polleres, A.: Counting to K or How SPARQL1.1 Property Paths Can Be Extended to Top-k Path Queries. In: Proceedings of the 13th International Conference on Semantic Systems. pp. 97–103. ACM, New York, NY, USA (2017).</dd>
-  <dt id="ref-44">[44]</dt>
+  <dt id="ref-42">[42]</dt>
   <dd resource="#hartig2015" typeof="schema:Article">Hartig, O., Pirrò, G.: A Context-Based Semantics for <abbr title='SPARQL Procotol and RDF Query Language'>SPARQL</abbr> Property Paths Over the Web. In: The Semantic Web. Latest Advances and New Domains. pp. 71–87. Springer International Publishing, Cham (2015).</dd>
-  <dt id="ref-45">[45]</dt>
+  <dt id="ref-43">[43]</dt>
   <dd resource="https://dx.doi.org/https://doi.org/10.1016/j.websem.2016.10.001" typeof="schema:Article">Hartig, O., Pérez, J.: <abbr title=' Linked Data Query Language'>LDQL</abbr>: A query language for the Web of Linked Data. Journal of Web Semantics. 41, 9–29 (2016).</dd>
-  <dt id="ref-46">[46]</dt>
+  <dt id="ref-44">[44]</dt>
   <dd resource="https://dx.doi.org/10.1145/2960414.2960420" typeof="schema:Article">Rutgers, P., Martella, C., Voulgaris, S., Boncz, P.: Powerful and Efficient Bulk Shortest-path Queries: Cypher Language Extension &#38; Giraph Implementation. In: Proceedings of the Fourth International Workshop on Graph Data Management Experiences and Systems. pp. 6:1–6:7. ACM, New York, NY, USA (2016).</dd>
 </dl>
 </section>
-
 <section id="footnotes">
     <h2>Footnotes</h2>
     <ol>

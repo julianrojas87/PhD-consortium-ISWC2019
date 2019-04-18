@@ -5,7 +5,7 @@ tourists discovering attractive routes to go around a new city,
 or bicycle users trying to avoid highly polluted routes
 are some examples where highly individualized route planning is needed.
 <!-- Need         -->
-Current route planning applications lack flexibility.
+Current route planning applications lack query flexibility.
 The types of queries supported by a route planner
 are only determined at design time
 and heavily depend on centralized pre-selected data sources.
@@ -21,7 +21,7 @@ and thus allow creating more flexible
 and personalized route planning applications.
 Semantic Web and Linked Data technologies
 provide a common framework for data integration.
-Yet it remains unclear how relevant data
+Yet it is still unclear how relevant data
 can be automatically discovered
 and reused while remaining independent
 from specific route planning algorithm implementations.

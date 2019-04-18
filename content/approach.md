@@ -4,14 +4,14 @@
 My approach consists of three steps, each related to one of the hypotheses.
 
 1. _Semantic modeling of route planning queries_ -
-Definition of a flexible semantic model for route planning queries
-that allows to define the different constraints
-and parameters to be considered during route calculations.
+A flexible semantic model to describe route planning queries
+that considers different constraints
+and parameters for route calculations.
 By using domain vocabularies in a structured way,
 automatic data requirements identification for a given query becomes possible.
 
 2. _Hypermedia-driven Linked Data summaries_ -
-Definition of the general requirements needed to
+Definition of general requirements to
 create and publish data summaries on the Web,
 based on spatial and temporal dimensions
 and including declarative hypermedia controls.

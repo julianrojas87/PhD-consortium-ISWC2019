@@ -10,11 +10,11 @@ provide a common environment where data
 is given a well-defined meaning,
 better allowing machines to comprehend and
 work with heterogeneous data from different sources.
-Through the [RDF specification](cite:cites cyganiak2014),
-Linked Data is described using a graph-based model, where
-each node in the graph represents a concept, object or
-literal value in the world, and each edge represents
-the logical relation between two of them.
+Linked Data is described using a graph-based model,
+often materialized in the Resource Description Framework [(RDF)](cite:cites cyganiak2014).
+Each node in the graph represents a concept,
+object or literal value in the world,
+and each edge represents the logical relation between two of them.
 This graph can be queried upon using the [SPARQL](cite:cites sparql) query language,
 which is the W3C recommendation to query RDF.  
 
@@ -22,7 +22,8 @@ In this section I present an overview
 of different aspects related to the problem
 of dynamically integrating new data sources to enable
 more diverse and specific queries in route planning
-applications.
+applications, such as data publishing and discovery on the Web,
+and route planning algorithms.
 
 ### Data Publishing on the Web
 
@@ -36,8 +37,8 @@ Extending this principles, the W3C published a document of [best practices
 for publishing Linked Data](cite:cites w3c2014), which provides a set of guidelines
 and design principles aimed at data publishers.
 
-Traditionally, data is published on the Web following one of two approaches:
-(i) as a data dump or (ii) through an API.
+Traditionally, data is often published on the Web
+as a data dump or through an API.
 In the public transport domain,
 [GTFS](cite:cites gtfs), which is regarded as the de-facto standard
 for describing and exchanging transit schedules,
@@ -56,7 +57,7 @@ derived from OSM that uses RDF as its data model.
 Also [GeoNames](cite:cites geonames) publishes over 25 million geographical names
 using stable URIs and a semantically annotated vocabulary[^gnontology].
 
-On the one hand, data dumps offer full flexibility over the data
+On the one hand, data dumps offer full query flexibility over the data
 but are expensive for clients who need to deal
 with integration of complete datasets.
 On the other hand, APIs offer simpler access to data,
@@ -67,21 +68,19 @@ explores the different trade-offs in terms of query flexibility
 and computational costs of _in between_ Web interfaces
 determined by _fragmenting_ datasets and publishing them on the Web.
 Based on the LDF concept,
-the [Linked Connections specification](cite:cites colpaert2017) was introduced.
-Defined as a light-weight data interface for publishing public transit schedules
-that allows to perform route planning on the client-side,
-it uses the Linked Connections Ontology[^lcontology]
+the [Linked Connections specification](cite:cites colpaert2017) was introduced
+as a light-weight data interface for publishing public transit schedules
+that allows to perform route planning on the client-side.
+It uses the Linked Connections Ontology[^lcontology]
 and the Linked GTFS vocabulary[^linkedgtfs] to describe
 vehicle departures in public transport networks [](cite:cites colpaertthesis).
 
 ### Data Discovery on the Web
 
-To dynamically integrate data sources available on the Web
-into route planning applications,
-discovering which data sources are relevant for resolving a certain query
-is a necessary previous step.
-One approach to enable automated discovery of datasets
-is using data catalogs descriptions.
+Discovering data sources which are relevant for resolving a certain query
+is necessary before integrating and reusing new data available on the Web
+in route planning applications.
+_Data catalog descriptions_ enable automated discovery of datasets.
 For instance, the [DCAT vocabulary](cite:cites dcat)
 is used to describe high-level metadata (keywords,
 location, data format, etc.) of datasets,
@@ -90,22 +89,21 @@ is contained on a certain dataset and how to access it.
 Given the graph-based nature of Linked Data on the Web,
 active approaches such as link traversal can be used
 to discover data during query execution.
-In [](cite:cites hartig2016) several link traversal approaches
-are studied showing significant improvements in query response time
-compared to a naive approach.
+Hartig et al. [](cite:cites hartig2016) studies several link traversal approaches
+showing significant improvements in query response time compared to a naive approach.
 
-Hypermedia-based approaches are also considered in the literature
+_Hypermedia-based approaches_ are also considered in the literature
 for enabling automated discovery of data.
-The approach presented in [](cite:cites vandersande2016) describes
+The approach presented in Van der Sande et al. [](cite:cites vandersande2016) describes
 how to perform data source selection based on hypermedia links and controls.
 Hypermedia is also used to semantically describe responses
-of Web APIs in [](cite:cites taelman2017). A shape-based approach
-using [SHACL](cite:cites shacl), is used by the authors
-to declare a parameterized structure of API responses.
+of Web APIs in Tealman et al. [](cite:cites taelman2017).
+A shape-based approach based on [SHACL](cite:cites shacl),
+is used to define a parameterized structure of API responses.
 
-The use of data summaries as a strategy to enable
+The use of _data summaries_ as a strategy to enable
 more precise data discovery to improve query response times
-is explored in [](cite:cites saleem2014).
+is explored in Saleem et al. [](cite:cites saleem2014).
 In the same direction, [Multidimensional Interfaces](cite:cites taelman2016) are
 defined to semantically describe ordinal ranges within datasets,
 e.g. time-based or geospatial-based ranges,
@@ -117,10 +115,10 @@ and their schedules (time range).
 ### Route Planning
 
 Route Planning has been extensively studied throughout the years.
-Multiple algorithms have been proposed to calculate routes
+Multiple algorithms were proposed to calculate routes
 over different types of networks (e.g. road, public transport, multimodal, etc),
 and using different criteria (e.g. shortest path, travel time, number of transfers, etc).
-The authors in [](cite:cites bast2015) and [](cite:cites pajorthesis) present
+Bast et al. [](cite:cites bast2015) and Pajor [](cite:cites pajorthesis) present
 a comparative analysis of multiple route planning algorithms
 for road, public transit and multimodal networks.
 Most algorithms use subjacent graph-based data models
@@ -138,14 +136,14 @@ There is no consensus about the criteria
 that route planning algorithms should support.
 The parameters supported by route planning algorithms
 change from one approach to another depending on the data model,
-the algorithm implementation and the use-case.
-In [](cite:cites kelly2011) a list of data requirements
-for _ideal multimodal route planners_ is introduced.
+the algorithm implementation and use-case.
+Kelly et al. [](cite:cites kelly2011) presents a list of data requirements
+for _ideal multimodal route planners_.
 It identifies 22 different parameters from traditional data sources such as GTFS feeds and OSM.
 The NeTEx standard defines also a _Trip Plan Query Model_[^netexquery]
 that considers among others, accessibility, via and trip fares parameters.
 A extensive analysis of formal languages using regular expressions
-to define constrained shortest path queries is presented in [](cite:cites barret2000).
+to define constrained shortest path queries is presented in Barret et al. [](cite:cites barret2000).
 Furthermore, the Web of Data opens the door for new possibilities
 and use-cases that need to be supported by route planning algorithms.
 For instance, the Multi-Criteria RAPTOR algorithm supports
@@ -156,14 +154,15 @@ causing it to become too slow for practical use [](cite:cites raptor2019).
 Given that Linked Data is also described using a graph-based model,
 the problem of finding routes between nodes have been previously studied.
 SPARQL 1.1 introduced the Property Paths (PP) syntax
-that allow query engines to test for path existence between nodes.
-In [](cite:cites savenkov2017) an extension for PP syntax is proposed
+that allows query engines to test for path existence between nodes.
+Savenkov et al. [](cite:cites savenkov2017) propose an extension for PP syntax
 to compute the top-k shortest paths of a given path expression between two nodes.
-An extension of the query semantics of PP is presented in [](cite:cites hartig2015)
+An extension of the query semantics of PP is also presented in Hartig et al. [](cite:cites hartig2015)
 to support navigation of PP over the Web of Data instead of over single RDF graphs.
 A more expressive alternative is later introduced as the [Linked Data Query Language (LDQL)](cite:cites ldql)
 that allows expressing query graph patterns and navigation paths independently.
-Another approach is introduced in [](cite:cites rutgers2016) as an extension of the property graph query language
+Another approach is introduced in Rutgers et al. [](cite:cites rutgers2016)
+as an extension of the property graph query language
 CypherQL[^cypher], which allows for top-k shortest paths queries,
 calculated path weights and filtering on path edges and nodes.
 Lastly, multimodal route plans are calculated using a GraphQL interface

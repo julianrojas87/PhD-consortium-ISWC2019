@@ -3,8 +3,8 @@
 
 The first research question is related to the need
 of having a declarative and use-case independent mechanism
-to express route planning queries that allows for the inclusion of arbitrary constraints,
-while being self-describing about the type of data that will be needed to answer the query.
+to express route planning queries, that allows including arbitrary constraints,
+while being self-describing about the type of data needed to answer a query.
 Existing solutions are usually tightly coupled
 to the subjacent data model and algorithm implementation,
 limiting the type of queries that can be expressed.
@@ -32,13 +32,13 @@ since only a subset of such networks is needed in practice.
 Considering this, I define the following Hypothesis related to Research Question 2:
 
 Hypothesis 2 -
-: _A data publishing strategy based on data summaries and declarative metadata containing hypermedia controls allows precise automated relevant data discovery able to reach full completeness in a closed-world environment for route planning query solving._
+: _A data publishing strategy based on data summaries and declarative metadata containing hypermedia controls enables precise automated data discovery able to reach full completeness in a closed-world environment for route planning query solving._
 
 The third research question relates to the performance problem
 of route planning algorithms that support arbitrary multi-criteria queries.
 The performance of current solutions significantly degrades
 with each additional parameter considered for route calculation.
-Therefore, I defined the following Hypothesis related to Research Question 3:
+Thus, I defined the following Hypothesis related to Research Question 3:
 
 Hypothesis 3 -
-: _A flexible route planning algorithm that adapts to combine multi-criteria Dijkstra and non Dijkstra-based approaches performs better in terms of query response time and provides answers at least as complete as the state of the art arbitrary multi-criteria approaches._
+: _A adaptable route planning algorithm capable of combining multi-criteria Dijkstra and non Dijkstra-based approaches performs better in terms of query response time and provides answers at least as complete as the state of the art arbitrary multi-criteria approaches._
