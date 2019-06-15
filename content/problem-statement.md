@@ -22,17 +22,24 @@ to publish their data using the [GTFS](cite:cites gtfs) format,
 Google collects these datasets and integrates them
 into their route planning application.
 
-However, centralized approaches do not scale
-and limit the query types supported
+However, centralized approaches incur in high costs
+in terms of computational infrastructure.
+Hosting, integrating and keeping up to date the data
+of every transport alternative that wants to be supported,
+and effectively processing route planning queries from a scaling number of users,
+requires big data storages and powerful processors,
+specially if aiming on providing a global route planning solution.
+Furthermore, they also limit the types of queries supported
+due to the difficulties that are faced
 when dealing with heterogeneous data.
 As long as data are homogeneous in terms of structure and format,
 i.e. dealing only with public transport data using a common format as GTFS,
 integrating new data sources into a route planning application
 can be easily automated and the same route planning algorithm implementation
-will remain useful without requiring any adaptation.
+will remain useful without requiring many adaptations.
 Other types of data make necessary to manually adapt
 the data model and the route planning algorithm that runs on top of it.
-This explains why route planning applications
+This could explain why route planning applications
 such as Google Maps or Open Trip Planner
 do not allow querying for routes that consider, for example air quality,
 even though this type of data can be found published on the Web as Open Data[^airquality].

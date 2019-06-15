@@ -22,8 +22,7 @@ and personalized route planning applications.
 Semantic Web and Linked Data technologies
 provide a common framework for data integration.
 Yet it is still unclear how relevant data
-can be automatically discovered
-and reused while remaining independent
+can be automatically reused while remaining independent
 from specific route planning algorithm implementations.
 <!-- Preliminaries     -->
 Preliminary work

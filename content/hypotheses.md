@@ -16,29 +16,14 @@ Therefore, I define the following Hypothesis related to Research Question 1:
 Hypothesis 1 -
 : _A semantic model for expressing route planning queries is at least as expressive as state of the art approaches and allows for complete and automatic identification of query solving data requirements._
 
-The second research question relates to the problem of automated relevant data discovery.
+The second research question relates to the problem of how data
+should be published on the Web to allow for efficient decentralized route planning solutions.
 Current Linked Data based approaches for publishing data on the Web
 allow for interoperable data integration.
-Moreover, semantically annotated metadata descriptions
-enable relevant data source identification.
-However once discovered, dynamically integrating full datasets during query execution
-render route planning applications unusable for practical use-cases.
-For instance, calculating a route from London to Paris will require discovering
-and integrating data from possible transport modes
-to travel in the UK and France,
-which includes e.g. complete national train networks.
-This causes an impractical overhead,
-since only a subset of such networks is needed in practice.
+Also, data summarization techniques provide data publishing alternatives
+for clients to access just the necessary data to solve a certain query,
+accelerating query evaluation times.
 Considering this, I define the following Hypothesis related to Research Question 2:
 
 Hypothesis 2 -
-: _A data publishing strategy based on data summaries and declarative metadata containing hypermedia controls enables precise automated data discovery able to reach full completeness in a closed-world environment for route planning query solving._
-
-The third research question relates to the performance problem
-of route planning algorithms that support arbitrary multi-criteria queries.
-The performance of current solutions significantly degrades
-with each additional parameter considered for route calculation.
-Thus, I defined the following Hypothesis related to Research Question 3:
-
-Hypothesis 3 -
-: _A adaptable route planning algorithm capable of combining multi-criteria Dijkstra and non Dijkstra-based approaches performs better in terms of query response time and provides answers at least as complete as the state of the art arbitrary multi-criteria approaches._
+: _A data publishing strategy based on data summarization techniques allows for decentralized route planning query evaluation to be as performant as state of the art centralized approaches such as Open Trip Planner._

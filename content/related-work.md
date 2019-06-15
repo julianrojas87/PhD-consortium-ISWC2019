@@ -10,19 +10,16 @@ provide a common environment where data
 is given a well-defined meaning,
 better allowing machines to comprehend and
 work with heterogeneous data from different sources.
-Linked Data is described using a graph-based model,
-often materialized in the Resource Description Framework [(RDF)](cite:cites cyganiak2014).
-Each node in the graph represents a concept,
-object or literal value in the world,
-and each edge represents the logical relation between two of them.
-This graph can be queried upon using the [SPARQL](cite:cites sparql) query language,
-which is the W3C recommendation to query RDF.  
+Moreover, the Web offers a common platform for data sharing
+where different data publishing strategies
+may facilitate and influence a decentralized
+approach for route planning applications.
 
 In this section I present an overview
 of different aspects related to the problem
 of dynamically integrating new data sources to enable
 more diverse and specific queries in route planning
-applications, such as data publishing and discovery on the Web,
+applications, such as data publishing
 and route planning algorithms.
 
 ### Data Publishing on the Web
@@ -38,13 +35,20 @@ for publishing Linked Data](cite:cites w3c2014), which provides a set of guideli
 and design principles aimed at data publishers.
 
 Traditionally, data is often published on the Web
-as a data dump or through an API.
+either as a data dump or through an API.
 In the public transport domain,
 [GTFS](cite:cites gtfs), which is regarded as the de-facto standard
 for describing and exchanging transit schedules,
 is a common example of data dump publishing.
-The European Committee for Standardization released the [NeTEx standard](cite:cites netex)
+The European Committee for Standardization
+released the [NeTEx standard](cite:cites netex)
 as a general purpose format for exchanging public transport schedules and related data.
+NeTEx is the standard selected by the European Union,
+under the Directive 2010/40/EU[^eudirective],
+for the provision of an EU-wide multimodal travel information service,
+where every member state will publish their public transport-related datasets
+through a National Access Point.
+
 Transport related data is also offered on the Web as route planning APIs.
 Navitia.io[^navitia], Plannerstack[^plannerstack], CityMapper
 or the open source Open Trip Planner are some examples.
@@ -75,42 +79,31 @@ It uses the Linked Connections Ontology[^lcontology]
 and the Linked GTFS vocabulary[^linkedgtfs] to describe
 vehicle departures in public transport networks [](cite:cites colpaertthesis).
 
-### Data Discovery on the Web
-
-Discovering data sources which are relevant for resolving a certain query
-is necessary before integrating and reusing new data available on the Web
-in route planning applications.
-_Data catalog descriptions_ enable automated discovery of datasets.
-For instance, the [DCAT vocabulary](cite:cites dcat)
-is used to describe high-level metadata (keywords,
-location, data format, etc.) of datasets,
-enabling clients to discover what kind of data
-is contained on a certain dataset and how to access it.
-Given the graph-based nature of Linked Data on the Web,
-active approaches such as link traversal can be used
-to discover data during query execution.
-Hartig et al. [](cite:cites hartig2016) studies several link traversal approaches
-showing significant improvements in query response time compared to a naive approach.
-
-_Hypermedia-based approaches_ are also considered in the literature
-for enabling automated discovery of data.
-The approach presented in Van der Sande et al. [](cite:cites vandersande2016) describes
-how to perform data source selection based on hypermedia links and controls.
-Hypermedia is also used to semantically describe responses
-of Web APIs in Tealman et al. [](cite:cites taelman2017).
-A shape-based approach based on [SHACL](cite:cites shacl),
-is used to define a parameterized structure of API responses.
-
-The use of _data summaries_ as a strategy to enable
-more precise data discovery to improve query response times
-is explored in Saleem et al. [](cite:cites saleem2014).
-In the same direction, [Multidimensional Interfaces](cite:cites taelman2016) are
-defined to semantically describe ordinal ranges within datasets,
+Data summarization techniques are also used when publishing data on the Web
+to facilitate its access and speed up querying processes.
+Taelman et al. introduced [Multidimensional Interfaces](cite:cites taelman2016)
+as mechanism to semantically describe ordinal ranges within datasets,
 e.g. time-based or geospatial-based ranges,
 which are inherent to the nature
 of commonly used route planning related datasets,
 such as public transport network topologies (geospatial range)
 and their schedules (time range).
+Graph-based summarization techniques such as [Contraction Hierarchies](cite:cites geisberger2012),
+[K-means](cite:cites hartigan1979) or [connectivity-based clustering](cite:cites flinsenberg2004)
+are also commonly used in the route planning domain
+to reduce the amount of data that needs to be processed
+when solving route planning queries.
+
+_Hypermedia_ plays also an important role when publishing data on the Web.
+Providing declarative descriptions about how data can be consumed,
+helps clients to understand the means of accessing data sources
+and increases their interoperability.
+The Hydra vocabulary[^hydra] aims on providing a common terminology for describing
+hypermedia-driven Web APIs to create generic API clients.
+Hypermedia is also used to semantically describe responses
+of Web APIs in Tealman et al. [](cite:cites taelman2017).
+A shape-based approach using [SHACL](cite:cites shacl),
+is used to define a parameterized structure of API responses.
 
 ### Route Planning
 
@@ -131,6 +124,18 @@ have been introduced for public transport and multimodal networks.
 [Trip-based routing](cite:cites witt2016) are among the approaches
 that exploit the basic elements of public transport networks
 to calculate routes directly on the timetables.
+
+Different solutions that use some of the aforementioned
+route planning algorithms are available.
+For instance Open Trip Planner[^otp] provides an open source implementation
+of Dijkstra-based and RAPTOR algorithms
+for planning routes over public transport and road networks.
+OsmAnd[^osmand] is also an open source route planner for road networks
+that implements a Dijkstra-based algorithm on top of OSM data.
+Being open source allows these solutions to be extended
+to include new different types of data sources for route planning.
+However, extending them requires substantial effort to adapt the
+algorithms and the data models over which they operate.
 
 There is no consensus about the criteria
 that route planning algorithms should support.
@@ -165,15 +170,20 @@ Another approach is introduced in Rutgers et al. [](cite:cites rutgers2016)
 as an extension of the property graph query language
 CypherQL[^cypher], which allows for top-k shortest paths queries,
 calculated path weights and filtering on path edges and nodes.
-Lastly, multimodal route plans are calculated using a GraphQL interface
-published by the Finish Transit Agency[^graphql].
+Lastly, multimodal route plans are calculated using a GraphQL interfaces
+published by the Finish[^fn-graphql] and Norwegian[^nw-graphql] Transit Agencies.
 
 [^ldprinciples]: <a href="https://www.w3.org/DesignIssues/LinkedData.html">https://www.w3.org/DesignIssues/LinkedData.html</a>
+[^eudirective]: <a href="http://data.europa.eu/eli/dir/2010/40/oj">http://data.europa.eu/eli/dir/2010/40/oj</a>
 [^navitia]: <a href="http://navitia.io/">http://navitia.io/</a>
 [^plannerstack]: <a href="http://www.plannerstack.org/">http://www.plannerstack.org/</a>
 [^lcontology]: <a href="http://semweb.mmlab.be/ns/linkedconnections#">http://semweb.mmlab.be/ns/linkedconnections#</a>
 [^linkedgtfs]: <a href="http://vocab.gtfs.org/gtfs.ttl#">http://vocab.gtfs.org/gtfs.ttl#</a>
+[^hydra]: <a href="https://www.hydra-cg.com/spec/latest/core/">https://www.hydra-cg.com/spec/latest/core/</a>
 [^gnontology]: <a href="http://www.geonames.org/ontology/ontology_v3.1.rdf">http://www.geonames.org/ontology/ontology_v3.1.rdf</a>
+[^otp]: <a href="https://github.com/opentripplanner/OpenTripPlanner">https://github.com/opentripplanner/OpenTripPlanner</a>
+[^osmand]: <a href="https://github.com/osmandapp/Osmand">https://github.com/osmandapp/Osmand</a>
 [^netexquery]: <a href="http://www.netex-cen.eu/model/conceptual/passenger_info/index.htm">http://www.netex-cen.eu/model/conceptual/passenger_info/index.htm</a>
 [^cypher]: <a href="https://neo4j.com/developer/cypher-query-language/">https://neo4j.com/developer/cypher-query-language/</a>
-[^graphql]: <a href="https://digitransit.fi/en/developers/apis/1-routing-api/itinerary-planning/">https://digitransit.fi/en/developers/apis/1-routing-api/itinerary-planning/</a>
+[^fn-graphql]: <a href="https://digitransit.fi/en/developers/apis/1-routing-api/itinerary-planning/">https://digitransit.fi/en/developers/apis/1-routing-api/itinerary-planning/</a>
+[^nw-graphql]: <a href="https://api.entur.io/journey-planner/v2/ide/">https://api.entur.io/journey-planner/v2/ide/</a>

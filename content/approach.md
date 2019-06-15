@@ -1,7 +1,7 @@
 ## Approach
 {:#approach}
 
-My approach consists of three steps, each related to one of the hypotheses.
+My approach consists of three steps.
 
 1. _Semantic modeling of route planning queries_ -
 A flexible semantic model to describe route planning queries
@@ -16,10 +16,5 @@ create and publish data summaries on the Web,
 based on spatial and temporal dimensions
 and including declarative hypermedia controls.
 By interpreting the hypermedia controls,
-route planning applications are able to discover
-and integrate subsets of relevant data sources on the fly.
-
-3. _Adaptable route planning algorithm_ -
-Design and implementation of a route planning algorithm
-capable of combining Dijkstra and non Dijkstra-based approaches
-to calculate routes depending on the query data requirements.
+route planning applications are able to integrate
+subsets of relevant data sources on the fly.

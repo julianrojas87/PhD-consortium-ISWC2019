@@ -24,7 +24,7 @@ national and regional governments, private companies and others,
 publish heterogeneous data from multiple domains.
 Many of these datasets contain information
 relevant for route planning purposes,
-e.g. parking locations and availabilities or street occupancy;
+e.g. parking alternatives, road works or street occupancy;
 which opens the door for creating richer applications
 capable of addressing more diverse or specific needs.
 Considering accessibility constraints
